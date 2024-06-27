@@ -6,6 +6,7 @@ extra_css:
   - 'css/styles.css'
   - 'assets/stylesheets/asf.css'
 extra:
+  # analytics are overridden asf_theme/main.html
   analytics:
     - provider: google
     - property: G-6RCQC8BJ8S
