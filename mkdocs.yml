@@ -2,14 +2,14 @@ site_name: ASF SAR Data Search Manual
 site_description: Documentation for searching and processing ASF SAR data.
 site_dir: 'docs'
 docs_dir: 'markdown-docs'
-google_analytics: ['G-440184110', 'docs.asf.alaska.edu']
+google_analytics: ['G-6RCQC8BJ8S', 'docs.asf.alaska.edu']
 extra_css:
   - 'css/styles.css'
   - 'assets/stylesheets/asf.css'
 extra:
   analytics:
     - provider: google
-    - property: G-440184110
+    - property: G-6RCQC8BJ8S
   consent:
     cookies:
       analytics: Analytics
