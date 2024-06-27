@@ -6,7 +6,7 @@ extra_css:
   - 'css/styles.css'
   - 'assets/stylesheets/asf.css'
 extra:
-  # analytics are overridden asf_theme/main.html
+  # analytics are overridden in the file asf_theme/main.html. Change the tracking ID there.
   analytics:
     - provider: google
     - property: G-6RCQC8BJ8S
