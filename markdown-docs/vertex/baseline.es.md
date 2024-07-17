@@ -21,7 +21,7 @@ Mientras estés en el tipo de búsqueda de referencia, notará muchos controles 
 - En la parte superior izquierda del panel de resultados, verás la cantidad de escenas enumeradas.
 - **Zoom** hará *Acercar los resultados* ampliando el área del mapa de la Tierra donde se encuentran las escenas.
 - **Lista*** podrá agregar todos los resultados a Descargas* permitiéndole agregar todas las escenas a la lista de descargas.
-- **On Demand** le permitirá *Agregar todos los resultados a la lista On Demand* para realizar un procesamiento personalizado en las escenas. Para obtener más información, haga clic [aquí](https://hyp3-docs.asf.alaska.edu/using/vertex/). También puede optar por *Crear suscripción *. Puede encontrar más detalles sobre las suscripciones [aquí](https://hyp3-docs.asf.alaska.edu/using/subsitas/).
+- **On Demand** le permitirá *Agregar todos los resultados a la lista On Demand* para realizar un procesamiento personalizado en las escenas. Para obtener más información, haga clic [aquí](https://hyp3-docs.asf.alaska.edu/using/vertex/). También puede optar por *Crear suscripción *. Puede encontrar más detalles sobre las suscripciones [aquí](https://hyp3-docs.asf.alaska.edu/using/subscriptions/).
 - **Exportar** le permitirá *Descargar datos/metadatos* para todas las escenas de la lista.
 - En la columna de la izquierda, **Lista** *podrá agregar archivos de escena a las descargas* solo para la escena seleccionada.
 - Debajo de los metadatos en la columna central, **Establecer como referencia** le permitirá establecer cualquier escena en la pila como escena de referencia. Cuando selecciones esto, tanto el gráfico como los valores de referencia se actualizarán automáticamente.
