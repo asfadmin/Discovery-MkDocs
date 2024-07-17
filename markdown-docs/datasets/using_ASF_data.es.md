@@ -1,5 +1,5 @@
 # Cómo usar los datos de ASF
-Esto proporciona una visión general de algunos usos potenciales para los productos disponibles a través de ASF. La sección [Descripción general](/datasets/using_ASF_data/#overview) proporciona ejemplos de uso para cada conjunto de datos, incluidos los conjuntos de datos revividos, así como la cobertura espacial y las fechas de misión para cada uno. [Detalles del conjunto de datos] (/datasets/using_ASF_data/#dataset-details) proporciona más detalles sobre algunos de los productos disponibles a través de cada conjunto de datos. También hay una sección [Lectura adicional] (/datasets/using_ASF_data/#further-reading).
+Esto proporciona una visión general de algunos usos potenciales para los productos disponibles a través de ASF. La sección [Descripción general](/datasets/using_ASF_data/#overview) proporciona ejemplos de uso para cada conjunto de datos, incluidos los conjuntos de datos revividos, así como la cobertura espacial y las fechas de misión para cada uno. [Detalles del conjunto de datos](/datasets/using_ASF_data/#dataset-details) proporciona más detalles sobre algunos de los productos disponibles a través de cada conjunto de datos. También hay una sección [Lectura adicional](/datasets/using_ASF_data/#further-reading).
 
 ## Visión general
 

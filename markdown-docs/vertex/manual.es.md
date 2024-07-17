@@ -98,6 +98,7 @@ Cada uno de estos pasos se realiza solo cuando es necesario para obtener el AOI 
 	- **Subtipo** – Limita la búsqueda a una nave espacial de misión específica.
 	- **ID de Grupo** – Limita la búsqueda a un ID de grupo específico.
 	- **ID de Ráfaga** – Limita la búsqueda a un ID de ráfaga específico. Se permiten múltiples IDs de ráfaga.
+	- **Productos Estándar o Productos CalVal** – Restringe la búsqueda solo a productos Estándar o de Calibración y Validación (CalVal). Es posible elegir una sola opción. Este selector está disponible únicamente para el conjunto de datos Opera-S1.
 
 
 ### Filtros de ruta y marco
