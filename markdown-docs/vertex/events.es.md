@@ -42,12 +42,11 @@ Mientras estás en el tipo de búsqueda de eventos, notarás muchos controles fa
 - La columna de Detalle del Evento (centro).
 	- Los detalles del evento se enumeran aquí. Esto incluye el tiempo de inicio y finalización del procesamiento del evento. Para los terremotos, también se muestra la magnitud y la profundidad.
 	- Puede **Copiar** el ID del Evento.
-	- Haga clic en **Evento SARVIEWS** para ser dirigido a la página SARVIEWS de su evento elegido.
 	- Para eventos de terremotos, se muestra el **ID del USGS**. Para los volcanes, se muestra el **ID del Smithsonian**. Haga clic en el enlace para ir a la página de eventos del USGS o del Smithsonian.
 	- Ajusta el control deslizante de **Escala del Polígono de Búsqueda Geográfica** según lo desees. El polígono de Área de Interés también se actualizará en el mapa.
 	- Una vez que estés satisfecho con la **Escala del Polígono de Búsqueda Geográfica**, Haga clic en **Geográfica** para iniciar una búsqueda geográfica utilizando el Área de Interés y las fechas del evento.
 	- Haga clic en **Lista** para iniciar una búsqueda de lista que incluye todas las escenas de productos del evento.
-	- Haga clic en **SARVIEWS** para ser dirigido a la página SARVIEWS de su evento elegido.
+
 
 - El ícono del ojo etiquetado como **Abrir en Visor de Imágenes** abre una ventana de vista previa más grande.
     - *Nota*: Al ver imágenes InSAR en el visor de imágenes, se muestra la imagen de vista previa envuelta. La imagen de vista previa sin envolver está disponible en el producto descargado.

@@ -241,8 +241,8 @@ Las palabras clave se utilizan para encontrar los datos deseados. Utilice tantas
 		- JERS-1: HH
 		- RADARSAT-1: HH
 		- SEASAT: HH
-		- Sentinel-1A: VV, VV+VH, Dual VV, VV+VH, Dual HV, HH, HH+HV, VV, Dual VH
-		- Sentinel-1B: VV, VV+VH, Dual VV, VV+VH, Dual HV, HH, HH+HV, VV, Dual VH
+		- Sentinel-1A: VV, VV+VH, Dual VV, VV+VH, Dual HV, Dual HH, HH, HH+HV, VV, Dual VH
+		- Sentinel-1B: VV, VV+VH, Dual VV, VV+VH, Dual HV, Dual HH, HH, HH+HV, VV, Dual VH
 		- UAVSAR: FULL, HH
 
 - <span style="color: #236192; font-size: 20px;">processingLevel</span>
@@ -256,11 +256,14 @@ Las palabras clave se utilizan para encontrar los datos deseados. Utilice tantas
 		- ERS-1: L0, L1
 		- ERS-2: L0, L1
 		- JERS-1: L0, L1
+		- OPERA-S1: RTC, CSLC, RTC_STATIC, CSLS_STATIC
 		- RADARSAT-1: L0, L1
-		- SEASAT: L1
+		- SEASAT: L1, GEOTIFF
 		- Sentinel-1A: GRD_HS, GRD_HD, GRD_MS, GRD_MD, GRD_FD, SLC, RAW, OCN, METADATA_RAW, METADATA_SLC, METADATA_GRD_HD, METADATA_GRD_MD, METADATA_GRD_MS, METADATA_GRD_HS, METADATA_OCN
 		- Sentinel-1B: GRD_HS, GRD_HD, GRD_MS, GRD_MD, GRD_FD, SLC, RAW, OCN, METADATA_RAW, METADATA_SLC, METADATA_GRD_HD, METADATA_GRD_MD, METADATA_GRD_MS, METADATA_GRD_HS, METADATA_OCN
 		- Sentinel-1 InSAR: GUNW_STD, GUNW_AMP, GUNW_CON, GUN_COH, GUNW_UNW
+		- Sentinel-1 Bursts: BURST
+		- SIR-C: SLC, METADATA_SLC
 		- SMAP: L1A_Radar_RO_QA, L1A_Radar_RO_HDF5, L1B_S0_LoRes_HDF5, L1B_S0_LoRes_QA, L1B_S0_LoRes_ISO_XML, L1A_Radar_QA, L1A_Radar_RO_ISO_XML, L1C_S0_HiRes_ISO_XML, L1C_S0_HiRes_QA, L1C_S0_HiRes_HDF5, L1A_Radar_HDF5
 		- UAVSAR: KMZ, PROYECTADO, PAULI, PROYECTADO_ML5X5, STOKES, AMPLITUD, COMPLEJO, DEM_TIFF, PROYECTADO_ML3X3, METADATOS, AMPLITUD_GRD, INTERFEROMETRÍA, INTERFEROMETRÍA_GRD, INC, PENDIENTE
 
@@ -421,6 +424,7 @@ Cada uno de estos pasos se realiza solo cuando es necesario para obtener el AOI 
 		- JERS-1: L0, L1; por defecto es L0
 		- RADARSAT-1: L0, L1; por defecto es L0
 		- Sentinel-1A & Sentinel-1B: SLC
+		- Sentinel-1 Bursts: SLC
 
 - <span style="color: #236192; font-size: 20px;">output</span>
 	- Formato deseado de los resultados de la API de Búsqueda. Si no se especifica, el formato predeterminado es metalink. El formato preferido es geoJSON.
