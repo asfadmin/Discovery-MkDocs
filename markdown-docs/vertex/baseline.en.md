@@ -14,17 +14,17 @@ Visit **[ASF's Vertex](https://search.asf.alaska.edu)** to begin using the Basel
 - If you do have a particular reference scene chosen, you can select ***Baseline*** from the Search Type dropdown list. You may enter your reference scene and hit ***Search***.
 
 ### **Interacting with Baseline Search Results**
-While in Baseline Search type, you will notice many familiar controls in the results panel. The scenes are shown in the left column. The perpendicular and temporal baselines are listed next to each scene. The center column lists the metadata for the selected scene, and includes the **Set as Reference** button, which allows you to set any scene in the stack as the reference scene. The Baseline Chart is shown in the right column.
+While in Baseline Search type, you will notice many familiar controls in the results panel. The scenes are shown in the left column. The perpendicular and temporal baselines are listed next to each scene. The center column lists the metadata for the selected scene, and includes the **Baseline** button, which allows you to set any scene in the stack as the reference scene. The Baseline Chart is shown in the right column.
 
 **Result Panel Controls**
 
 - At the top left of the results panel, you will see the number of scenes listed.
 - **Zoom** will *Zoom to results* magnifying the map area of the Earth where the scenes are located.
 - **Queue** will *Add all results to Downloads* allowing you to add all scenes to the download queue.
-- **On Demand** will allow you to *Add all results to On Demand queue* to do custom processing on the scenes. To learn more click [here](https://hyp3-docs.asf.alaska.edu/using/vertex/). You may also choose to *Create Subscription*. More details about subscriptions can be found [here](https://hyp3-docs.asf.alaska.edu/using/subscriptions/).
+- **On Demand** will allow you to *Add all results to On Demand queue* to do custom processing on the scenes. To learn more click [here](https://hyp3-docs.asf.alaska.edu/using/vertex/).
 - **Export** will allow you to *Download data/metadata* for all scenes in the stack.
 - In the left column, **Queue** will *Add scene files to downloads* for the selected scene only.
-- Under the metadata in the center column, **Set as Reference** will allow you to set any scene in the stack as the reference scene. When you select this, both the chart and the baseline values will be updated automatically.
+- Under the metadata in the center column, **Baseline** will allow you to set any scene in the stack as the reference scene. When you select this, both the chart and the baseline values will be updated automatically.
 
 **Chart Controls**
 
@@ -36,6 +36,7 @@ While in Baseline Search type, you will notice many familiar controls in the res
 
 - You may click **Baseline Criteria...** above the chart for additional options.
 	- You can adjust the sliders to change the perpendicular and temporal values that you wish to be included in your results.
+	- **Seasonal Search** allows constraining the results to certain annual periods within an overall range of dates. Click the Seasonal Search toggle and additional options will appear, allowing you to adjust the sliders to specify a seasonal range (*Season Start Day/Season End Day*).
 	- You can enter a start and end date.
 	- Changing any criteria will automatically update the list of scenes and the chart.
 
