@@ -1,4 +1,5 @@
- # asf_search Mejores Prácticas
+ 
+# asf_search Mejores Prácticas
 
 Además de cubrir las mejores prácticas, esta página también contiene técnicas avanzadas de búsqueda y sirve como la "filosofía de asf_search".
 
@@ -12,7 +13,7 @@ Los temas cubiertos incluyen:
 - Método de autenticación recomendado y descarga
 - Técnicas avanzadas de búsqueda, incluyendo rangos, subclases, grandes conjuntos de resultados, y más
 
-# Recomendaciones Generales
+## Recomendaciones Generales
 Esta sección contiene información sobre conjuntos de resultados, rendimiento general, los diferentes tipos de búsqueda disponibles, ejemplos de filtros comunes y conteo.
 
 ### Conjuntos de Resultados
