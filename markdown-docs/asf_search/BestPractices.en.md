@@ -1,4 +1,5 @@
- # asf_search Best Practices
+ 
+# asf_search Best Practices
 
 In addition to covering best practices, this page also contains advanced search techniques and serves as the "philosophy of asf_search".
 

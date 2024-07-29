@@ -14,19 +14,21 @@ In the top right menu, next to the **Sign In** icon, there are language control 
 
 ![type:video](https://www.youtube.com/embed/JovQ-rG9ZJE)
 
-- In the top left corner of the map, there are buttons that allow you to change your **map projection**, **zoom**, and **map view**.
+- In the top left corner of the map, there are buttons that allow you to change your **map view**, **zoom**, and **layers**.
 	- By default, the map is in equatorial projection. You may click **Map View** and select **Arctic map view** or **Antarctic map view** to change your map projection. Click **Equatorial map view** to switch back to the equatorial projection.
 	- You may click the **Zoom In** or **Zoom Out** icons to adjust your zoom.
 	- The default map layer is satellite. You may click the **Layers** button and select **Satellite View** or **Street View** to switch your map layer.
 		- You may click **Overview Map** to add an overview map in the top right corner of the map. Click it again to turn off the overview map.
+		- You may click **Coherence Layer** to select a seasonal coherence layer. Click the bubble next to the season you would like to turn on. Click the Coherence Layer checkbox again to turn the layer off.
 		- You may click **Gridlines** to add a graticule overlay to the map. Click it again to turn off the overlay. *Note*: This is currently only available in the equatorial map view.
-	- You may click **Opacity** and adjust the slider as desired to change the opacity of browse images displayed on the map.
+	- You may click **Opacity** and adjust the slider as desired to change the opacity of browse images displayed on the map. If the Coherence Layer is on, you may also adjust the opacity of that layer.
 - Navigate to your area of interest by dragging the map while holding down the left mouse button.
 - By default, the map-drawing tool is a bounding box. Click on the map once to specify the starting corner, move the mouse, then click again to finish the box. Additional drawing tool options are available in the toolbar at the top of the screen, including *point*, *linestring*, and *polygon* options.
 	- **Point** allows you to define an area of interest by clicking on the map to place a point.
 	- **Line** allows you to define an area of interest over a series of line segments by clicking on the map multiple times. Double-click to stop adding segments.
 	- **Polygon** allows you to define an area of interest over an arbitrary polygon. You will receive an error message at the bottom of the window if there was a problem with the polygon (self-intersecting, reversed polygon winding order, etc.).
 	- **Box** allows you to define an area of interest over a lat/long-aligned bounding box by clicking once to set one corner, and again to set the opposite corner.
+	- **Circle** allows you to define an area of interest over an arbitrary circle. Click and drag to select your circle. Click again to stop drawing.
 	- Once a shape has been drawn, select the **Edit current area of interest** icon on the toolbar to move, add, and delete points. Select the **Draw new area of interest** icon to create a new AOI.
 	- Clicking **Upload Goespatial File** brings up the Area of Interest dialog window. You may enter a WKT string, upload a geospatial file, or enter a location.
 - **Dataset** enables you to choose the dataset of interest.
@@ -99,19 +101,18 @@ Each of these steps is performed only when necessary to get the AOI to a single 
 	- **Group ID** – Limit the search to a specific group ID.
 	- **Burst ID** – Limit the search to a specific burst ID. Multiple burst IDs allowed.
 	- **Standard Products or CalVal Products** – Limit the search to either CalVal or Standard products. May choose one option. This selector is only available for the Opera-S1 dataset.
+	- **Campaign Selector** – Limit the search to a specific campaign.
 
 
 ### Path and Frame Filters
 
 - **Path and Frame Filters** are available for select datasets. You may enter a single path or frame, or a range. Due to inconsistent Sentinel-1 framing, we recommend searching for a frame of interest by ±1-2 frames.
+
+### Additional Search Options
+
 - The maximum number of results is displayed below the **SEARCH** button. Click the **down arrow** to choose your preferred maximum results.
-	- You may click **API URL...** in order to generate the API URL matching your current search parameters. This will open a new window.
-		- **Amount** allows you to set the maximum results.
-		- **Format** allows you to choose your preferred output format.
-		- The **Copy** icon next to the URL will copy the URL. It can be pasted into a browser search bar to perform the API search, or pasted into a document and saved.
-		- **API Docs** will send you to the [API Documentation](https://asf.alaska.edu/api/).
-		- **Download Results** will download the results in the specified output format.
-- Once all parameters have been chosen, click **SEARCH**. Search results will appear in the footer area of the Vertex window, and on the map.
+- To clear all current search filters, click the **down arrow** next to the **SEARCH** button, then click **Clear Search**.
+- Once all parameters have been chosen, click **SEARCH**. Search results will appear in the footer area of the Vertex window and on the map.
 	- *Note*: The number of files that are predicted to match the current search parameters is displayed under the SEARCH button. If there are no predicted matches, the search button will be greyed out and display NO RESULTS.
 
 ## *List* Search Options
@@ -122,7 +123,7 @@ Each of these steps is performed only when necessary to get the AOI to a single 
 	- **Scene** allows searching for specific scene names (granule names), and the results will include any files that are part of those scenes.
 	- **File** allows searching for specific file names (product names), and the results will only include exactly those files.
 - **Edit List** opens the *List Search* window so you can make changes to your list
-- Once all parameters have been chosen, click **SEARCH**. Search results will appear in the footer area of your browser window, and on the map.
+- Once all parameters have been chosen, click **SEARCH**. Search results will appear in the footer area of your browser window and on the map.
 	- *Note*: The number of files that are predicted to match the current search parameters is displayed under the SEARCH button. If there are no predicted matches, the search button will be greyed out and will display NO RESULTS.
 
 ### List Search File Import
@@ -162,7 +163,7 @@ You may **drag and drop files** into the box provided on the **Scene** or **File
 	- *Note*: If there are no matching scenes, the RESULTS button will be greyed out and will display NO RESULTS.
 - Once a Reference Scene has been entered, click **SEARCH**. Search results will appear under the map. Clicking on the *Zoom to results* icon at the top of the left results column will display the location of the stack of scenes on the map.
 - The graph displays the Temporal and Perpendicular (spatial) relationship of the secondary scenes to the Reference.
-- Clicking on **Baseline Criteria...** above the graph will open the *Baseline Search* window. Using the sliders, the Temporal and Perpendicular extents can be adjusted to limit the number of secondary scenes displayed in the results.
+- The **Baseline Criteria...** button allows you to specify additional criteria to refine your results, such as start and end dates, seasonal date settings, and temporal and perpendicular extents.
 - For further information on **Baseline**, please see the [Baseline documentation](/vertex/baseline).
 
 ## *SBAS* Search Options
@@ -222,16 +223,18 @@ You may **drag and drop files** into the box provided on the **Scene** or **File
 	- The **Queue** button will add all scenes to the download queue.
 	- The **On Demand** button will allow you to choose which eligible scenes to add to the On Demand Queue for further processing.
 	- The **Raw** button will show or hide raw files. *Note*: This button is applicable for Sentinel-1 scenes only.
-	- The **Export** button will allow you to export data or metadata for all scenes in the results.
+	- The **Export** or **Pairs** button will allow you to export data or metadata for all scenes in the results.
 	- The **Expired** button will show or hide expired On Demand files. *Note*: This button is only available in the **On Demand Products** search type.
+	- The **Copy** button will allow you to copy scene IDs or URLs. *Note*: This button is only available in the **Event** search type.
 	- *Note*: Not all buttons are available on all search types.
 - The **Scenes** column (left).
 	- Click on the cart icon next to a scene name to add all the scene’s files to the download queue. The cart changes appearance when this is done.
 	- Click on the zoom icon next to a scene name to zoom-in to the scene’s location on the map.
+	- Click the On Demand button to add eligible scenes to the On Demand Queue for further processing.
 - To view more information about a scene, click on the scene in the left column and the **Scene Detail** and **Files** columns will populate.
 	- The **Scene Detail** column (center) provides a more detailed description of the scene, including *Start Date/Time*, *Beam Mode*, *Path*, *Frame*, *Flight Direction*, *Polarization*, *Absolute Orbit*, and a browse image (if available). Not all scenes will have all the extra information.
-		- The **Baseline Tool** button opens the ASF Baseline Tool, which is used for creating InSAR stacks.
-		- The **SBAS Tool** button opens the ASF SBAS Tool, which is another method of creating InSAR stacks.
+		- The **Baseline** button opens the ASF Baseline Tool, which is used for creating InSAR stacks.
+		- The **SBAS** button opens the ASF SBAS Tool, which is another method of creating InSAR stacks.
 		- The **More Like This** button creates a search based on the selected scene’s path and frame.
 		![type:video](https://www.youtube.com/embed/h7vmrcpMd60)
 		- The **Source Data** button creates a search for the source Sentinel-1 scene based on the Opera product’s Group ID. *Note*: This button is only available for Opera-S1 search results.
@@ -242,10 +245,8 @@ You may **drag and drop files** into the box provided on the **Scene** or **File
 			- Click or scroll through the thumbnails at the bottom to see other browse images for scenes returned by your search.
 			- By default, the **Only display scenes with a browse image** box is checked. You may uncheck this to see all scenes returned by your search. Scenes without a browse image will show a thumbnail listing *No Browse Available*.
 			- The scene metadata is listed on the right side of the browse viewer window.
-	- The **Files** column (right) displays a list of files available for the currently selected scene. You may download files immediately or add them to your download queue by clicking on the appropriate icon.
-		- Clicking on the right arrow in front a file (product) name will expand the file to show the ancillary files included. These files may be downloaded individually or added to the download queue.
-			- You must be signed in to Vertex for this feature to work.
-			- This feature is not available for all datasets.
+			- Click on a file to download immediately or add it to the download queue.
+	- The **Files** column (right) displays a list of files available for the currently selected scene. You may download files immediately or add them to your download queue by clicking on the appropriate icon. You may also add eligible files to the On Demand queue for further processing.
 
 ## On Demand Queue
 
@@ -253,20 +254,20 @@ You may **drag and drop files** into the box provided on the **Scene** or **File
 
 - Clicking on the **three boxes** icon in the header, labeled **On Demand**, will display a drop down list of options.
 - **On Demand Queue** will open the On Demand queue.
-	- The different jobs types in your queue are separated by tabs along the top of the queue. The job types currently available are **RTC GAMMA**, **InSAR GAMMA**, and **autoRIFT**. You may click on a tab to select it. The selected tab is highlighted.
-	- For **RTC GAMMA** and **InSAR GAMMA** jobs, there are additional processing options available.  The options you select will apply to all files of that job type in your queue.
+	- The different job types in your queue are separated by tabs along the top of the queue. You may click on a tab to select it. The selected tab is highlighted.
+	- Some job types have additional processing options available.  The options you select will apply to all files of that job type in your queue.
 		- You may hover over each option to display a tool tip with details on the option.
-	- Choose your desired sorting with the **Sort Criteria** and **Sort Order** drop down boxes.
+	- Choose your desired sorting with the **Sort Criteria** and **Sort Order** drop-down boxes.
 		- Under **Sort Criteria**, you may choose to sort files by *Start Date* of the file, or by *Date Added* to the queue.
 		- Under **Sort Order**, you may choose to sort files by *Latest* or most recent, or by *Oldest*.
 	- The list of files you have added to your queue is listed below the options. The X allows you to remove any files you wish from the queue.
 	-  **Clear** will list some options for clearing files from your queue. You can choose to clear an individual tab, or you can choose **Clear All Processing Types** to clear all files from the queue. If you choose to clear all files, the option *Restore* will be displayed to allow you to undo this action.
-	- The number of jobs remaining is displayed at the bottom of the queue. There are 1,000 jobs allotted to each user per month. If you have too many jobs in your queue, a message stating the number of extra jobs will be displayed at the top of the queue. The **Sumbit** button will be greyed out.
+	- The number of credits remaining is displayed at the bottom of the queue. Each job type uses a set amount of credits. The **Submit** button will list the total number of credits that your jobs will use. If you have too many jobs in your queue, the **Submit** button will be greyed out.
 	- When you are satisfied with your selections, click **Submit Jobs** at the bottom. This will display the Review Submission window.
 		- The **Project Name** field allows you to create a name for the files you want to submit for processing. The character limit is 20. This field is optional.
 		- You may select or deselect the checkboxes to submit only the job types you wish.
 		- Select **Cancel** to return to the queue without submitting any files for processing.
-		- Click **Submit** to submit your jobs. *Note:* The Submit button will list the number of jobs you are submitting.
+		- Click **Submit** to submit your jobs. *Note:* The Submit button will list the number of jobs and the amount of credits you are submitting.
 		- If there are any errors, such as missing DEM coverage, an error message will display.
 - **Submitted Products** will switch to On Demand Products search type and will display your submitted products.
 - **On Demand (HyP3) Docs** will send you to the [On Demand documentation](https://hyp3-docs.asf.alaska.edu/)
@@ -307,29 +308,29 @@ Enhanced download queue functionality is available on Google Chrome browser. Ple
 
 ## Other Vertex Options
 
-- In the top left corner of the map, there are buttons that allow you to change your **map projection**, **zoom**, and **map view**. *Note:* Available map controls vary by search type.
+- In the top left corner of the map, there are buttons that allow you to change your **map view**, **zoom**, and **layers**. *Note:* Available map controls vary by search type.
 ![type:video](https://www.youtube.com/embed/qrUnsbZTVnA)
 	- By default, the map is in equatorial projection. You may click **Map View** and select **Arctic map view** or **Antarctic map view** to change your map projection. Click **Equatorial map view** to switch back to the equatorial projection.
 	- You may click the **Zoom In** or **Zoom Out** icons to adjust your zoom.
 	- The default map layer is satellite. You may click the **Layers** button and select **Satellite View** or **Street View** to switch your map layer.
 		- You may click **Overview Map** to add an overview map in the top right corner of the map. Click it again to turn off the overview map.
+		- You may click **Coherence Layer** to select a seasonal coherence layer. Click the bubble next to the season you would like to turn on. Click the Coherence Layer checkbox again to turn the layer off.
 		- You may click **Gridlines** to add a graticule overlay to the map. Click it again to turn off the overlay. *Note*: This is currently only available in the equatorial map view.
-	- You may click **Opacity** and adjust the slider as desired to change the opacity of browse images displayed on the map.
+	- You may click **Opacity** and adjust the slider as desired to change the opacity of browse images displayed on the map. If the Coherence Layer is on, you may also adjust the opacity of that layer.
 - Click on the **down arrow** on the **Search**
 	- **Clear Search** will clear all search parameters that have been set except for Search Type and Dataset.
-	- **Saved Searches** opens a submenu.
+	- **Saved Searches** opens a submenu. *Note*: You must be signed in to Vertex for this option to be available.
 	![type:video](https://www.youtube.com/embed/io4OQumWrJA)
 		- **Save Search** allows you to name and save your current search.
 		- **View Searches...** opens a list of searches that you have named and saved. Click on the magnifying glass icon to load the search settings.
 		- **Search History...** opens a list of your 10 last searches that were not named and saved. Click on the magnifying glass icon to load the search settings.
-	- **Saved Filters** opens a submenu.
+	- **Saved Filters** opens a submenu. *Note*: You must be signed in to Vertex for this option to be available.
 		- **Save Filters** allows you to save your current filter set.
 		- **View Filters...** allows you to view your saved filter sets. Click Apply Filters to apply them to your current search.
 	- **Share Search** opens a submenu.
 		- **Copy Search Link** will copy all the search parameters that have been set in the current search as a URL. The URL can then be pasted into a browser search bar to recreate the search exactly, or pasted into a document and saved to recreate the search later.
 		- **Share With Email** will open a new email with the URL of the search to send to others.
-	- **Help & Tutorials** provides both illustrated and video demonstrations on the basic steps for setting up a search and viewing the results.
-		- *Note*: You must be signed in to Vertex for these options to be available.
+	- **Help & Tutorials** provides both illustrated and video demonstrations on a variety of topics.
 	- **Export** opens a submenu.
 		- **Export Python** will provide a Python code snippet to recreate the current search using the Python search package asf_search. It also provides a link to the asf_search documentation. 
 		- **Export API** will provide the API URL to recreate the current search using the SearchAPI. It also provides a link to the SearchAPI documentation. 
@@ -340,11 +341,12 @@ Enhanced download queue functionality is available on Google Chrome browser. Ple
 	- **Find SAR Data Using ASF API** opens the SearchAPI documentation in a new tab.
 	- **Learn More About ASF & SAR** opens the ASF website in a new tab.
 	- **Statistics and GitHub Repository** provides links to our GitHub Vertex repository.
+- Click the **Language** icon to select your default language. 
 - Click on the **Sign in** icon once you are signed in to display the user options.
 	- **Saved Searches** opens a list of searches that you have named and saved. Click on the magnifying glass icon to load the search settings.
 	- **Search History** opens a list of your 10 last searches that were not named and saved. Click on the magnifying glass icon to load the search settings.
 	- **Saved Filters** opens a list of filters that you have saved. Click *Apply Filters* to apply the selected filter set to your search.
-	- **Preferences** opens a window that allows you to set search preferences for language, theme, dataset, max results, map layer, and default filter presets. These preferences will be saved and applied to future searches.
+	- **Preferences** opens a window that allows you to set search preferences for language, theme, dataset, max results, map layer, default filter presets, and On Demand presets. These preferences will be saved and applied to future searches.
 - *Note*: **Saved Searches**, **Saved Filters**, and **Search History** are available through both the Sign in menu and the Search button down arrow menu.
 - Click into the **Search all ASF** field on the grey header bar to perform a search. Inputs into this field will search across all ASF websites.
 	- You may also click the **microphone** icon if you prefer to use voice search.
