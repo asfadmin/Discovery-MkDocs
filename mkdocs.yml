@@ -97,6 +97,7 @@ nav:
       - vertex/manual.md
     - Baseline: vertex/baseline.md
     - SBAS: vertex/sbas.md
+    - Displacement: vertex/displacement.md
     - Event: vertex/events.md
     - Derived Datasets: vertex/derived_datasets.md
     - What's New: vertex/changelog.md
