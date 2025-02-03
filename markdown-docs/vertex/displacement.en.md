@@ -21,5 +21,5 @@ This layer provides color-coded priority for Displacement Products creation by r
 Regions are prioritized 1 through 3, with 1 being the highest processing priority.
 Note that some sub-regions may be de-prioritized based on snow cover, vegetation, or other factors.
 
-## Further Reading 
+## Further Reading  
 [Displacement Products Roadmap](https://storymaps.arcgis.com/stories/9356add046654d719fcc20566fc1f243)
