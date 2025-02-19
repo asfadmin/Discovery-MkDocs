@@ -9,6 +9,19 @@ The Displacement Tool provides the ability to visualize and interact with these 
 Go to [Displacement Tool](https://displacement.asf.alaska.edu/) to begin using the tool. Note that the Displacement Tool is also available by going to [Vertex](https://search.asf.alaska.edu), and selecting Displacement from the Search Type dropdown.
 
 ## Beginning your Displacement Search
+### Map Base Layers
+The available base map layers can assist you in selecting your AOI. Displacement products are available in areas where Deformation or Velocity data is present.
+In the top left corner of the map, you may click the checkbox to select your desired map layer.
+
+#### Cumulative Velocity
+This is a derived layer based on the cumulative deformation layer from the displacement products.
+There are separate Ascending and Descending variants, and the layer will update to display the correct direction based on your search filters.
+
+#### Cumulative Deformation
+This layer is based on shortwave displacement.
+There are separate Ascending and Descending variants, and the layer will update to display the correct direction based on your search filters.
+
+### Selecting AOIs
 When you first access the Displacement Tool, the point selector is active. You may click your desired point(s) on the map.
 You may also click **Point** for a dropdown list. You may choose to draw a polygon, bounding box, or circle instead. When you are done adding your Areas of Interest (AOIs), click the **Draw** toggle to stop drawing. You may click it again to select more AOIs on the map.
 
@@ -41,22 +54,14 @@ Each Series is color coded. Mousing over the AOI in the AOI list, on the chart, 
 
 In the header bar, click the **Flight Direction** button to change the flight direction. Changing the flight direction will update the chart, and all selected map layers.
 
-### Map Layers
-There are additional map layers available. In the top left corner of the map, you may click the checkbox to select your desired map layer.
-Descriptions of each layer are below.
-
-#### Cumulative Deformation
-This layer is based on shortwave displacement.
-There are separate Ascending and Descending variants, and the layer will update to display the correct direction based on your search filters.
-
-#### Cumulative Velocity
-This is a derived layer based on the cumulative deformation layer from the displacement products.
-There are separate Ascending and Descending variants, and the layer will update to display the correct direction based on your search filters.
+### Additional Map Layers
+In the top left corner of the map, there are additional map layers available. You may click the checkbox to select your desired layer. 
 
 #### Rollout
 This layer provides color-coded priority for Displacement Products creation by region.
 Regions are prioritized 1 through 3, with 1 being the highest processing priority.
 Note that some sub-regions may be de-prioritized based on snow cover, vegetation, or other factors.
+There are separate Ascending and Descending variants, and the layer will update to display the correct direction based on your search filters.
 
 ### Search Tools
 There are additional options available in the top right of the header bar.
