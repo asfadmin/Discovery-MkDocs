@@ -25,8 +25,8 @@ There are separate Ascending and Descending variants, and the layer will update 
 When you first access the Displacement Tool, the point selector is active. You may click your desired point(s) on the map.
 You may also click **Point** for a dropdown list. You may choose to draw a polygon, bounding box, or circle instead. When you are done adding your Areas of Interest (AOIs), click the **Draw** toggle to stop drawing. You may click it again to select more AOIs on the map.
 
-Once you have selected an AOI, the results panel will appear. The left pane lists your selected AOIs, labeled as **Series 1, Series 2** and so on. There will be a spinning loading icon displayed next to each series while it is loading.
-The chart is displayed in the right pane. 
+Once you have selected an AOI, the results panel will appear. The left pane lists your selected AOIs, labeled as **Series 1, Series 2**, and so on. A spinning loading icon will be displayed next to each series while it is loading.
+The chart is displayed in the right pane. If your AOI is a polygon, bounding box, or circle, the time series is an area average of all pixels within the AOI. Currently, only time series values of short wavelength displacement may be displayed in the chart.
 
 Each Series is color coded. Mousing over the AOI in the AOI list, on the chart, or on the map will highlight that AOI in all three locations.
 
