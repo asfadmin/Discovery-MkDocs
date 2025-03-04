@@ -6,7 +6,10 @@ The OPERA Sentinel-1 Displacement Products are high-quality Interferometric Synt
 
 The Displacement Tool provides the ability to visualize and interact with these products. 
 
-Go to [Displacement Tool](https://displacement.asf.alaska.edu/) to begin using the tool. Note that the Displacement Tool is also available by going to [Vertex](https://search.asf.alaska.edu), and selecting Displacement from the Search Type dropdown.
+The Displacement Tool is coming soon. Check back for more updates.
+
+[add later]: <> (Go to [Displacement Tool](https://displacement.asf.alaska.edu/) to begin using the tool. Note that the Displacement Tool is also available by going to [Vertex](https://search.asf.alaska.edu), and selecting Displacement from the Search Type dropdown.)
+
 
 ## Beginning your Displacement Search
 ### Map Base Layers
