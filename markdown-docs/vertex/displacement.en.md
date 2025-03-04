@@ -40,6 +40,8 @@ Each Series is color coded. Mousing over the AOI in the AOI list, on the chart, 
 - By default, all AOIs are shown on the chart. You may click the **checkbox** next to an AOI if you wish to hide it from the chart. When checked, AOIs will appear on the chart. When unchecked, they will appear as a grayed out series on the chart.
     - You may click the **All AOIs checkbox** to gray out all time series on the chart.
 - You may click the **trash can** icon to delete an AOI from your list. This will remove it from the map, list, and chart.
+- If you wish to delete all existing AOIs, you may click the **trash can** icon next to *All AOIs*. A confirmation message will be displayed. Clicking **Cancel** will not delete any AOIs. Clicking **Delete** will delete all existing AOIs from the map, list, and chart.
+
 
 ### Chart
 
