@@ -13,23 +13,19 @@ The Displacement Tool is coming soon. Check back for more updates.
 
 ## Beginning your Displacement Search
 ### Map Base Layers
-The available base map layers can assist you in selecting your AOI. Displacement products are available in areas where Deformation or Velocity data is present.
-In the top left corner of the map, you may click the checkbox to select your desired map layer.
+The available base map layers can assist you in selecting your AOI. Displacement products are available in areas where Velocity data is present.
+In the top left corner of the map, you may click the checkbox to toggle your desired map layers on or off.
 
 #### Cumulative Velocity
 This is a derived layer based on the cumulative deformation layer from the displacement products.
 There are separate Ascending and Descending variants, and the layer will update to display the correct direction based on your search filters.
 
-#### Cumulative Deformation
-This layer is based on shortwave displacement.
-There are separate Ascending and Descending variants, and the layer will update to display the correct direction based on your search filters.
-
 ### Selecting AOIs
 When you first access the Displacement Tool, the point selector is active. You may click your desired point(s) on the map.
-You may also click **Point** for a dropdown list. You may choose to draw a polygon, bounding box, or circle instead. When you are done adding your Areas of Interest (AOIs), click the **Draw** toggle to stop drawing. You may click it again to select more AOIs on the map.
+When you are done adding your Areas of Interest (AOIs), click the **Draw** toggle to stop drawing. You may click it again to select more AOIs on the map.
 
 Once you have selected an AOI, the results panel will appear. The left pane lists your selected AOIs, labeled as **Series 1, Series 2**, and so on. A spinning loading icon will be displayed next to each series while it is loading.
-The chart is displayed in the right pane. If your AOI is a polygon, bounding box, or circle, the time series is an area average of all pixels within the AOI. Currently, only time series values of short wavelength displacement may be displayed in the chart.
+The chart is displayed in the right pane. Currently, only time series values of short wavelength displacement may be displayed in the chart.
 
 Each Series is color coded. Mousing over the AOI in the AOI list, on the chart, or on the map will highlight that AOI in all three locations.
 
@@ -47,7 +43,7 @@ Each Series is color coded. Mousing over the AOI in the AOI list, on the chart, 
 
 - Hovering over a time series on the chart will highlight it in the AOI list, chart, and map. Hovering over individual points in the chart will provide additional information on that point.
 - You may use the mouse to navigate the chart. There are **Zoom In** and **Zoom Out** buttons in the top right of the chart. The **Zoom to Fit** button will fit all time series into the visible chart.
-- You may right-click any point in a time series to **Set as Baseline**.
+- You may right-click any point in a time series to **Shift to Zero**.
 - The **Date Slider** is below the chart. You may drag the pips to adjust the start and end dates.
 - Click the **Export** icon in the top right to download a csv for all AOIs in your time series. *Note*: If an AOI is deselected in the AOI list it will not be included in the csv export.
 - Click the **Settings** icon in the top right for additional options
@@ -57,7 +53,7 @@ Each Series is color coded. Mousing over the AOI in the AOI list, on the chart, 
   
 ### Flight Direction
 
-In the header bar, click the **Flight Direction** button to change the flight direction. Changing the flight direction will update the chart, and all selected map layers.
+In the header bar, click the **Flight Direction** button to change the flight direction. Changing the flight direction will update the chart, and all selected map layers. A Line of Sight indicator is also displayed in the header bar. This shows the azimuth and grazing angles and will update based on the flight direction.
 
 ### Additional Map Layers
 In the top left corner of the map, there are additional map layers available. You may click the checkbox to select your desired layer. 
