@@ -13,8 +13,8 @@ Should data indicating ground movement on a house be a cause for concern?
 
 InSAR detects small ground movements with millimeter-scale precision, but not all points indicate structural issues or land deformation. 
 Many structures and surfaces move naturally due to environmental factors, affecting how radar signals are reflected. 
-As an example, bridges expand and contract with temperature changes, which may be detected by InSAR but are not necessarily signs of structural failure. 
-Since such movements are expected and accounted for in engineering and construction, InSAR data should always be analyzed alongside additional information and expert knowledge to distinguish natural behavior from potential issues, especially for specific locations like houses.
+As an example, bridges expand and contract with temperature changes, which may be detected by InSAR but are not necessarily signs of structural damage. 
+Since such movements are expected and accounted for in engineering and construction, InSAR data should always be analyzed alongside additional information and expert knowledge to distinguish natural behavior from potential issues affecting specific structures and infrastructure.
 
 ## Isolated Measurements and Outliers
 InSAR ground motion measurements are based on reflected radar signals, which can originate from both the Earth's surface and human-made structures. 
