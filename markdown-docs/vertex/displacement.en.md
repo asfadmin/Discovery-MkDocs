@@ -53,7 +53,7 @@ Each Series is color coded. Mousing over the AOI in the AOI list, on the chart, 
   
 ### Flight Direction
 
-In the header bar, click the **Flight Direction** button to change the flight direction. Changing the flight direction will update the chart, and all selected map layers. A Line of Sight indicator is also displayed in the header bar. This shows the azimuth and grazing angles and will update based on the flight direction.
+In the header bar, click the **Flight Direction** button to change the flight direction. Changing the flight direction will update the chart, and all selected map layers. A Line of Sight indicator is also displayed in the header bar. This shows the radar look direction and incidence angle and will update based on the flight direction.
 
 ### Additional Map Layers
 In the top left corner of the map, there are additional map layers available. You may click the checkbox to select your desired layer. 
