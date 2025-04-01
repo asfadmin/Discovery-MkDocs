@@ -12,7 +12,7 @@ This means that large-scale signals (such as atmospheric effects, plate motion, 
 These data are provided as the “short_wavelength_displacement” layer within the DISP-S1 product package. 
 The cumulative velocity map displayed is derived from this layer.
 
-For the displacement measurement that includes both short- and long-wavelength signals, users are directed to look at the unfiltered “displacement” layer within the DISP-S1 product.
+For the displacement measurement that includes both short- and long-wavelength signals, users are directed to look at the "unfiltered" displacement layer within the DISP-S1 product.
 This may make large spatial features, such as Central Valley or Mexico City, look different in the portal.
 The portal is meant to highlight local deformation and all signals should be retrievable from the unfiltered time series.
 
