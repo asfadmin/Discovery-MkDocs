@@ -50,7 +50,7 @@ Cada Serie está codificada por colores. Al pasar el cursor sobre el AOI en la l
 
 ### Dirección de vuelo
 
-En la barra superior, haga clic en el botón **Dirección de vuelo** para cambiar la dirección de vuelo. Cambiar la dirección actualizará el gráfico y todas las capas del mapa seleccionadas. También se muestra un indicador de Línea de Visión en la barra superior. Este muestra los ángulos de azimut e inclinación y se actualizará en función de la dirección de vuelo.
+En la barra superior, haga clic en el botón Dirección de Vuelo para cambiar la dirección del vuelo. Al cambiar la dirección del vuelo, se actualizarán el gráfico y todas las capas seleccionadas en el mapa. También se muestra un indicador de Línea de Vista (Line of Sight) en la barra superior. Este indicador muestra el acimut, la dirección de observación del radar (grazing radar look direction) y los ángulos de incidencia, y se actualizará según la dirección del vuelo.
 
 ### Capas adicionales del mapa
 En la esquina superior izquierda del mapa, hay capas adicionales disponibles. Puede hacer clic en la casilla de verificación para seleccionar la capa deseada.

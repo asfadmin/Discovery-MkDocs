@@ -1,7 +1,10 @@
 # Displacement Products Usage
 
 ## What are the Displacement Products?
-The OPERA Surface Displacement (DISP) Products are Interferometric Synthetic Aperture Radar (InSAR)-derived displacement data with reduced decorrelation noise using a hybrid Persistent Scatterer (PS) and Distributed Scatterer (DS) time series processing approach. All displacement products are provided in the satellite’s line-of-sight (LOS) direction, meaning that surface movements are measured relative to the satellite, indicating whether a point is moving toward (positive value) or away (negative value) from the satellite. These products provide information on anthropogenic and natural movements of the Earth's surface, such as subsidence, tectonics, and landslides. The products will cover North America and be back-processed from 2016 for the Sentinel-1 mission. New products will be generated as Sentinel-1 data becomes available.
+The OPERA Surface Displacement (DISP) Products are Interferometric Synthetic Aperture Radar (InSAR)-derived displacement data made using a hybrid Persistent Scatterer (PS) and Distributed Scatterer (DS) time series processing approach. 
+All displacement products are provided in the satellite’s line-of-sight (LOS) direction, meaning that surface movements are measured relative to the LOS, indicating whether a point is moving toward (positive value) or away (negative value) from the satellite. 
+These products provide information on anthropogenic and natural movements of the Earth's surface, such as subsidence due to groundwater or oil and gas extraction, and ground motion from tectonic faults, landslides, volcanoes, and more. 
+OPERA DISP products are derived from Sentinel-1A/B/C and NISAR satellite SAR data and cover North America.
 
 The Displacement Portal provides the ability to visualize and interact with these products.
 [add later]: <> (Access the [Displacement Portal](https://displacement.asf.alaska.edu/) to get started. Note that the Displacement Portal is also available by going to [Vertex](https://search.asf.alaska.edu), and selecting Displacement from the Search Type dropdown.)
@@ -11,7 +14,7 @@ This provides some usage notes for these products.
 ## Data Interpretation Caution
 Should data indicating ground movement on a house be a cause for concern?
 
-InSAR detects small ground movements with millimeter-scale precision, but not all points indicate structural issues or land deformation. 
+InSAR detects small ground movements with millimeter-scale precision, but not all points indicate structural issues or land displacement. 
 Many structures and surfaces move naturally due to environmental factors, affecting how radar signals are reflected. 
 As an example, bridges expand and contract with temperature changes, which may be detected by InSAR but are not necessarily signs of structural damage. 
 Since such movements are expected and accounted for in engineering and construction, InSAR data should always be analyzed alongside additional information and expert knowledge to distinguish natural behavior from potential issues affecting specific structures and infrastructure.
@@ -21,7 +24,7 @@ InSAR ground motion measurements are based on reflected radar signals, which can
 Signal reflecting from these structures may be misinterpreted. For example, thermal expansion in buildings can appear as displacement, even though it does not indicate actual ground motion. 
 Similarly, harvest cycles in crop fields can cause sudden changes in reflectivity, affecting displacement measurements.
 
-DISP-S1 products mitigate outliers using masking thresholds that prioritize measurement point stability over time. 
+DISP products mitigate outliers using masking thresholds that prioritize measurement point stability over time. 
 However, pixels near masked regions may have borderline quality. 
 For more reliable analysis, focus on clusters of points with consistent movement patterns rather than isolated points with unexpected motion.
 
