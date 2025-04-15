@@ -21,8 +21,9 @@ The available base map layers can assist you in selecting your area of interest 
 In the top left corner of the map, you may click the checkbox to toggle your desired map layers on or off.
 
 #### Basic Velocity
-Velocity is a derived layer based on the average velocity of the cumulative displacement captured by an aggregate of short-wavelength displacement layers (also referred to as “local displacement”; see [FAQs](/datasets/disp_faq) for more information) from the displacement products.
-There are separate Ascending and Descending variants, and the layer will update to display the correct direction based on your search filters.
+This layer shows the cumulative displacement over time (i.e., Velocity = total short-wavelength displacement / total time), derived using the short-wavelength displacement layer from the DISP-S1 product.
+See the [FAQs](/datasets/disp_faq) for more details.
+There are separate Ascending and Descending satellite path layers, and the layer will update to only display the correct direction based on your search filters.
 
 ### Selecting AOIs
 When you first access the Displacement Portal, the point selector is active. You may click your desired point(s) on the map.
@@ -59,15 +60,16 @@ Each Series is color coded. Mousing over the AOI in the AOI list, on the chart, 
 
 In the header bar, click the **Flight Direction** button to change the flight direction. Changing the flight direction will update the chart, and all selected map layers. 
 The flight direction options are Ascending (satellite heads from south to north) and Descending (satellite heads from north to south). 
-A Line of Sight indicator is displayed next to the Flight Direction. This shows the satellite heading, radar look direction, and look angle range, and will update based on the selected direction.
+Indicators displayed next to the Flight Direction show the satellite heading, radar look direction, and look angle range.
+The indicators will update based on the selected direction.
 
 ### Additional Map Layers
 In the top left corner of the map, there are additional map layers available. You may click the checkbox to select your desired layer. 
 
 #### Rollout
-This layer provides color-coded priority for Displacement Products creation by region.
-Regions are prioritized 1 through 3, with 1 being the highest processing priority.
-Note that some sub-regions may be de-prioritized based on snow cover, vegetation, or other factors.
+This layer shows color-coded regional priorities for Displacement Product generation during the historical processing phase, which would initially include data from July 2016 to December 2024 and will be updated by the end of 2025. 
+Regions are prioritized from 1 through 3, with 1 being the highest processing priority. 
+Note that some sub-regions may be de-prioritized based on snow cover, vegetation, or other factors. 
 There are separate Ascending and Descending variants, and the layer will update to display the correct direction based on your search filters.
 
 ### Search Tools
