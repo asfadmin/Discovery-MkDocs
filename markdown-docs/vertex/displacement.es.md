@@ -1,76 +1,89 @@
 # Portal de Desplazamiento
 
 ## ¿Qué es el Portal de Desplazamiento?
-Los Productos de Desplazamiento Superficial (DISP) de OPERA son datos de desplazamiento derivados de radar de apertura sintética interferométrica (InSAR) con reducción de ruido por decorrelación, utilizando un enfoque híbrido de procesamiento de series temporales con Dispersores Persistentes (PS) y Dispersores Distribuidos (DS). Todos los productos de desplazamiento se proporcionan en la dirección de la línea de visión (LOS) del satélite, lo que significa que los movimientos de la superficie se miden en relación con el satélite, indicando si un punto se está moviendo hacia (valor positivo) o alejándose (valor negativo) del satélite. Estos productos proporcionan información sobre movimientos antropogénicos y naturales de la superficie terrestre, como subsidencias, actividad tectónica y deslizamientos de tierra. Los productos cubrirán América del Norte y se reprocesarán desde 2016 para la misión Sentinel-1. Se generarán nuevos productos a medida que estén disponibles los datos de Sentinel-1.
+Los Productos de Desplazamiento Superficial de OPERA (DISP) son datos de desplazamiento derivados de radar de apertura sintética interferométrico (InSAR), elaborados mediante un enfoque híbrido de procesamiento en series temporales de Dispersores Persistentes (PS) y Dispersores Distribuidos (DS).  
+Todos los productos de desplazamiento se proporcionan en la dirección de línea de visión (LOS, por sus siglas en inglés) del satélite, lo que significa que los movimientos de la superficie se miden en relación con dicha línea. Esto indica si un punto se está acercando (valor positivo) o alejando (valor negativo) del satélite.  
+Estos productos brindan información sobre movimientos naturales y antropogénicos de la superficie terrestre, como hundimientos por extracción de agua subterránea, petróleo o gas, así como desplazamientos por fallas tectónicas, deslizamientos de tierra, volcanes y más.  
+OPERA generará estos productos tan pronto como los datos adquiridos por el satélite estén disponibles.  
+Sin embargo, durante la fase inicial de implementación (hasta finales de 2025), se dará prioridad a la creación de datos históricos entre 2016 y 2024.  
+Los productos DISP de OPERA se derivan de datos SAR de los satélites Sentinel-1A/B/C y NISAR, y cubren América del Norte.
 
-El Portal de Desplazamiento proporciona la capacidad de visualizar e interactuar con estos productos.
+El Portal de Desplazamiento permite visualizar e interactuar con estos productos.  
 
-El Portal de Desplazamiento estará disponible próximamente. Vuelva más adelante para obtener actualizaciones.
+El Portal de Desplazamiento estará disponible próximamente. Vuelva a consultar para futuras actualizaciones.
 
-[añadir más adelante]: <> (Acceda al [Portal de Desplazamiento](https://displacement.asf.alaska.edu/) para comenzar. Tenga en cuenta que el Portal de Desplazamiento también está disponible en [Vertex](https://search.asf.alaska.edu), seleccionando Desplazamiento en el menú desplegable de Tipo de Búsqueda.)
+[agregar después]: <> (Acceda al [Portal de Desplazamiento](https://displacement.asf.alaska.edu/) para comenzar. Tenga en cuenta que también puede acceder desde [Vertex](https://search.asf.alaska.edu), seleccionando "Displacement" en el menú desplegable "Search Type").
 
-## Iniciar su búsqueda de desplazamiento
-### Capas base del mapa
-Las capas base del mapa disponibles pueden ayudarle a seleccionar su área de interés (AOI). Los productos de desplazamiento están disponibles en áreas donde hay datos de Velocidad presentes.  
-En la esquina superior izquierda del mapa, puede hacer clic en la casilla de verificación para activar o desactivar las capas del mapa que desee.
+## Iniciar su Búsqueda de Desplazamiento
+### Capas Base del Mapa
+Las capas base disponibles pueden asistirle en la selección de su área de interés (AOI).  
+En la esquina superior izquierda del mapa, usted puede hacer clic en la casilla de verificación para activar o desactivar las capas deseadas.
 
-#### Velocidad acumulada
-Esta es una capa derivada basada en la deformación acumulada capturada por un conjunto de capas de desplazamiento de longitud de onda corta de los productos de desplazamiento.  
-Existen variantes Ascendente y Descendente por separado, y la capa se actualizará para mostrar la dirección correcta en función de los filtros de su búsqueda.
+#### Velocidad Básica
+Esta capa muestra el desplazamiento acumulado a lo largo del tiempo (es decir, Velocidad = desplazamiento de onda corta total / tiempo total), derivado de la capa de desplazamiento de onda corta del producto DISP-S1.  
+Consulte las [Preguntas Frecuentes](/datasets/disp_faq) para más detalles.  
+Existen capas separadas para las trayectorias ascendentes y descendentes del satélite. La capa se actualizará para mostrar únicamente la dirección correspondiente con base en sus filtros de búsqueda.
 
-### Selección de AOI
-Cuando acceda por primera vez al Portal de Desplazamiento, el selector de puntos estará activo. Puede hacer clic en el/los punto(s) deseado(s) en el mapa.  
-Cuando haya terminado de agregar sus Áreas de Interés (AOI), puede hacer clic en el botón **Dibujar** para dejar de dibujar. Puede hacer clic nuevamente para seleccionar más AOI en el mapa.
+### Selección de Áreas de Interés (AOIs)
+Al acceder por primera vez al Portal de Desplazamiento, el selector de puntos estará activo. Usted puede hacer clic sobre los puntos deseados en el mapa.  
+Cuando haya terminado de añadir sus Áreas de Interés (AOIs), puede hacer clic en el interruptor **Dibujar** para dejar de agregar puntos. Puede volver a hacer clic para seleccionar más AOIs en el mapa.
 
-Una vez que haya seleccionado un AOI, aparecerá el panel de resultados. El panel izquierdo enumera sus AOI seleccionados, etiquetados como **Serie 1, Serie 2**, y así sucesivamente. Se mostrará un ícono de carga giratorio junto a cada serie mientras se carga.  
-El gráfico se muestra en el panel derecho. Actualmente, solo se pueden mostrar en el gráfico valores de series temporales de desplazamiento de longitud de onda corta.
+Una vez que haya seleccionado un AOI, aparecerá el panel de resultados. El panel izquierdo enumera sus AOIs seleccionadas, etiquetadas como **Serie 1, Serie 2**, etc. Se mostrará un icono giratorio de carga junto a cada serie mientras se carga.  
+El gráfico se muestra en el panel derecho. Actualmente, solo pueden visualizarse valores de series temporales de desplazamiento de onda corta en el gráfico.
 
-Cada Serie está codificada por colores. Al pasar el cursor sobre el AOI en la lista, en el gráfico o en el mapa, se resaltará ese AOI en las tres ubicaciones.
+Cada serie está codificada por color. Al pasar el mouse sobre el AOI en la lista, en el gráfico o en el mapa, se resaltará esa AOI en las tres ubicaciones.
 
-## Interacción con los resultados del Portal de Desplazamiento
+## Interacción con los Resultados del Portal de Desplazamiento
 ### Lista de Áreas de Interés
 
-- Al pasar el cursor sobre un AOI, este se resaltará en la lista de AOI, el gráfico y el mapa.
-- Por defecto, todos los AOI se muestran en el gráfico. Puede hacer clic en la **casilla de verificación** junto a un AOI si desea ocultarlo del gráfico. Cuando está marcada, los AOI aparecerán en el gráfico. Cuando no está marcada, aparecerán como una serie atenuada en el gráfico.
-    - Puede hacer clic en la **casilla de verificación de Todos los AOI** para atenuar todas las series temporales en el gráfico.
-- Puede hacer clic en el ícono de **papelera** para eliminar un AOI de su lista. Esto lo eliminará del mapa, la lista y el gráfico.
-- Si desea eliminar todos los AOI existentes, puede hacer clic en el ícono de **papelera** junto a *Todos los AOI*. Aparecerá un mensaje de confirmación. Al hacer clic en **Cancelar**, no se eliminará ningún AOI. Al hacer clic en **Eliminar**, se eliminarán todos los AOI existentes del mapa, la lista y el gráfico.
+- Al pasar el cursor sobre un AOI, este se resaltará en la lista, el gráfico y el mapa.
+- Por defecto, todos los AOIs se muestran en el gráfico. Usted puede hacer clic en la **casilla de verificación** junto a un AOI para activar o desactivar su visualización en el gráfico. Cuando está seleccionada, el AOI aparecerá en el gráfico. Si no está seleccionada, aparecerá como una serie atenuada.
+    - Puede hacer clic en la **casilla de verificación de Todos los AOIs** para atenuar todas las series temporales del gráfico.
+- Puede hacer clic en el icono de **papelera** para eliminar un AOI de su lista. Esto lo removerá del mapa, la lista y el gráfico.
+- Si desea eliminar todos los AOIs existentes, puede hacer clic en el icono de **papelera** junto a *Todos los AOIs*. Aparecerá un mensaje de confirmación. Al hacer clic en **Cancelar**, no se eliminará ningún AOI. Al hacer clic en **Eliminar**, se eliminarán todos los AOIs existentes.
 
 ### Gráfico
 
-- Al pasar el cursor sobre una serie temporal en el gráfico, se resaltará en la lista de AOI, el gráfico y el mapa. Al pasar el cursor sobre puntos individuales en el gráfico, se proporcionará información adicional sobre ese punto.
-- Puede usar el mouse para navegar por el gráfico. Hay botones de **Acercar** y **Alejar** en la parte superior derecha del gráfico. El botón **Ajustar al gráfico** ajustará todas las series temporales al gráfico visible.
-- Puede hacer clic derecho en cualquier punto de una serie temporal para **Ajustar a cero**.
-- El **Control deslizante de fecha** está debajo del gráfico. Puede arrastrar los extremos para ajustar las fechas de inicio y fin.
-- Haga clic en el ícono de **Exportar** en la parte superior derecha para descargar un archivo CSV con todos los AOI de su serie temporal. *Nota*: si un AOI está deseleccionado en la lista de AOI, no se incluirá en la exportación CSV.
-- Haga clic en el ícono de **Configuración** en la parte superior derecha para obtener opciones adicionales:
-    - Haga clic en la casilla de verificación **Mostrar líneas** para activar o desactivar las líneas.
-    - Haga clic en la casilla de verificación **Mostrar ajuste lineal** para mostrar el ajuste lineal de cada serie temporal. Las ecuaciones de ajuste lineal se mostrarán sobre el gráfico. Aparecerán líneas discontinuas que representan el ajuste lineal en el gráfico.
-    - Haga clic en **Restablecer referencia del gráfico** para restablecer el gráfico a su referencia de línea base original.
+- Al pasar el cursor sobre una serie temporal en el gráfico, se resaltará en la lista de AOIs, el gráfico y el mapa. Al pasar el cursor sobre puntos individuales, se mostrará información adicional sobre ese punto.
+- Puede usar el ratón para navegar en el gráfico. Hay botones de **Acercar** y **Alejar** en la esquina superior derecha del gráfico. El botón **Ajustar Zoom** mostrará todas las series temporales en el área visible del gráfico.
+- Puede hacer clic derecho sobre cualquier punto en una serie para **Ajustar a Cero**.
+- El **Deslizador de Fechas** está ubicado debajo del gráfico. Puede arrastrar los extremos para ajustar las fechas de inicio y fin.
+- Haga clic en el icono de **Exportar** en la esquina superior derecha para descargar un archivo .csv con todas las series temporales de sus AOIs. *Nota*: Si un AOI está deseleccionado en la lista, no se incluirá en la exportación.
+- Haga clic en el icono de **Configuración** en la esquina superior derecha para acceder a opciones adicionales:
+    - Active o desactive la opción **Mostrar líneas**.
+    - Active la opción **Mostrar Ajuste Lineal** para visualizar la línea de tendencia de cada serie temporal. Las ecuaciones aparecerán sobre el gráfico y se mostrarán como líneas discontinuas.
+    - Haga clic en **Restablecer Referencia del Gráfico** para volver a la línea base original.
 
-### Dirección de vuelo
+### Dirección de Vuelo
 
-En la barra superior, haga clic en el botón Dirección de Vuelo para cambiar la dirección del vuelo. Al cambiar la dirección del vuelo, se actualizarán el gráfico y todas las capas seleccionadas en el mapa. También se muestra un indicador de Línea de Vista (Line of Sight) en la barra superior. Este indicador muestra el acimut, la dirección de observación del radar (grazing radar look direction) y los ángulos de incidencia, y se actualizará según la dirección del vuelo.
+En la barra de encabezado, haga clic en el botón **Dirección de Vuelo** para cambiar la dirección de vuelo. Esto actualizará el gráfico y las capas seleccionadas del mapa.  
+Las opciones de dirección de vuelo son Ascendente (el satélite se desplaza de sur a norte) y Descendente (de norte a sur).  
+Se mostrarán indicadores que reflejan la dirección del satélite, la dirección de observación del radar y el rango del ángulo de visión.  
+Los indicadores se actualizarán según la dirección seleccionada.
 
-### Capas adicionales del mapa
-En la esquina superior izquierda del mapa, hay capas adicionales disponibles. Puede hacer clic en la casilla de verificación para seleccionar la capa deseada.
+### Capas Adicionales del Mapa
+En la esquina superior izquierda del mapa hay capas adicionales disponibles. Puede hacer clic en la casilla para seleccionar la capa deseada.
 
 #### Implementación
-Esta capa proporciona prioridad codificada por colores para la creación de productos de desplazamiento por región.  
-Las regiones están priorizadas del 1 al 3, siendo 1 la prioridad de procesamiento más alta.  
-Tenga en cuenta que algunas subregiones pueden tener menor prioridad según la cobertura de nieve, vegetación u otros factores.  
-Existen variantes Ascendente y Descendente por separado, y la capa se actualizará para mostrar la dirección correcta en función de los filtros de su búsqueda.
+Esta capa muestra prioridades regionales codificadas por color para la generación de productos de desplazamiento durante la fase de procesamiento histórico, que incluirá inicialmente datos de julio de 2016 a diciembre de 2024 y se actualizará antes de finalizar 2025.  
+Las regiones se priorizan del 1 al 3, siendo 1 la prioridad más alta.  
+Tenga en cuenta que algunas subregiones pueden tener menor prioridad por cobertura de nieve, vegetación u otros factores.  
+Existen variantes ascendentes y descendentes. La capa se actualizará según los filtros de búsqueda seleccionados.
 
-### Herramientas de búsqueda
-Hay opciones adicionales disponibles en la parte superior derecha de la barra de encabezado.
+### Herramientas de Búsqueda
+En la esquina superior derecha de la barra de encabezado hay opciones adicionales:
 
-- El botón **Compartir/Guardar** abre el menú de **Búsquedas guardadas** y **Compartir búsqueda**.  
-  Desde **Búsquedas guardadas**, puede guardar o ver una búsqueda de desplazamiento. También puede ver el historial de sus búsquedas de desplazamiento.  
-  **Compartir búsqueda** le permite copiar la URL actual para compartir su búsqueda o enviar el enlace por correo electrónico.
-- El botón **Información** abre una ventana con más información sobre los Productos de Desplazamiento OPERA Sentinel-1.
-- El ícono **Ayuda** abre el menú de ayuda de Vertex, que incluye tutoriales en video y documentación.
-- El **selector de idioma** le permite cambiar el idioma. Actualmente, están disponibles inglés y español.
-- El ícono de **Iniciar sesión** muestra las opciones de usuario, incluyendo Búsquedas guardadas, Historial de búsqueda, Filtros guardados y Preferencias.
+- El botón **Compartir/Guardar** abre el menú de **Búsquedas Guardadas** y **Compartir Búsqueda**.  
+Desde **Búsquedas Guardadas**, usted puede guardar o ver una búsqueda de desplazamiento. También puede consultar su historial de búsquedas.  
+**Compartir Búsqueda** le permite copiar la URL actual o enviarla por correo electrónico.
+- El botón **Información** abre una ventana con más detalles sobre los productos de desplazamiento superficial de OPERA (DISP).
+- El ícono de **Ayuda** abre el menú de ayuda de Vertex, que incluye tutoriales en video y documentación.
+- El **selector de idioma** permite cambiar el idioma. Actualmente están disponibles inglés y español.
+- El icono de **Iniciar Sesión** muestra las opciones de usuario, incluyendo Búsquedas Guardadas, Historial de Búsqueda, Filtros Guardados y Preferencias.
 
-## Lecturas adicionales
-[Hoja de ruta de los productos de desplazamiento](https://storymaps.arcgis.com/stories/9356add046654d719fcc20566fc1f243)
+## Lecturas Adicionales
+[Hoja de Ruta de Productos de Desplazamiento](https://storymaps.arcgis.com/stories/9356add046654d719fcc20566fc1f243)  
+
+[Uso de Productos de Desplazamiento](/datasets/disp_usage) 
+ 
+[Preguntas Frecuentes sobre Desplazamiento](/datasets/disp_faq)

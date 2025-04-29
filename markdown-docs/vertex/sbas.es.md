@@ -29,14 +29,14 @@ Mientras esté en el tipo de búsqueda SBAS, notarás muchos controles familiare
 
 **Controles del Panel de Resultados**
 
-- En la parte superior izquierda del panel de resultados, verás el número de pares listados.
+- En la parte superior izquierda del panel de resultados, verá el número de pares listados.
 - **Ampliar** permitirá *Ampliar los resultados*, aumentando la área del mapa de la Tierra donde se encuentran las escenas.
 - **Lista** permitirá *Agregar todo a Descargas*, lo que te permite agregar todas las escenas a la lista de descargas.
 - **On Demand** te permitirá *Agregar todo a la lista On Demand* para realizar un procesamiento personalizado en las escenas. También puede optar por *Crear Suscripción*.
-	- Puede elegir entre **RTC GAMMA**, **InSAR GAMMA** o **autoRIFT**, dependiendo de tus necesidades. El procesamiento RTC GAMMA se realiza en las escenas individuales de su conjunto de resultados. El procesamiento InSAR GAMMA y autoRIFT se realiza en los pares de su conjunto de resultados.
+	- Puede elegir entre los tipos de trabajo disponibles para sus escenas, según sus necesidades. El procesamiento RTC se realiza en las escenas individuales de su conjunto de resultados. El procesamiento InSAR y autoRIFT se realiza en los pares de su conjunto de resultados.
 	- **Nota:** Actualmente, solo las escenas con modo de haz IW son elegibles para el procesamiento On Demand.
 - **Pares** te permitirá *Descargar el par CSV*, que lista las escenas en cada par y la URL de descarga para cada una. También incluye los valores de la línea de base.
-- En la columna izquierda, resalta el par deseado y haga clic en el ícono **On Demand** para *Agregar el par a la lista On Demand*. Puede elegir el procesamiento *InSAR GAMMA* o *autoRIFT* para cada par que desees agregar.
+- En la columna de la izquierda, resalte el par deseado y haga clic en el icono **On Demand** para *Agregar par a la lista On Demand*. Puede elegir el tipo de trabajo deseado para cada par.
 
 **Controles del Gráfico**
 
