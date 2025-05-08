@@ -1,38 +1,35 @@
-# Uso de productos de desplazamiento
+# Uso de los Productos de Desplazamiento
 
-## ¿Qué son los productos de desplazamiento?
-Los productos de desplazamiento de superficie (DISP) de OPERA son datos de desplazamiento derivados del radar de apertura sintética interferométrica (InSAR) con ruido de descorrelación reducido utilizando un enfoque híbrido de procesamiento de series temporales de dispersor persistente (PS) y dispersor distribuido (DS). Todos los productos de desplazamiento se proporcionan en la dirección de la línea de visión (LOS) del satélite, lo que significa que los movimientos de la superficie se miden en relación con el satélite, lo que indica si un punto se está acercando (valor positivo) o alejándose (valor negativo) del satélite. Estos productos proporcionan información sobre los movimientos antropogénicos y naturales de la superficie de la Tierra, como el hundimiento, la tectónica y los deslizamientos de tierra. Los productos cubrirán América del Norte y serán procesados a partir de 2016 para la misión Sentinel-1. Se generarán nuevos productos a medida que los datos de Sentinel-1 estén disponibles.
+## Consideraciones y Limitaciones de los Productos de Desplazamiento
+Aquí se proporcionan algunas notas de uso para los productos de desplazamiento OPERA.  
+Acceda al [Portal de Desplazamiento](https://displacement.asf.alaska.edu/) para interactuar con estos productos, o consulte la [documentación del Portal de Desplazamiento](/vertex/displacement) para más detalles sobre cómo usar el portal.
 
-El Portal de Desplazamiento ofrece la posibilidad de visualizar e interactuar con estos productos.
-[añadir más tarde]: <> (Acceda al [Portal de Desplazamiento](https://displacement.asf.alaska.edu/) para empezar. Tenga en cuenta que el Portal de desplazamiento también está disponible yendo a [Vértice](https://search.asf.alaska.edu) y seleccionando Desplazamiento en el menú desplegable Tipo de búsqueda).
+***¡Precaución al interpretar los datos!***
 
-Esto proporciona algunas notas de uso para estos productos.
+## ¿Los datos que indican movimiento del suelo en una casa deben ser motivo de preocupación?
 
-## Precaución con la interpretación de datos
-¿Deberían ser motivo de preocupación los datos que indican el movimiento del suelo en una casa?
+InSAR puede detectar pequeños movimientos del suelo con precisión milimétrica, pero no todos los puntos indican problemas estructurales o desplazamientos del terreno.  
+Muchas estructuras y superficies se mueven de forma natural debido a factores ambientales, lo que afecta cómo se reflejan las señales de radar.  
+Por ejemplo, los puentes se expanden y contraen con los cambios de temperatura, lo cual puede ser detectado por InSAR, pero no necesariamente representa daño estructural.  
+Dado que estos movimientos se consideran normales y están contemplados en la ingeniería y construcción, los datos de InSAR siempre deben analizarse junto con información adicional y conocimiento experto para distinguir el comportamiento natural de posibles problemas que afecten a estructuras e infraestructura específicas.
 
-InSAR detecta pequeños movimientos del terreno con precisión a escala milimétrica, pero no todos los puntos indican problemas estructurales o deformación del terreno.
-Muchas estructuras y superficies se mueven naturalmente debido a factores ambientales, lo que afecta la forma en que se reflejan las señales de radar.
-Por ejemplo, los puentes se expanden y contraen con los cambios de temperatura, que pueden ser detectados por InSAR, pero no son necesariamente signos de falla estructural.
-Dado que tales movimientos se esperan y se tienen en cuenta en la ingeniería y la construcción, los datos InSAR siempre deben analizarse junto con información adicional y conocimiento experto para distinguir el comportamiento natural de los problemas potenciales, especialmente para ubicaciones específicas como las casas.
+## Mediciones Aisladas y Valores Atípicos
+Las mediciones de movimiento del suelo mediante InSAR se basan en señales de radar reflejadas, que pueden originarse tanto en la superficie terrestre como en estructuras artificiales.  
+Las señales reflejadas por estructuras pueden malinterpretarse. Por ejemplo, la expansión térmica en edificios puede parecer un desplazamiento, aunque no indique un movimiento real del suelo.  
+De forma similar, los ciclos de cosecha en campos agrícolas pueden causar cambios repentinos en la reflectividad, afectando las mediciones de desplazamiento.
 
-## Mediciones aisladas y valores atípicos
-Las mediciones de movimiento terrestre InSAR se basan en señales de radar reflejadas, que pueden provenir tanto de la superficie de la Tierra como de estructuras hechas por el hombre.
-La señal que se refleja en estas estructuras puede ser malinterpretada. Por ejemplo, la expansión térmica en los edificios puede aparecer como desplazamiento, aunque no indique el movimiento real del suelo.
-Del mismo modo, los ciclos de cosecha en los campos de cultivo pueden causar cambios bruscos en la reflectividad, lo que afecta a las mediciones de desplazamiento.
+El Portal de Desplazamiento utiliza la Máscara Recomendada en los productos OPERA DISP para reducir valores atípicos. Los píxeles cercanos a áreas enmascaradas pueden tener menor calidad.  
+Para un análisis más confiable, dé prioridad a grupos de puntos que muestren un movimiento similar en lugar de a puntos individuales con movimientos inusuales.
 
-Los productos DISP-S1 mitigan los valores atípicos mediante umbrales de enmascaramiento que priorizan la estabilidad del punto de medición a lo largo del tiempo.
-Sin embargo, los píxeles cercanos a las regiones enmascaradas pueden tener una calidad límite.
-Para un análisis más fiable, concéntrese en grupos de puntos con patrones de movimiento coherentes en lugar de puntos aislados con movimientos inesperados.
-
-## Área de interés frente a la posición del píxel
-Cada píxel que se muestra en la vista del mapa representa un área de 30 m de ancho y la altura varía según la latitud.
-El portal proporciona una ubicación de punto al dibujar un punto de forma interactiva, pero es importante recordar que los datos de desplazamiento corresponden a la totalidad de los 30 m x 30 m en los que se encuentra el punto.
-Los movimientos registrados representan un agregado de todos los cambios de superficie dentro de esa área de píxeles en lugar de una medición precisa de un solo punto.
-También tenga en cuenta que los píxeles del mosaico no se corresponden 1 a 1 con los píxeles de datos subyacentes, por lo que es posible hacer clic en dos esquinas opuestas de un píxel de mosaico y obtener dos series temporales diferentes a partir de dos píxeles de datos subyacentes diferentes.
-El mosaico se proporciona para resaltar tendencias y no pretende ser una fuente de datos rigurosa para el análisis.
+## ¿Cuál es el tamaño de cada píxel y cómo se mide el desplazamiento dentro de ese píxel?
+Cada píxel en el mapa de Velocidad Básica representa un área de 30 m x 30 m.  
+Aunque se puede seleccionar un punto en el portal, los datos de desplazamiento que se muestran corresponden al promedio de todo ese píxel.  
+Por lo tanto, los movimientos registrados son un agregado de todos los cambios en la superficie dentro del área de 30 m x 30 m, no una medición precisa de un punto.  
+Además, los píxeles del mapa mosaico no corresponden directamente a los píxeles de los datos subyacentes.  
+Hacer clic en diferentes esquinas de un solo píxel del mosaico puede generar series temporales distintas, provenientes de píxeles de datos subyacentes diferentes.  
+El mosaico de Velocidad Básica sirve para indicar tendencias y no está destinado a análisis rigurosos.
 
 ## Contacto
-Si tiene alguna pregunta sobre el Portal de Desplazamiento, comuníquese con ASF en uso@asf.alaska.edu.
+Para cualquier pregunta relacionada con el Portal de Desplazamiento, por favor contacte a ASF en uso@asf.alaska.edu.  
 
-Para cualquier pregunta o consulta relacionada con los Productos de Desplazamiento, póngase en contacto con opera.sep@jpl.nasa.gov.
+Para preguntas o consultas sobre los Productos de Desplazamiento, por favor contacte a opera.sep@jpl.nasa.gov.
