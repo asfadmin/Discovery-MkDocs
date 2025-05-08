@@ -19,8 +19,7 @@ Consulte las [Preguntas Frecuentes](/datasets/disp_faq) y el [Documento de Espec
 
 En general, OPERA crea los productos DISP tan pronto como los datos de entrada del satélite están disponibles.  
 Sin embargo, los productos DISP de OPERA provenientes de Sentinel-1 se están implementando en dos fases.  
-La Fase 1 (desde ahora hasta finales de 2025) se enfoca en la creación de datos históricos entre julio de 2016 y diciembre de 2024.  
-La Fase 2 se enfoca en la creación de los datos históricos restantes y de todos los productos nuevos a medida que estén disponibles los datos de satélite.
+La Fase 1 (desde ahora hasta finales de 2025) se enfoca en la creación de datos históricos entre julio de 2016 y diciembre de 2024. La Fase 2 se enfoca en la creación de los datos históricos restantes y de todos los productos nuevos a medida que estén disponibles los datos de satélite.
 
 El Portal de Desplazamiento proporciona la capacidad de visualizar e interactuar con estos productos.  
 El Portal de Desplazamiento estará disponible próximamente. Vuelva más adelante para obtener más actualizaciones.  
@@ -34,17 +33,12 @@ Las capas base del mapa disponibles pueden ayudarle a seleccionar su área de in
 En la esquina superior izquierda del mapa, puede hacer clic en la casilla de verificación para activar o desactivar las capas del mapa que desee.
 
 #### Velocidad básica
-Esta capa muestra la velocidad, derivada utilizando la capa de desplazamiento de longitud de onda corta del producto DISP.  
-Consulte las [Preguntas Frecuentes](/datasets/disp_faq) para más detalles.  
-Hay capas separadas para trayectorias satelitales Ascendentes y Descendentes, y la capa se actualizará automáticamente para mostrar únicamente la dirección correcta según los filtros de búsqueda.
+Esta capa muestra la velocidad, derivada utilizando la capa de desplazamiento de longitud de onda corta del producto DISP. Consulte las [Preguntas Frecuentes](/datasets/disp_faq) para más detalles. Hay capas separadas para trayectos satelitales Ascendentes y Descendentes, y la capa se actualizará automáticamente para mostrar únicamente la dirección correcta según los filtros de búsqueda.
 
 ### Selección de AOIs
-Cuando acceda por primera vez al Portal de Desplazamiento, el selector de puntos estará activo. Puede hacer clic en los puntos deseados en el mapa.  
-Cuando haya terminado de agregar sus Áreas de Interés (AOIs), puede hacer clic en el botón **Dibujar** para dejar de dibujar. Puede volver a hacer clic para seleccionar más AOIs en el mapa.
+Cuando acceda por primera vez al Portal de Desplazamiento, el selector de puntos estará activo. Puede hacer clic en los puntos deseados en el mapa. Cuando haya terminado de agregar sus Áreas de Interés (AOIs), puede hacer clic en el botón **Dibujar** para dejar de dibujar. Puede volver a hacer clic para seleccionar más AOIs en el mapa.
 
-Una vez que haya seleccionado el AOI, aparecerá el panel de resultados. El panel izquierdo muestra sus AOIs seleccionados, etiquetados como **Serie 1, Serie 2**, y así sucesivamente.  
-También mostrará el marco asociado con cada AOI. Se mostrará un ícono de carga giratorio junto a cada serie mientras se carga.  
-El gráfico se mostrará en el panel derecho.
+Una vez que haya seleccionado el AOI, aparecerá el panel de resultados. El panel izquierdo muestra sus AOIs seleccionados, etiquetados como **Serie 1, Serie 2**, y así sucesivamente. También mostrará el marco asociado con cada AOI. Se mostrará un ícono de carga giratorio junto a cada serie mientras se carga.  El gráfico se mostrará en el panel derecho.
 
 Cada Serie está codificada por colores. Al pasar el cursor sobre el AOI en la lista de AOIs, en el gráfico o en el mapa, se resaltará dicho AOI en las tres ubicaciones.
 
@@ -52,10 +46,7 @@ Cada Serie está codificada por colores. Al pasar el cursor sobre el AOI en la l
 En la esquina superior izquierda del mapa, hay capas adicionales de mapa disponibles. Puede hacer clic en la casilla de verificación para seleccionar la capa deseada.
 
 #### Implementación
-Esta capa muestra prioridades regionales codificadas por colores para la generación de productos de desplazamiento durante la fase de procesamiento histórico, que inicialmente incluirá datos desde julio de 2016 hasta diciembre de 2024 y se actualizará para finales de 2025.  
-Las regiones se priorizan del 1 al 3, siendo 1 la prioridad de procesamiento más alta.  
-Tenga en cuenta que algunas subregiones pueden tener menor prioridad debido a cobertura de nieve, vegetación u otros factores.  
-Hay variantes separadas Ascendente y Descendente, y la capa se actualizará para mostrar la dirección correcta según los filtros de su búsqueda.
+Esta capa muestra prioridades regionales codificadas por colores para la generación de productos de desplazamiento durante la fase de procesamiento histórico, que inicialmente incluirá datos desde julio de 2016 hasta diciembre de 2024 y se actualizará para finales de 2025. Las regiones se priorizan del 1 al 3, siendo 1 la prioridad de procesamiento más alta. Tenga en cuenta que algunas subregiones pueden tener menor prioridad debido a cobertura de nieve, vegetación u otros factores. Hay variantes separadas Ascendente y Descendente, y la capa se actualizará para mostrar la dirección correcta según los filtros de su búsqueda.
 
 ## Interacción con los resultados del Portal de Desplazamiento
 ### Lista de Áreas de Interés
@@ -84,9 +75,7 @@ Hay variantes separadas Ascendente y Descendente, y la capa se actualizará para
 ### Dirección de Vuelo
 
 En la barra superior, haga clic en el botón **Dirección de Vuelo** para cambiar la dirección de vuelo. Cambiar la dirección de vuelo actualizará el gráfico y todas las capas de mapa seleccionadas.  
-Las opciones de dirección de vuelo son Ascendente (el satélite se desplaza de sur a norte) y Descendente (el satélite se desplaza de norte a sur).  
-Los íconos a la derecha del botón Dirección de Vuelo mostrarán la orientación del satélite, la dirección de observación del radar y el rango del ángulo de observación.  
-Los íconos se actualizarán según la dirección seleccionada.
+Las opciones de dirección de vuelo son Ascendente (el satélite se desplaza de sur a norte) y Descendente (el satélite se desplaza de norte a sur). Los íconos a la derecha del botón Dirección de Vuelo mostrarán la orientación del satélite, la dirección de observación del radar y el rango del ángulo de observación. Los íconos se actualizarán según la dirección seleccionada.
 
 ### Herramientas de Búsqueda
 

@@ -1,5 +1,9 @@
 # What's New
 
+## Unlimited Results Sets Deprecation Notice
+Beginning on May 21, 2025, we will implement a 30-second timeout on SearchAPI queries. This is a necessary change to update our API. This will impact large list searches, and  Vertex searches for 5,000 results.
+An alternative would be to use our Python package, [asf_search](/asf_search/basics/).
+
 ## Dataset keyword
 The new "dataset" keyword is the preferred alternative for platform searches. It allows results from multiple platforms at once. More information can be found [here](/api/keywords/#dataset-parameters).
 
