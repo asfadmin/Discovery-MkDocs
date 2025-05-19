@@ -107,6 +107,7 @@ Each of these steps is performed only when necessary to get the AOI to a single 
 ### Path and Frame Filters
 
 - **Path and Frame Filters** are available for select datasets. You may enter a single path or frame, or a range. Due to inconsistent Sentinel-1 framing, we recommend searching for a frame of interest by ±1-2 frames.
+- *Note*: For the NISAR dataset, path is called track.
 
 ### Additional Search Options
 

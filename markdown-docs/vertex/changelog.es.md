@@ -1,5 +1,9 @@
 # Novedades
 
+## Aviso de Deprecación sobre Conjuntos de Resultados Ilimitados
+A partir del 21 de mayo de 2025, implementaremos un tiempo de espera de 30 segundos en las consultas de SearchAPI.  
+Este cambio es necesario para actualizar nuestra API. Esto afectará las búsquedas en Vertex que soliciten 5,000 resultados.
+Una alternativa sería utilizar nuestro paquete de Python, [asf_search](/asf_search/basics/).
 
 ## ¡Vertex ahora es multilingüe!
 
