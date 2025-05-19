@@ -1,5 +1,10 @@
 # Novedades
 
+## Aviso de Deprecación sobre Conjuntos de Resultados Ilimitados  
+A partir del 21 de mayo de 2025, implementaremos un tiempo de espera de 30 segundos en las consultas de SearchAPI.  
+Este es un cambio necesario para actualizar nuestra API. Esto afectará las búsquedas de listas grandes y las búsquedas en Vertex de 5,000 resultados.  
+Una alternativa sería utilizar nuestro paquete de Python, [asf_search](/asf_search/basics/)
+
 ## Palabra clave "dataset"
 La nueva palabra clave "dataset" es la alternativa preferida para búsquedas en la plataforma. Permite obtener resultados de múltiples plataformas a la vez. Se puede encontrar más información [aquí](/api/keywords/#dataset-parameters).
 
