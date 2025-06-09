@@ -4,6 +4,9 @@
 Beginning on May 21, 2025, we will implement a 30-second timeout on SearchAPI queries. This is a necessary change to update our API. This will impact Vertex searches for 5,000 results.
 An alternative would be to use our Python package, [asf_search](/asf_search/basics/).
 
+We have added a new output parameter (`output=python`) to SearchAPI. This will provide the Python code snippet needed to perform your desired search in asf_search.
+For more details, see the [output keyword](/api/keywords/#results-parameters).
+
 ## Vertex is Now Multilingual!
 
 Vertex now supports English and Spanish. If your browser language is set to Spanish, Vertex will default to Spanish. You can also select your preferred language from the top menu. More information can be found [here](/vertex/manual/#language-options).
