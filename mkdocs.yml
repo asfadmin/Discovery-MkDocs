@@ -126,7 +126,7 @@ nav:
   # - About: about.md
   - Product Details:
     - Using ASF Data: datasets/using_ASF_data.md
-#    - Displacement Product Usage: datasets/disp_usage.md
+    - Displacement Product Usage: datasets/disp_usage.md
     - Displacement Product FAQs: datasets/disp_faq.md
     - ALOS PALSAR Products: datasets/palsar.md
     - Events (SARVIEWS): datasets/events_about.md
