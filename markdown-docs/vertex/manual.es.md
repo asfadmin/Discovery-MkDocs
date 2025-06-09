@@ -107,6 +107,7 @@ Cada uno de estos pasos se realiza solo cuando es necesario para llevar el AOI a
 ### Filtros de Ruta y Cuadro
 
 - **Filtros de Ruta y Cuadro** están disponibles para conjuntos de datos seleccionados. Puede ingresar una sola ruta o cuadro, o un rango. Debido a la inconsistencia del encuadre de Sentinel-1, recomendamos buscar un cuadro de interés con un margen de ±1-2 cuadros.
+-*Nota*: Para el conjunto de datos NISAR, la ruta se denomina trayecto.
 
 ### Opciones de Búsqueda Adicionales
 
