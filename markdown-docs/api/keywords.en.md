@@ -392,9 +392,10 @@ Each of these steps is performed only when necessary to get the AOI to a single 
 	- Example:
 		- output=geojson
 	- Values:
-		- geojson, csv, json, kml, metalink, count, download
+		- geojson, python, csv, json, kml, metalink, count, download
 	- Description:
-		- GeoJSON is the preferred output format. If a required field is not included, please contact ASF using the info below or reach the team directly at <uaf-asf-discovery@alaska.edu>
+        - GeoJSON is the preferred output format. If a required field is not included, please contact ASF using the info below or reach the team directly at <uaf-asf-discovery@alaska.edu>
+        - Python will provide the code snippet needed to run your desired search using asf_search
 		- KML can be opened in Google Earth, ArcGIS Earth, or a similar program
 		- Count returns the number of results returned by your query. It does not include any additional information. Using count output can be helpful in determining if your query has returned the correct number of results. There is a time limit on running Search API queries. See the [Troubleshooting page](/api/troubleshooting) for more details.
 		- Metalink provides download information for the scenes returned by your query. It does not include metadata.
@@ -433,9 +434,10 @@ Each of these steps is performed only when necessary to get the AOI to a single 
 	- Example:
 		- output=geojson
 	- Values:
-		- geojson, csv, json, kml, metalink, count, download
+		- geojson, python, csv, json, kml, metalink, count, download
 	- Description:
 		- GeoJSON is the preferred output format. If a required field is not included, please contact ASF using the info below or reach the team directly at <uaf-asf-discovery@alaska.edu>
+		- Python will provide the code snippet needed to run your desired search using asf_search
 		- KML can be opened in Google Earth, ArcGIS Earth, or a similar program
 		- Count returns the number of results returned by your query. It does not include any additional information. Using count output can be helpful in determining if your query has returned the correct number of results. There is a time limit on running Search API queries. See the [Troubleshooting page](/api/troubleshooting) for more details.
 		- Metalink provides download information for the scenes returned by your query. It does not include metadata.

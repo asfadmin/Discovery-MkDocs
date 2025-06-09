@@ -35,7 +35,7 @@ In the top left corner of the map, you may click the checkbox to toggle your des
 #### Basic Velocity
 This layer shows velocity, derived using the short wavelength displacement layer from the DISP product. 
 See the [FAQs](/datasets/disp_faq) for more details.
-There are separate Ascending and Descending satellite path layers, and the layer will update automatically to only display the correct direction based on your search filters.
+There are separate Ascending and Descending satellite track layers, and the layer will update automatically to only display the correct direction based on your search filters.
 
 ### Selecting AOIs
 When you first access the Displacement Portal, the point selector is active. You may click your desired point(s) on the map.
