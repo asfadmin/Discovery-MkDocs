@@ -3,7 +3,9 @@
 
 ## What is the Displacement Portal?
 The Displacement Portal provides the ability to visualize and interact with the OPERA Surface Displacement (DISP) Products. 
-[add later]: <> (Access the [Displacement Portal](https://displacement.asf.alaska.edu/) to get started. Note that the Displacement Portal is also available by going to [Vertex](https://search.asf.alaska.edu), and selecting Displacement from the Search Type dropdown.)
+Access the [Displacement Portal](https://displacement.asf.alaska.edu/) to get started. 
+[//]: # (Note that the Displacement Portal is also available by going to [Vertex](https://search.asf.alaska.edu), and selecting Displacement from the Search Type dropdown.)
+
 
 ## What are the OPERA Surface Displacement Products?
 The OPERA Surface Displacement (DISP) Products are Interferometric Synthetic Aperture Radar (InSAR)-derived displacement data made using a hybrid Persistent Scatterer (PS) and Distributed Scatterer (DS) time series processing approach.
