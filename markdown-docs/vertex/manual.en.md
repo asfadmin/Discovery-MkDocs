@@ -103,6 +103,22 @@ Each of these steps is performed only when necessary to get the AOI to a single 
 	- **Standard Products or CalVal Products** – Limit the search to either CalVal or Standard products. May choose one option. This selector is only available for the Opera-S1 dataset.
 	- **Campaign Selector** – Limit the search to a specific campaign.
 
+### Product Filters
+
+- **Product Filters** are available for the NISAR dataset.
+- **Science Product** - Limit the search to specific products. Multiple selections allowed.
+- **Production Configuration** - Limit the search to specific production configurations. *Production* is selected by default. Multiple selections are allowed.
+
+### Observational Filters
+
+- **Observational Filters** are available for the NISAR dataset.
+- **Main Band (Freq. A) Polarization** - Limit the search to specific Frequency A polarizations. Multiple selections allowed.
+- **Side Band (Freq. B) Polarization** - Limit the search to specific Frequency B polarizations. Multiple selections allowed.
+- **Direction** – Limit the search to a specific orbit direction.
+- **Instrument** - Limit the search to a specific instrument. Currently, only L-Band SAR is available.
+- **Frame Coverage** - Limit the search to either Full or Partial frame coverage.
+- **Range Bandwidth** - Limit the search to specific range bandwidths. Multiple selections allowed.
+- **Joint Observation Only** - This toggle is defaulted to off. Toggle on for simultaneous L- and S-band acquisitions.
 
 ### Path and Frame Filters
 
