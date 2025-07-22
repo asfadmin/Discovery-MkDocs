@@ -5,6 +5,9 @@ A partir del 21 de mayo de 2025, implementaremos un tiempo de espera de 30 segun
 Este es un cambio necesario para actualizar nuestra API. Esto afectará las búsquedas de listas grandes y las búsquedas en Vertex de 5,000 resultados.  
 Una alternativa sería utilizar nuestro paquete de Python, [asf_search](/asf_search/basics/)
 
+Hemos añadido un nuevo parámetro de salida (`output=python`) a SearchAPI. Esto proporcionará el fragmento de código en Python necesario para realizar su búsqueda deseada en asf_search.  
+Para más detalles, consulte la [palabra clave output](/api/keywords/#results-parameters).
+
 ## Palabra clave "dataset"
 La nueva palabra clave "dataset" es la alternativa preferida para búsquedas en la plataforma. Permite obtener resultados de múltiples plataformas a la vez. Se puede encontrar más información [aquí](/api/keywords/#dataset-parameters).
 

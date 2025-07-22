@@ -390,9 +390,10 @@ Cada uno de estos pasos se realiza solo cuando es necesario para obtener el AOI 
 	- Ejemplo:
 		- output=geojson
 	- Valores:
-		- geojson, csv, json, kml, metalink, count, download
+		- geojson, python, csv, json, kml, metalink, count, download
 	- Descripción:
 		- GeoJSON es el formato de salida preferido. Si un campo requerido no está incluido, por favor contacta a ASF usando la información a continuación o contacta al equipo directamente en <uaf-asf-discovery@alaska.edu>
+       - Python proporcionará el fragmento de código necesario para ejecutar su búsqueda deseada utilizando asf_search
 		- KML se puede abrir en Google Earth, ArcGIS Earth, o un programa similar
 		- Count devuelve el número de resultados obtenidos por su consulta. No incluye información adicional. Usar la salida count puede ser útil para determinar si su consulta ha devuelto el número correcto de resultados. Hay un límite de tiempo para ejecutar consultas de la API de Búsqueda. Consulta la [página de Solución de Problemas](/api/troubleshooting) para más detalles.
 		- Metalink proporciona información de descarga para las escenas devueltas por su consulta. No incluye metadatos.
@@ -431,9 +432,10 @@ Cada uno de estos pasos se realiza solo cuando es necesario para obtener el AOI 
 	- Ejemplo:
 		- output=geojson
 	- Valores:
-		- geojson, csv, json, kml, metalink, count, download
+		- geojson, python, csv, json, kml, metalink, count, download
 	- Descripción:
 		- GeoJSON es el formato de salida preferido. Si un campo requerido no está incluido, por favor contacta a ASF usando la información a continuación o contacta al equipo directamente en <uaf-asf-discovery@alaska.edu>
+		-  Python proporcionará el fragmento de código necesario para ejecutar su búsqueda deseada utilizando asf_search
 		- KML se puede abrir en Google Earth, ArcGIS Earth, o un programa similar
 		- Count devuelve el número de resultados obtenidos por su consulta. No incluye información adicional. Usar la salida count puede ser útil para determinar si su consulta ha devuelto el número correcto de resultados. Hay un límite de tiempo para ejecutar consultas de la API de Búsqueda. Consulta la [página de Solución de Problemas](/api/troubleshooting) para más detalles.
 		- Metalink proporciona información de descarga para las escenas devueltas por su consulta. No incluye metadatos.
