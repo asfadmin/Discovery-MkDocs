@@ -2,8 +2,10 @@
 # Portal de Desplazamiento
 
 ## ¿Qué es el Portal de Desplazamiento?
-El Portal de Desplazamiento proporciona la capacidad de visualizar e interactuar con los Productos de Desplazamiento Superficial (DISP) de OPERA.  
-[añadir más adelante]: <> (Acceda al [Portal de Desplazamiento](https://displacement.asf.alaska.edu/) para comenzar. Tenga en cuenta que el Portal de Desplazamiento también está disponible en [Vertex](https://search.asf.alaska.edu), seleccionando Desplazamiento en el menú desplegable de Tipo de Búsqueda.)
+El Portal de Desplazamiento proporciona la capacidad de visualizar e interactuar con los Productos de Desplazamiento Superficial (DISP) de OPERA.
+[add later]: <> (Acceda al [Portal de Desplazamiento](https://displacement.asf.alaska.edu/) para comenzar.  
+Tenga en cuenta que el Portal de Desplazamiento también está disponible en [Vertex](https://search.asf.alaska.edu), seleccionando "Desplazamiento" en el menú desplegable Tipo de búsqueda.
+
 
 ## ¿Qué son los Productos de Desplazamiento Superficial de OPERA?
 Los Productos de Desplazamiento Superficial (DISP) de OPERA son datos de desplazamiento derivados del radar de apertura sintética interferométrica (InSAR), creados mediante un enfoque híbrido de procesamiento de series temporales con Dispersores Persistentes (PS) y Dispersores Distribuidos (DS).  
