@@ -103,6 +103,22 @@ Cada uno de estos pasos se realiza solo cuando es necesario para llevar el AOI a
   - **Productos Estándar o Productos CalVal** – Limitar la búsqueda a productos CalVal o Estándar. Puede elegir una opción. Este selector solo está disponible para el conjunto de datos Opera-S1.
   - **Selector de Campaña** – Limitar la búsqueda a una campaña específica.
 
+### Filtros de Producto
+
+- **Filtros de Producto** están disponibles para el conjunto de datos NISAR.
+- **Producto Científico** – Limitar la búsqueda a productos específicos. Se permiten múltiples selecciones.
+- **Configuración de Producción** – Limitar la búsqueda a configuraciones de producción específicas. *Producción* está seleccionada de forma predeterminada. Se permiten múltiples selecciones.
+
+### Filtros de Observación
+
+- **Filtros de Observación** están disponibles para el conjunto de datos NISAR.
+- **Polarización de Banda Principal (Frecuencia A)** – Limitar la búsqueda a polarizaciones específicas de Frecuencia A. Se permiten múltiples selecciones.
+- **Polarización de Banda Secundaria (Frecuencia B)** – Limitar la búsqueda a polarizaciones específicas de Frecuencia B. Se permiten múltiples selecciones.
+- **Dirección** – Limitar la búsqueda a una dirección de órbita específica.
+- **Instrumento** – Limitar la búsqueda a un instrumento específico. Actualmente, solo está disponible el SAR de Banda L.
+- **Cobertura del Cuadro** – Limitar la búsqueda a cobertura de cuadro Completa o Parcial.
+- **Ancho de Banda de Rango** – Limitar la búsqueda a anchos de banda de rango específicos. Se permiten múltiples selecciones.
+- **Solo Observación Conjunta** – Este interruptor está desactivado de forma predeterminada. Actívelo para adquisiciones simultáneas de bandas L y S.
 
 ### Filtros de Ruta y Cuadro
 
