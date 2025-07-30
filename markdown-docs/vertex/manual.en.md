@@ -107,7 +107,7 @@ Each of these steps is performed only when necessary to get the AOI to a single 
 
 - **Product Filters** are available for the NISAR dataset.
 - **Science Product** - Limit the search to specific products. Multiple selections allowed.
-- **Production Configuration** - Limit the search to specific production configurations. *Production* uses the standard production system and is selected by default. *Urgent Response* is time-sensitive processing in response to urgent response events. *Custom Validation* is user-initiated processing outside the nominal production system. Multiple selections are allowed.
+- **Production Configuration** - Limit the search to specific processing pipelines. *Production* uses the standard production system and is selected by default. *Urgent Response* is time-sensitive processing in response to urgent response events. *Custom Validation* is user-initiated processing outside the nominal production system. Multiple selections are allowed.
 
 ### Observational Filters
 
