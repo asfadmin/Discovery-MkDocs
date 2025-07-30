@@ -5,6 +5,9 @@ A partir del 21 de mayo de 2025, implementaremos un tiempo de espera de 30 segun
 Este cambio es necesario para actualizar nuestra API. Esto afectará las búsquedas en Vertex que soliciten 5,000 resultados.
 Una alternativa sería utilizar nuestro paquete de Python, [asf_search](/asf_search/basics/).
 
+Hemos añadido un nuevo parámetro de salida (`output=python`) a SearchAPI. Esto proporcionará el fragmento de código en Python necesario para realizar su búsqueda deseada en asf_search.  
+Para más detalles, consulte la [palabra clave output](/api/keywords/#results-parameters).
+
 ## ¡Vertex ahora es multilingüe!
 
 Vertex ahora es compatible con inglés y español. Si el idioma de su navegador está configurado en español, Vértice usará español de forma predeterminada. También puede seleccionar su idioma preferido en el menú superior. Puede encontrar más información [aquí](/vertex/manual/#language-options).
