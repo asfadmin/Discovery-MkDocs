@@ -129,6 +129,13 @@ Keywords are used to find the desired data. Use as many or as few keywords as ne
     - Values:
         - Any number from 0 to 7200.
 
+- <span style="color: #236192; font-size: 20px;">frameCoverage</span>
+    - Used for NISAR dataset. Specifies whether the product covers the full NISAR frame, or if it is partial coverage. You may specify a single value.
+    - Example: 
+        - frameCoverage='FULL'
+    - Values:
+        - FULL, PARTIAL
+
 - <span style="color: #236192; font-size: 20px;">fullBurstID</span>
     - Used for Sentinel-1 [burst products](/datasets/using_ASF_data/#sentinel-1-bursts). Each value represents all burst products over a single sub-swath, corresponding to a near-perfect frame-aligned stack. This value is useful for baseline stacking. You may specify a single value, or a list of values.
     - Example:
@@ -139,6 +146,13 @@ Keywords are used to find the desired data. Use as many or as few keywords as ne
     - List of specific group IDs. For some datasets, the group ID is the same as the scene name. For others, such as Sentinel-1, the group ID is unique for a group of scenes.
     - Example:
         - groupID='S1A_IWDV_0112_0118_037147_150'
+
+- <span style="color: #236192; font-size: 20px;">jointObservation</span>
+    - Used for NISAR dataset. Specifies if products are simultaneous L- and S-band acquisitions. True is used for simultaneous acquisitions.
+    - Example:
+        - jointObservation=True
+    - Values: 
+        - True, False
 
 - <span style="color: #236192; font-size: 20px;">lookDirection</span>
     - Left or right direction of data acquisition. You may specify a single value.
@@ -170,12 +184,43 @@ Keywords are used to find the desired data. Use as many or as few keywords as ne
     - Example:
         - polarization=asf.POLARIZATION.VV
 
+- <span style="color: #236192; font-size: 20px;">mainBandPolarization</span>
+    - See the [list of constants](https://github.com/asfadmin/Discovery-asf_search/blob/master/asf_search/constants/POLARIZATION.py)
+    - Used for NISAR dataset. Main Band Polarization is also known as Frequency A Polarization
+    - A property of SAR electromagnetic waves that can be used to extract meaningful information about surface properties of the earth. You may specify a single value, or a list of values.
+    - Example:
+        - mainBandPolarization=asf.POLARIZATION.HH
+
+- <span style="color: #236192; font-size: 20px;">sideBandPolarization</span>
+    - See the [list of constants](https://github.com/asfadmin/Discovery-asf_search/blob/master/asf_search/constants/POLARIZATION.py)
+    - Used for NISAR dataset. Side Band Polarization is also known as Frequency B Polarization
+    - A property of SAR electromagnetic waves that can be used to extract meaningful information about surface properties of the earth. You may specify a single value, or a list of values.
+    - Example:
+        - sideBandPolarization=asf.POLARIZATION.HH
+
 - <span style="color: #236192; font-size: 20px;">processingLevel</span>
     - See the [list of constants](https://github.com/asfadmin/Discovery-asf_search/blob/master/asf_search/constants/PRODUCT_TYPE.py)
     - Level to which the data has been processed, also type of product.
+        - For the NISAR dataset, the processingLevel is the Science Product.
     - You may also get the available list of constants by using ```help(asf_search.constants.PRODUCT_TYPE)```
     - Example:
         - processingLevel=asf.PRODUCT_TYPE.SLC
+
+- <span style="color: #236192; font-size: 20px;">productionConfiguration</span>
+    - See the [list of constants](https://github.com/asfadmin/Discovery-asf_search/blob/master/asf_search/constants/PRODUCTION_CONFIGURATION.py)
+    - Used for NISAR dataset to specify the processing pipeline used for the scene. You may specify a single value, or a list of values.
+        - Production uses the standard production system.
+        - Urgent Response is time-sensitive processing in response to urgent response events.
+        - Custom is user-initiated processing outside the nominal production system.
+    - Example: 
+        - productionConfiguration=asf.PRODUCTION_CONFIGURATION.URGENT_RESPONSE
+
+- <span style="color: #236192; font-size: 20px;">rangeBandwidth</span>
+    - See the [list of constants](https://github.com/asfadmin/Discovery-asf_search/blob/master/asf_search/constants/RANGE_BANDWIDTH.py)
+    - Used for NISAR dataset to specify the range bandwidth in MHz. You may specify a single value, or a list of values. 
+    - Some products have a range for both Main and Side band polarizations. These are listed as '[Main Band Bandwidth]+[Side Band Bandwidth]'
+    - Example: 
+        - rangeBandwidth=asf.RANGE_BANDWIDTH.BW_20_5
 
 - <span style="color: #236192; font-size: 20px;">relativeBurstID</span>
     - Used for Sentinel-1 [burst products](/datasets/using_ASF_data/#sentinel-1-bursts). Each value identifies a burst cycle, and within each sub-swath these values are unique. You may specify a single value, or a list of values.
