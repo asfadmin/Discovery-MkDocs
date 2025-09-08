@@ -107,7 +107,7 @@ Cada uno de estos pasos se realiza solo cuando es necesario para llevar el AOI a
 
 - **Filtros de Producto** están disponibles para el conjunto de datos NISAR.
 - **Producto Científico** – Limitar la búsqueda a productos específicos. Se permiten múltiples selecciones.
-- **Configuración de Producción** – Limitar la búsqueda a configuraciones de producción específicas. *Producción* está seleccionada de forma predeterminada. Se permiten múltiples selecciones.
+- **Configuración de Producción** – Limite la búsqueda a pipelines de procesamiento específicos. *Producción* utiliza el sistema de producción estándar y está seleccionada por defecto. *Respuesta Urgente* es un procesamiento sensible al tiempo en respuesta a eventos de respuesta urgente. *Validación Personalizada* es un procesamiento iniciado por el usuario fuera del sistema de producción nominal. Se permiten múltiples selecciones.
 
 ### Filtros de Observación
 
