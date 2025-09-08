@@ -202,6 +202,7 @@ Keywords are used to find the desired data. Use as many or as few keywords as ne
     - See the [list of constants](https://github.com/asfadmin/Discovery-asf_search/blob/master/asf_search/constants/PRODUCT_TYPE.py)
     - Level to which the data has been processed, also type of product.
         - For the NISAR dataset, the processingLevel is the Science Product.
+    - You may specify a single value, or a list of values.
     - You may also get the available list of constants by using ```help(asf_search.constants.PRODUCT_TYPE)```
     - Example:
         - processingLevel=asf.PRODUCT_TYPE.SLC
