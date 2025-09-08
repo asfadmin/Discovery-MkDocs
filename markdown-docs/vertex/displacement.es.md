@@ -1,10 +1,11 @@
 
+
 # Portal de Desplazamiento
 
 ## ¿Qué es el Portal de Desplazamiento?
-El Portal de Desplazamiento proporciona la capacidad de visualizar e interactuar con los Productos de Desplazamiento Superficial (DISP) de OPERA.
-[add later]: <> (Acceda al [Portal de Desplazamiento](https://displacement.asf.alaska.edu/) para comenzar.  
-Tenga en cuenta que el Portal de Desplazamiento también está disponible en [Vertex](https://search.asf.alaska.edu), seleccionando "Desplazamiento" en el menú desplegable Tipo de búsqueda.
+El Portal de Desplazamiento proporciona la capacidad de visualizar e interactuar con los Productos de Desplazamiento Superficial (DISP) de OPERA.  
+Acceda al [Portal de Desplazamiento](https://displacement.asf.alaska.edu/) para comenzar. Tenga en cuenta que el Portal de Desplazamiento también está disponible en [Vertex](https://search.asf.alaska.edu), y seleccionando "Desplazamiento" en el menú desplegable Tipo de búsqueda.
+
 
 
 ## ¿Qué son los Productos de Desplazamiento Superficial de OPERA?
@@ -16,6 +17,7 @@ La información LOS se muestra gráficamente en el panel superior del Portal de 
 La suite de productos DISP de OPERA se deriva de los datos SAR de los satélites Sentinel-1A/B/C y NISAR, y cubre América del Norte (Estados Unidos y territorios estadounidenses, Canadá dentro de los 200 km de la frontera con EE. UU., y todos los países continentales desde la frontera sur de EE. UU. hasta Panamá inclusive).
 
 El producto DISP de OPERA incluye una capa de “desplazamiento de longitud de onda corta”, que es el conjunto de datos actualmente mostrado en el Portal de Desplazamiento.  
+
 La capa de desplazamiento de longitud de onda corta está filtrada para resaltar el desplazamiento local (longitud de onda < 30 km) y eliminar señales de longitud de onda larga como el ruido atmosférico.  
 Consulte las [Preguntas Frecuentes](/datasets/disp_faq) y el [Documento de Especificaciones de los Productos DISP de OPERA](https://www.jpl.nasa.gov/go/opera/products/disp-product-suite/) para una descripción más detallada de la capa del producto.
 

@@ -11,165 +11,172 @@ Keywords are used to find the desired data. Use as many or as few keywords as ne
 
 ### Dataset Parameters
 - <span style="color: #236192; font-size: 20px;">dataset</span>
-	- This is the preferred alternative keyword for 'platform' searches.
-	- This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
-	- Remote sensing platform that acquired the data. You may specify a single value, or a list of values.
-	- Example:
-		- dataset=SENTINEL-1
-		- dataset=OPERA-S1
-		- dataset=AIRSAR,UAVSAR
-	- Values:
-		- [SENTINEL-1](/datasets/using_ASF_data/#sentinel-1), [SLC-BURST](/datasets/using_ASF_data/#sentinel-1-bursts), [OPERA-S1](/datasets/using_ASF_data/#opera-sentinel-1), [ALOS PALSAR](/datasets/using_ASF_data/#alos-palsar), [ALOS AVNIR-2](/datasets/using_ASF_data/#alos-avnir-2), [SIR-C](/datasets/using_ASF_data/#sir-c), [ARIA S1 GUNW](/datasets/using_ASF_data/#aria-s1-gunw), [SMAP](/datasets/using_ASF_data/#smap-soil-moisture-active-passive), [UAVSAR](/datasets/using_ASF_data/#uavsar), [RADARSAT-1](/datasets/using_ASF_data/#radarsat-1), [ERS](/datasets/using_ASF_data/#ers), [JERS-1](/datasets/using_ASF_data/#jers), [AIRSAR](/datasets/using_ASF_data/#airsar), [SEASAT](/datasets/using_ASF_data/#seasat)
+    - This is the preferred alternative keyword for 'platform' searches.
+    - This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
+    - Remote sensing platform that acquired the data. You may specify a single value, or a list of values.
+    - Example:
+        - dataset=SENTINEL-1
+        - dataset=OPERA-S1
+        - dataset=AIRSAR,UAVSAR
+    - Values:
+        - NISAR, [SENTINEL-1](/datasets/using_ASF_data/#sentinel-1), [SLC-BURST](/datasets/using_ASF_data/#sentinel-1-bursts), [OPERA-S1](/datasets/using_ASF_data/#opera-sentinel-1), [ALOS PALSAR](/datasets/using_ASF_data/#alos-palsar), [ALOS AVNIR-2](/datasets/using_ASF_data/#alos-avnir-2), [SIR-C](/datasets/using_ASF_data/#sir-c), [ARIA S1 GUNW](/datasets/using_ASF_data/#aria-s1-gunw), [SMAP](/datasets/using_ASF_data/#smap-soil-moisture-active-passive), [UAVSAR](/datasets/using_ASF_data/#uavsar), [RADARSAT-1](/datasets/using_ASF_data/#radarsat-1), [ERS](/datasets/using_ASF_data/#ers), [JERS-1](/datasets/using_ASF_data/#jers), [AIRSAR](/datasets/using_ASF_data/#airsar), [SEASAT](/datasets/using_ASF_data/#seasat)
 
 - <span style="color: #236192; font-size: 20px;">platform</span>
-	- See also 'dataset'. Dataset is the preferred keyword when possible.
-	- This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
-	- See also 'instrument'
-	- Remote sensing platform that acquired the data. Sentinel-1 and ERS have multiple remote sensing platforms, and you may choose whether to specify a specific platform. You may specify a single value, or a list of values.
-	- Example:
-		- platform=ALOS
-		- platform=SA,SB
-		- platform=S1
-	- Values:
-		- ALOS, A3, AIRSAR, AS, ERS, ERS-1, E1, ERS-2, E2, JERS-1, J1, RADARSAT-1, R1, SEASAT, SS, S1, Sentinel, Sentinel-1, Sentinel-1A, SA, Sentinel-1B, Sentinel-1 Interferogram (BETA), SB, SIR-C, SMAP, SP, UAVSAR, UA
+    - See also 'dataset'. Dataset is the preferred keyword when possible.
+    - This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
+    - See also 'instrument'
+    - Remote sensing platform that acquired the data. Sentinel-1 and ERS have multiple remote sensing platforms, and you may choose whether to specify a specific platform. You may specify a single value, or a list of values.
+    - Example:
+        - platform=ALOS
+        - platform=SA,SB
+        - platform=S1
+    - Values:
+        - NISAR, ALOS, A3, AIRSAR, AS, ERS, ERS-1, E1, ERS-2, E2, JERS-1, J1, RADARSAT-1, R1, SEASAT, SS, S1, Sentinel, Sentinel-1, Sentinel-1A, SA, Sentinel-1B, Sentinel-1 Interferogram (BETA), SB, SIR-C, SMAP, SP, UAVSAR, UA
 
 - <span style="color: #236192; font-size: 20px;">instrument</span>
-	- See also 'dataset'. Dataset is the preferred keyword when possible.
-	- This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
-	- See also 'platform'
-	- Remote sensing instrument that acquired the data. For some platforms, such as ALOS, there are multiple instruments to choose from.
-	- Example:
-		- ALOS: instrument=PALSAR
-		- ALOS: instrument=AVNIR-2
-	- Values:
-		- C-SAR, PALSAR, AVNIR-2
+    - See also 'dataset'. Dataset is the preferred keyword when possible.
+    - This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
+    - See also 'platform'
+    - Remote sensing instrument that acquired the data. For some platforms, such as ALOS, there are multiple instruments to choose from.
+    - Example:
+        - ALOS: instrument=PALSAR
+        - ALOS: instrument=AVNIR-2
+    - Values:
+        - C-SAR, PALSAR, AVNIR-2
 
 - <span style="color: #236192; font-size: 20px; font-size: 20px;">absoluteOrbit</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- For ALOS, ERS-1, ERS-2, JERS-1, RADARSAT-1, Sentinel-1A, and Sentinel-1B this value corresponds to the orbit count within the orbit cycle. For UAVSAR it is the [Flight ID](https://uavsar.jpl.nasa.gov/cgi-bin/data.pl?_ga=2.34282209.1335434931.1620087198-1930115146.1605056035). You may specify a single value, range of values, or a list of values.
-	- Example:
-		- RADARSAT: absoluteOrbit=25436
-		- PALSAR: absoluteOrbit=25436-25445,25450
-		- UAVSAR: absoluteOrbit=12006
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - For ALOS, ERS-1, ERS-2, JERS-1, RADARSAT-1, Sentinel-1A, and Sentinel-1B this value corresponds to the orbit count within the orbit cycle. For UAVSAR it is the [Flight ID](https://uavsar.jpl.nasa.gov/cgi-bin/data.pl?_ga=2.34282209.1335434931.1620087198-1930115146.1605056035). You may specify a single value, range of values, or a list of values.
+    - Example:
+        - RADARSAT: absoluteOrbit=25436
+        - PALSAR: absoluteOrbit=25436-25445,25450
+        - UAVSAR: absoluteOrbit=12006
 
 - <span style="color: #236192; font-size: 20px;">asfframe</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- See also 'frame'
-	- This is primarily an ASF / [JAXA](https://global.jaxa.jp/) frame reference. However, some platforms use other conventions. You may specify a single value, range of values, or a list of values.
-	- Example:
-		- asfframe=300 or asfframe=2845-2855 or asfframe=2800,2845-2855
-	- Values:
-		- ERS, JERS, RADARSAT: ASF frames 0 to 900
-		- ALOS PALSAR: JAXA frames 0 to 7200
-		- SEASAT: ESA-like frames 0208 to 3458  (must use a leading zero for frames 208-999)
-		- Sentinel-1: In-house values 0 to 1184
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - See also 'frame'
+    - This is primarily an ASF / [JAXA](https://global.jaxa.jp/) frame reference. However, some platforms use other conventions. You may specify a single value, range of values, or a list of values.
+    - Example:
+        - asfframe=300 or asfframe=2845-2855 or asfframe=2800,2845-2855
+    - Values:
+        - ERS, JERS, RADARSAT: ASF frames 0 to 900
+        - ALOS PALSAR: JAXA frames 0 to 7200
+        - SEASAT: ESA-like frames 0208 to 3458  (must use a leading zero for frames 208-999)
+        - Sentinel-1: In-house values 0 to 1184
 
 - <span style="color: #236192; font-size: 20px;">maxBaselinePerp</span>
-	- For interferometric SAR (InSAR) analysis, Perpendicular Baseline is the spatial distance between the first and second observations measured perpendicular to the satellite look direction and provides an indication of the sensitivity to topographic height.
-	- Works for ERS-1, ERS-2, JERS, RADARSAT-1, ALOS PALSAR. (Not Sentinel-1)
-	- Example:
-		- maxBaselinePerp=1500 or maxBaselinePerp=50.5
+    - For interferometric SAR (InSAR) analysis, Perpendicular Baseline is the spatial distance between the first and second observations measured perpendicular to the satellite look direction and provides an indication of the sensitivity to topographic height.
+    - Works for ERS-1, ERS-2, JERS, RADARSAT-1, ALOS PALSAR. (Not Sentinel-1)
+    - Example:
+        - maxBaselinePerp=1500 or maxBaselinePerp=50.5
 
 - <span style="color: #236192; font-size: 20px;">minBaselinePerp</span>
-	- For interferometric SAR (InSAR) analysis, Perpendicular Baseline is the spatial distance between the first and second observations measured perpendicular to the satellite look direction and provides an indication of the sensitivity to topographic height.
-	- Works for ERS-1, ERS-2, JERS, RADARSAT-1, ALOS PALSAR. (Not Sentinel-1)
-	- Example:
-		- minBaselinePerp=100 or minBaselinePerp=50.5
+    - For interferometric SAR (InSAR) analysis, Perpendicular Baseline is the spatial distance between the first and second observations measured perpendicular to the satellite look direction and provides an indication of the sensitivity to topographic height.
+    - Works for ERS-1, ERS-2, JERS, RADARSAT-1, ALOS PALSAR. (Not Sentinel-1)
+    - Example:
+        - minBaselinePerp=100 or minBaselinePerp=50.5
 
 - <span style="color: #236192; font-size: 20px;">beamMode</span>
-	- This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
-	- The beam mode used to acquire the data. See also beamSwath. You may specify a single value, or a list of values.
-	- Example:
-		- beamMode=FBS or beamMode=EW,IW or beamMode=ScanSAR+Wide
-	- Values:
-		- AIRSAR: 3FP, ATI, XTI
-		- ALOS: FBD, FBS, PLR, WB1, WB2, DSN
-		- ERS-1: Standard, STD
-		- ERS-2: Standard, STD
-		- JERS-1: Standard, STD
-		- RADARSAT-1: Standard, STD, Fine, High, Low, Wide, Narrow, ScanSAR+Wide, ScanSAR+Narrow
-		- SEASAT: Standard, STD
-		- SMAP: Standard, STD
-		- Sentinel-1A: EW, IW, S1, S2, S3, S4, S5, S6, WV
-		- Sentinel-1B: EW, IW, S1, S2, S3, S4, S5, S6, WV
-		- UAVSAR: POL, RPI
+    - This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
+    - The beam mode used to acquire the data. See also beamSwath. You may specify a single value, or a list of values.
+    - Example:
+        - beamMode=FBS or beamMode=EW,IW or beamMode=ScanSAR+Wide
+    - Values:
+        - AIRSAR: 3FP, ATI, XTI
+        - ALOS: FBD, FBS, PLR, WB1, WB2, DSN
+        - ERS-1: Standard, STD
+        - ERS-2: Standard, STD
+        - JERS-1: Standard, STD
+        - RADARSAT-1: Standard, STD, Fine, High, Low, Wide, Narrow, ScanSAR+Wide, ScanSAR+Narrow
+        - SEASAT: Standard, STD
+        - SMAP: Standard, STD
+        - Sentinel-1A: EW, IW, S1, S2, S3, S4, S5, S6, WV
+        - Sentinel-1B: EW, IW, S1, S2, S3, S4, S5, S6, WV
+        - UAVSAR: POL, RPI
 
 - <span style="color: #236192; font-size: 20px;">beamSwath</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- BeamSwath encompasses a look angle and beam mode. You may specify a single value, or a list of values.
-	- Example:
-		- beamSwath=0
-		- beamSwath=FN1, FN2, FN3, FN4, FN5
-	- Values:
-		- AIRSAR: 3FP, ATI, XTI
-		- ALOS: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 16, 17, 18, 19, 20
-		- AVNIR-2: OBS
-		- ERS-1: STD
-		- ERS-2: STD
-		- JERS-1: STD
-		- RADARSAT-1: FN1, FN2, FN3, FN4, FN5, SNA, SNB, ST1, ST2, ST3, ST4, ST5, ST6, ST7, SWA, SWB, WD1, WD2, WD3, EH3, EH4, EH6, EL1
-		- SEASAT: STD
-		- Sentinel-1A: EW, IW, S1, S2, S3, S4, S5, S6, SLC, WV
-		- Sentinel-1B: EW, IW, S1, S2, S3, S4, S5, S6, SLC, WV
-		- UAVSAR: POL, RPI
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - BeamSwath encompasses a look angle and beam mode. You may specify a single value, or a list of values.
+    - Example:
+        - beamSwath=0
+        - beamSwath=FN1, FN2, FN3, FN4, FN5
+    - Values:
+        - AIRSAR: 3FP, ATI, XTI
+        - ALOS: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 15, 16, 17, 18, 19, 20
+        - AVNIR-2: OBS
+        - ERS-1: STD
+        - ERS-2: STD
+        - JERS-1: STD
+        - RADARSAT-1: FN1, FN2, FN3, FN4, FN5, SNA, SNB, ST1, ST2, ST3, ST4, ST5, ST6, ST7, SWA, SWB, WD1, WD2, WD3, EH3, EH4, EH6, EL1
+        - SEASAT: STD
+        - Sentinel-1A: EW, IW, S1, S2, S3, S4, S5, S6, SLC, WV
+        - Sentinel-1B: EW, IW, S1, S2, S3, S4, S5, S6, SLC, WV
+        - UAVSAR: POL, RPI
 
 - <span style="color: #236192; font-size: 20px;">collectionName</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- For UAVSAR and AIRSAR data collections only. Search by the mission/campaign name. You may specify a single value. For a list of available collections, refer to the Mission List Endpoint below.
-	- Example:
-		- UAVSAR: collectionName=ABoVE
-		- AIRSAR: collectionName=collectionName=Akiyoshi,+Japan
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - For UAVSAR and AIRSAR data collections only. Search by the mission/campaign name. You may specify a single value. For a list of available collections, refer to the Mission List Endpoint below.
+    - Example:
+        - UAVSAR: collectionName=ABoVE
+        - AIRSAR: collectionName=collectionName=Akiyoshi,+Japan
 
 - <span style="color: #236192; font-size: 20px;">maxDoppler</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- Doppler provides an indication of how much the look direction deviates from the ideal perpendicular flight direction acquisition.
-	- Example:
-		- maxDoppler=1500 or maxDoppler=1500.5
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - Doppler provides an indication of how much the look direction deviates from the ideal perpendicular flight direction acquisition.
+    - Example:
+        - maxDoppler=1500 or maxDoppler=1500.5
 
 - <span style="color: #236192; font-size: 20px;">minDoppler</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- Doppler provides an indication of how much the look direction deviates from the ideal perpendicular flight direction acquisition.
-	- Example:
-		- minDoppler=100 or minDoppler=1500.5
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - Doppler provides an indication of how much the look direction deviates from the ideal perpendicular flight direction acquisition.
+    - Example:
+        - minDoppler=100 or minDoppler=1500.5
 
 - <span style="color: #236192; font-size: 20px;">maxFaradayRotation</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- Rotation of the polarization plane of the radar signal impacts imagery. HH and HV signals become mixed. One-way rotations exceeding 5° are likely to significantly reduce the accuracy of geophysical parameter recovery, such as forest biomass.
-	- Example:
-		- maxFaradayRotation=3.5
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - Rotation of the polarization plane of the radar signal impacts imagery. HH and HV signals become mixed. One-way rotations exceeding 5° are likely to significantly reduce the accuracy of geophysical parameter recovery, such as forest biomass.
+    - Example:
+        - maxFaradayRotation=3.5
 
 - <span style="color: #236192; font-size: 20px;">minFaradayRotation</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- Rotation of the polarization plane of the radar signal impacts imagery. HH and HV signals become mixed. One-way rotations exceeding 5° are likely to significantly reduce the accuracy of geophysical parameter recovery, such as forest biomass.
-	- Example:
-		- minFaradayRotation=2
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - Rotation of the polarization plane of the radar signal impacts imagery. HH and HV signals become mixed. One-way rotations exceeding 5° are likely to significantly reduce the accuracy of geophysical parameter recovery, such as forest biomass.
+    - Example:
+        - minFaradayRotation=2
 
 - <span style="color: #236192; font-size: 20px;">flightDirection</span>
-	- This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
-	- Satellite orbit direction during data acquisition. You may specify a single value.
-	- Example:
-		- flightDirection=DESCENDING
-	- Values:
-		- A, ASC, ASCENDING, D, DESC, DESCENDING
+    - This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
+    - Satellite orbit direction during data acquisition. You may specify a single value.
+    - Example:
+        - flightDirection=DESCENDING
+    - Values:
+        - A, ASC, ASCENDING, D, DESC, DESCENDING
 
 - <span style="color: #236192; font-size: 20px;">flightLine</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- Specify a flightline for UAVSAR or AIRSAR. You may specify a single value.
-	- Example:
-		- UAVSAR: flightLine=05901
-		- AIRSAR: flightLine=gilmorecreek045-1.93044
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - Specify a flightline for UAVSAR or AIRSAR. You may specify a single value.
+    - Example:
+        - UAVSAR: flightLine=05901
+        - AIRSAR: flightLine=gilmorecreek045-1.93044
 
 - <span style="color: #236192; font-size: 20px;">frame</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- See also 'asfframe'
-	- ESA-referenced frames are offered to give users a universal framing convention. Each ESA frame has a corresponding ASF frame assigned. You may specify a single value, range of values, or a list of values.
-	- Example:
-		- frame=300
-		- frame=300-400
-		- frame=300,303,305
-		- frame=300,303,305-315
-	- Values:
-		- Any number from 0 to 7200.
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - See also 'asfframe'
+    - ESA-referenced frames are offered to give users a universal framing convention. Each ESA frame has a corresponding ASF frame assigned. You may specify a single value, range of values, or a list of values.
+    - Example:
+        - frame=300
+        - frame=300-400
+        - frame=300,303,305
+        - frame=300,303,305-315
+    - Values:
+        - Any number from 0 to 7200.
+
+- <span style="color: #236192; font-size: 20px;">frameCoverage</span>
+    - Used for NISAR dataset. Specifies whether the product covers the full NISAR frame, or if it is partial coverage. You may specify a single value.
+    - Example: 
+        - frameCoverage='FULL'
+    - Values:
+        - FULL, PARTIAL
 
 - <span style="color: #236192; font-size: 20px;">fullBurstID</span>
     - Used for Sentinel-1 [burst products](/datasets/using_ASF_data/#sentinel-1-bursts). Each value represents all burst products over a single sub-swath, corresponding to a near-perfect frame-aligned stack. This value is useful for baseline stacking. You may specify a single value, or a list of values.
@@ -178,48 +185,55 @@ Keywords are used to find the desired data. Use as many or as few keywords as ne
         - list of values: fullBurstID=017_034465_IW2,079_167884_IW1
 
 - <span style="color: #236192; font-size: 20px;">granule_list</span>
-	- Comma-separated list of specific scenes (granules). Large lists will need to utilize a [POST request](https://en.wikipedia.org/wiki/POST_(HTTP)).
-	- granule_list may not be used in conjuction with other keywords, however, it may be used with the output keyword.
-	- Example:
-		- granule_list=ALPSRP111041130,
-		S1B_IW_GRDH_1SDV_20161124T032008_20161124T032033_003095_005430_9906
+    - Comma-separated list of specific scenes (granules). Large lists will need to utilize a [POST request](https://en.wikipedia.org/wiki/POST_(HTTP)).
+    - granule_list may not be used in conjuction with other keywords, however, it may be used with the output keyword.
+    - Example:
+        - granule_list=ALPSRP111041130,
+        S1B_IW_GRDH_1SDV_20161124T032008_20161124T032033_003095_005430_9906
 
 - <span style="color: #236192; font-size: 20px;">groupid</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- Comma-separated list of specific group IDs. For some datasets, the group ID is the same as the scene name. For others, such as Sentinel-1, the group ID is unique for a group of scenes. The group ID value is included in GeoJSON, JSON, and CSV outputs.
-	- Example:
-		- groupid=S1A_IWDV_0112_0118_037147_150
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - Comma-separated list of specific group IDs. For some datasets, the group ID is the same as the scene name. For others, such as Sentinel-1, the group ID is unique for a group of scenes. The group ID value is included in GeoJSON, JSON, and CSV outputs.
+    - Example:
+        - groupid=S1A_IWDV_0112_0118_037147_150
+
+- <span style="color: #236192; font-size: 20px;">jointObservation</span>
+    - Used for NISAR dataset. Specifies if products are simultaneous L- and S-band acquisitions. True is used for simultaneous acquisitions.
+    - Example:
+        - jointObservation=True
+    - Values: 
+        - True, False
 
 - <span style="color: #236192; font-size: 20px;">lookDirection</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- Left or right direction of data acquisition. You may specify a single value.
-	- Example:
-		- lookDirection=L
-	- Values:
-		- R, RIGHT, L, LEFT
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - Left or right direction of data acquisition. You may specify a single value.
+    - Example:
+        - lookDirection=L
+    - Values:
+        - R, RIGHT, L, LEFT
 
 - <span style="color: #236192; font-size: 20px;">maxInsarStackSize</span>
-	- An InSAR stack is composed of all SAR granules that cover the same geographic region, are from the same platform, and were acquired with the same beam mode, look angle, and bandwidth. To obtain InSAR stacks containing a certain number of SAR granules specify a min, max, or both.
-	- Works for ERS-1, ERS-2, JERS, RADARSAT-1, ALOS PALSAR. (Not Sentinel-1)
-	- Example:
-		- maxInsarStackSize=175
+    - An InSAR stack is composed of all SAR granules that cover the same geographic region, are from the same platform, and were acquired with the same beam mode, look angle, and bandwidth. To obtain InSAR stacks containing a certain number of SAR granules specify a min, max, or both.
+    - Works for ERS-1, ERS-2, JERS, RADARSAT-1, ALOS PALSAR. (Not Sentinel-1)
+    - Example:
+        - maxInsarStackSize=175
 
 - <span style="color: #236192; font-size: 20px;">minInsarStackSize</span>
-	- An InSAR stack is composed of all SAR granules that cover the same geographic region, are from the same platform, and were acquired with the same beam mode, look angle, and bandwidth. To obtain InSAR stacks containing a certain number of SAR granules specify a min, max, or both.
-	- Works for ERS-1, ERS-2, JERS, RADARSAT-1, ALOS PALSAR. (Not Sentinel-1)
-	- Example:
-		- minInsarStackSize=20
+    - An InSAR stack is composed of all SAR granules that cover the same geographic region, are from the same platform, and were acquired with the same beam mode, look angle, and bandwidth. To obtain InSAR stacks containing a certain number of SAR granules specify a min, max, or both.
+    - Works for ERS-1, ERS-2, JERS, RADARSAT-1, ALOS PALSAR. (Not Sentinel-1)
+    - Example:
+        - minInsarStackSize=20
 
 - <span style="color: #236192; font-size: 20px;">offNadirAngle</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- Off-nadir angles for ALOS PALSAR. You may specify a single value, range of values, or a list of values.
-	- Example:
-		- offNadirAngle=21.5
-		- offNadirAngle=9.7-14
-		- offNadirAngle=21.5,23.1,20.5-24.2
-	- Values:
-		- Most common: 21.5, 23.1, 27.1, 34.3
-		- Other: 9.7, 9.9, 13.8, 14, 16.2, 17.3, 17.9, 18, 19.2, 20.5, 21.5, 23.1, 24.2, 24.6, 25.2, 25.8, 25.9, 26.2, 27.1, 28.8, 30.8, 34.3, 36.9, 38.8, 41.5, 43.4, 45.2, 46.6, 47.8, 49, 50, 50.8
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - Off-nadir angles for ALOS PALSAR. You may specify a single value, range of values, or a list of values.
+    - Example:
+        - offNadirAngle=21.5
+        - offNadirAngle=9.7-14
+        - offNadirAngle=21.5,23.1,20.5-24.2
+    - Values:
+        - Most common: 21.5, 23.1, 27.1, 34.3
+        - Other: 9.7, 9.9, 13.8, 14, 16.2, 17.3, 17.9, 18, 19.2, 20.5, 21.5, 23.1, 24.2, 24.6, 25.2, 25.8, 25.9, 26.2, 27.1, 28.8, 30.8, 34.3, 36.9, 38.8, 41.5, 43.4, 45.2, 46.6, 47.8, 49, 50, 50.8
 
 - <span style="color: #236192; font-size: 20px;">operaBurstID</span>
     - Used for [Opera-S1 products](/datasets/using_ASF_data/#opera-sentinel-1). Each value identifies the specific burst for the product. You may specify a single value, or a list of values. 
@@ -228,68 +242,110 @@ Keywords are used to find the desired data. Use as many or as few keywords as ne
         - list of values: operaBurstID=T078_165486_IW2, T078_165485_IW2
 
 - <span style="color: #236192; font-size: 20px;">polarization</span>
-	- This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
-	- A property of SAR electromagnetic waves that can be used to extract meaningful information about surface properties of the earth. You may specify a single value, or a list of values.
-	- Example:
-		- polarization=VV
-		- polarization=VV,HH
-		- polarization=VV+VH
-		- polarization=Dual+VV
-	- Values:
-		- AIRSAR: FULL
-		- ALOS: QUADRATURE, HH+5SCAN, HH, HH+4SCAN, VV, HH+3SCAN, FULL, HH+HV, VV+VH
-		- ERS-1: VV
-		- ERS-2: VV
-		- JERS-1: HH
-		- RADARSAT-1: HH
-		- SEASAT: HH
-		- Sentinel-1A: VV, VV+VH, Dual VV, VV+VH, Dual HV, Dual HH, HH, HH+HV, VV, Dual VH
-		- Sentinel-1B: VV, VV+VH, Dual VV, VV+VH, Dual HV, Dual HH, HH, HH+HV, VV, Dual VH
-		- UAVSAR: FULL, HH
+    - This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
+    - A property of SAR electromagnetic waves that can be used to extract meaningful information about surface properties of the earth. You may specify a single value, or a list of values.
+    - Example:
+        - polarization=VV
+        - polarization=VV,HH
+        - polarization=VV+VH
+        - polarization=Dual+VV
+    - Values:
+        - AIRSAR: FULL
+        - ALOS: QUADRATURE, HH+5SCAN, HH, HH+4SCAN, VV, HH+3SCAN, FULL, HH+HV, VV+VH
+        - ERS-1: VV
+        - ERS-2: VV
+        - JERS-1: HH
+        - RADARSAT-1: HH
+        - SEASAT: HH
+        - Sentinel-1A: VV, VV+VH, Dual VV, VV+VH, Dual HV, Dual HH, HH, HH+HV, VV, Dual VH
+        - Sentinel-1B: VV, VV+VH, Dual VV, VV+VH, Dual HV, Dual HH, HH, HH+HV, VV, Dual VH
+        - UAVSAR: FULL, HH
+
+- <span style="color: #236192; font-size: 20px;">mainBandPolarization</span>
+    - This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
+    - Used for NISAR dataset. Main Band Polarization is also known as Frequency A Polarization
+    - A property of SAR electromagnetic waves that can be used to extract meaningful information about surface properties of the earth. You may specify a single value, or a list of values.
+    - Example:
+        - mainBandPolarization=HH
+    - Values:
+        - NISAR: HH, HH+HV, HH+VV, HH+HV+VH+VV, VV, VV+VH, LH+LV, RH+RV
+
+- <span style="color: #236192; font-size: 20px;">sideBandPolarization</span>
+    - This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
+    - Used for NISAR dataset. Side Band Polarization is also known as Frequency B Polarization
+    - A property of SAR electromagnetic waves that can be used to extract meaningful information about surface properties of the earth. You may specify a single value, or a list of values.
+    - Example:
+        - sideBandPolarization=HH
+    - Values:
+        - NISAR: HH, HH+HV, HH+HV+VH+VV, VV, VV+VH, LH+LV, RH+RV
 
 - <span style="color: #236192; font-size: 20px;">processingLevel</span>
-	- This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
-	- Level to which the data has been processed, also type of product. You may specify a single value, or a list of values.
-	- Example:
-		- processingLevel=L0,L1
-	- Values:
-		- AIRSAR: 3FP, LTIF, PTIF, CTIF, PSTOKES, DEM, CSTOKES, JPG, LSTOKES
-		- ALOS: L1.0, L1.1, L1.5, L2.2, RTC_LOW_RES, RTC_HI_RES, KMZ
-		- ERS-1: L0, L1
-		- ERS-2: L0, L1
-		- JERS-1: L0, L1
-		- OPERA-S1: RTC, CSLC, RTC_STATIC, CSLS_STATIC
-		- RADARSAT-1: L0, L1
-		- SEASAT: L1, GEOTIFF
-		- Sentinel-1A: GRD_HS, GRD_HD, GRD_MS, GRD_MD, GRD_FD, SLC, RAW, OCN, METADATA_RAW, METADATA_SLC, METADATA_GRD_HD, METADATA_GRD_MD, METADATA_GRD_MS, METADATA_GRD_HS, METADATA_OCN
-		- Sentinel-1B: GRD_HS, GRD_HD, GRD_MS, GRD_MD, GRD_FD, SLC, RAW, OCN, METADATA_RAW, METADATA_SLC, METADATA_GRD_HD, METADATA_GRD_MD, METADATA_GRD_MS, METADATA_GRD_HS, METADATA_OCN
-		- Sentinel-1 InSAR: GUNW_STD, GUNW_AMP, GUNW_CON, GUN_COH, GUNW_UNW
-		- Sentinel-1 Bursts: BURST
-		- SIR-C: SLC, METADATA_SLC
-		- SMAP: L1A_Radar_RO_QA, L1A_Radar_RO_HDF5, L1B_S0_LoRes_HDF5, L1B_S0_LoRes_QA, L1B_S0_LoRes_ISO_XML, L1A_Radar_QA, L1A_Radar_RO_ISO_XML, L1C_S0_HiRes_ISO_XML, L1C_S0_HiRes_QA, L1C_S0_HiRes_HDF5, L1A_Radar_HDF5
-		- UAVSAR: KMZ, PROJECTED, PAULI, PROJECTED_ML5X5, STOKES, AMPLITUDE, COMPLEX, DEM_TIFF, PROJECTED_ML3X3, METADATA, AMPLITUDE_GRD, INTERFEROMETRY, INTERFEROMETRY_GRD, INC, SLOPE
+    - This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
+    - Level to which the data has been processed, also type of product.
+        - For the NISAR dataset, the processingLevel is the Science Product.
+    - You may specify a single value, or a list of values.
+    - Example:
+        - processingLevel=L0,L1
+    - Values:
+        - NISAR: L0B, RSLC, RIFG, RUNW, ROFF, GSLC, GCOV, GUNW, GOFF, SME2
+        - AIRSAR: 3FP, LTIF, PTIF, CTIF, PSTOKES, DEM, CSTOKES, JPG, LSTOKES
+        - ALOS: L1.0, L1.1, L1.5, L2.2, RTC_LOW_RES, RTC_HI_RES, KMZ
+        - ERS-1: L0, L1
+        - ERS-2: L0, L1
+        - JERS-1: L0, L1
+        - OPERA-S1: RTC, CSLC, RTC_STATIC, CSLS_STATIC
+        - RADARSAT-1: L0, L1
+        - SEASAT: L1, GEOTIFF
+        - Sentinel-1A: GRD_HS, GRD_HD, GRD_MS, GRD_MD, GRD_FD, SLC, RAW, OCN, METADATA_RAW, METADATA_SLC, METADATA_GRD_HD, METADATA_GRD_MD, METADATA_GRD_MS, METADATA_GRD_HS, METADATA_OCN
+        - Sentinel-1B: GRD_HS, GRD_HD, GRD_MS, GRD_MD, GRD_FD, SLC, RAW, OCN, METADATA_RAW, METADATA_SLC, METADATA_GRD_HD, METADATA_GRD_MD, METADATA_GRD_MS, METADATA_GRD_HS, METADATA_OCN
+        - Sentinel-1 InSAR: GUNW_STD, GUNW_AMP, GUNW_CON, GUN_COH, GUNW_UNW
+        - Sentinel-1 Bursts: BURST
+        - SIR-C: SLC, METADATA_SLC
+        - SMAP: L1A_Radar_RO_QA, L1A_Radar_RO_HDF5, L1B_S0_LoRes_HDF5, L1B_S0_LoRes_QA, L1B_S0_LoRes_ISO_XML, L1A_Radar_QA, L1A_Radar_RO_ISO_XML, L1C_S0_HiRes_ISO_XML, L1C_S0_HiRes_QA, L1C_S0_HiRes_HDF5, L1A_Radar_HDF5
+        - UAVSAR: KMZ, PROJECTED, PAULI, PROJECTED_ML5X5, STOKES, AMPLITUDE, COMPLEX, DEM_TIFF, PROJECTED_ML3X3, METADATA, AMPLITUDE_GRD, INTERFEROMETRY, INTERFEROMETRY_GRD, INC, SLOPE
 
 - <span style="color: #236192; font-size: 20px;">product_list</span>
-	- Comma-separated list of specific files (products). Large lists will need to utilize a [POST request](https://en.wikipedia.org/wiki/POST_(HTTP)). You can find the product_list values for any file in the GeoJSON (fileID) or JSON (product_file_id) outputs. It is also available from CMR, in the granuleUR field. It is guaranteed to be a unique indentifier in CMR. You can also find the product_list value in Vertex! See the [Cookbook page](/api/cookbook) for this Tip & more.
-	- product_list may not be used in conjuction with other keywords, however, it may be used with the output keyword.
-	- Example:
-		- product_list=ALAV2A276512920,
-		S1A_IW_SLC__1SDV_20210614T154839_20210614T154905_038338_048643_D7E4-SLC
+    - Comma-separated list of specific files (products). Large lists will need to utilize a [POST request](https://en.wikipedia.org/wiki/POST_(HTTP)). You can find the product_list values for any file in the GeoJSON (fileID) or JSON (product_file_id) outputs. It is also available from CMR, in the granuleUR field. It is guaranteed to be a unique indentifier in CMR. You can also find the product_list value in Vertex! See the [Cookbook page](/api/cookbook) for this Tip & more.
+    - product_list may not be used in conjuction with other keywords, however, it may be used with the output keyword.
+    - Example:
+        - product_list=ALAV2A276512920,
+        S1A_IW_SLC__1SDV_20210614T154839_20210614T154905_038338_048643_D7E4-SLC
+
+- <span style="color: #236192; font-size: 20px;">productionConfiguration</span>
+    - This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
+    - Used for NISAR dataset to specify the processing pipeline used for the scene. You may specify a single value, or a list of values.
+        - Production or PR uses the standard production system.
+        - Urgent Response or UR is time-sensitive processing in response to urgent response events.
+        - Custom or OD is user-initiated processing outside the nominal production system.
+    - Example: 
+        - productionConfiguration=UR
+    - Values:
+        - PR, UR, OD
+
+- <span style="color: #236192; font-size: 20px;">rangeBandwidth</span>
+    - This keyword has constants provided through asf_search. More information can be found [here](/asf_search/searching/#keywords).
+    - Used for NISAR dataset to specify the range bandwidth in MHz. You may specify a single value, or a list of values. 
+    - Some products have a range for both Main and Side band polarizations. These are listed as '[Main Band Bandwidth]+[Side Band Bandwidth]'
+    - Example: 
+        - rangeBandwidth=20+5
+    - Values:
+        - L-Band: 20, 40, 20+5, 40+5, 77, 5, 5+5
+[//]: # (        - S-Band: 10, 25, 37, 75)
 
 - <span style="color: #236192; font-size: 20px;">relativeOrbit</span>
-	- This keyword is also available through [asf_search](/asf_search/searching/#searching).
-	- Path or track of satellite during data acquisition. For UAVSAR it is the [Line ID](https://uavsar.jpl.nasa.gov/cgi-bin/data.pl?_ga=2.201268782.1252483948.1620685771-1930115146.1605056035). You may specify a single value, range of values, or a list of values.
-	- Example:
-		- relativeOrbit=500,550-580
-		- UAVSAR: relativeOrbit=05905
-	- Values:
-		- ALOS: 1-671
-		- ERS-1: 0-2410
-		- ERS-2: 0-500
-		- JERS-1: 0-658
-		- RADARSAT-1: 0-342
-		- SEASAT: 1-243
-		- UAVSAR: various
+    - This keyword is also available through [asf_search](/asf_search/searching/#searching).
+    - Path or track of satellite during data acquisition. For UAVSAR it is the [Line ID](https://uavsar.jpl.nasa.gov/cgi-bin/data.pl?_ga=2.201268782.1252483948.1620685771-1930115146.1605056035). You may specify a single value, range of values, or a list of values.
+    - Example:
+        - relativeOrbit=500,550-580
+        - UAVSAR: relativeOrbit=05905
+    - Values:
+        - ALOS: 1-671
+        - ERS-1: 0-2410
+        - ERS-2: 0-500
+        - JERS-1: 0-658
+        - RADARSAT-1: 0-342
+        - SEASAT: 1-243
+        - UAVSAR: various
 
 ### Geospatial Parameters
 - <span style="color: #236192; font-size: 20px;">bbox</span>
