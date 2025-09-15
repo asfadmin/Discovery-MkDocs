@@ -119,6 +119,7 @@ Each of these steps is performed only when necessary to get the AOI to a single 
 - **Frame Coverage** - Limit the search to either Full or Partial frame coverage.
 - **Range Bandwidth** - Limit the search to specific range bandwidths. Multiple selections allowed.
 - **Joint Observation Only** - This toggle is defaulted to off. Toggle on for simultaneous L- and S-band acquisitions.
+    - *Note:* S-band data is available through [ISRO's Bhoonidhi](https://bhoonidhi.nrsc.gov.in/bhoonidhi/home.html)
 
 ### Path and Frame Filters
 
