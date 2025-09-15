@@ -149,6 +149,7 @@ Keywords are used to find the desired data. Use as many or as few keywords as ne
 
 - <span style="color: #236192; font-size: 20px;">jointObservation</span>
     - Used for NISAR dataset. Specifies if products are simultaneous L- and S-band acquisitions. True is used for simultaneous acquisitions.
+    - *Note:* S-band data is available through [ISRO's Bhoonidhi](https://bhoonidhi.nrsc.gov.in/bhoonidhi/home.html)
     - Example:
         - jointObservation=True
     - Values: 
