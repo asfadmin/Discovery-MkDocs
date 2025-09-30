@@ -119,6 +119,8 @@ Cada uno de estos pasos se realiza solo cuando es necesario para llevar el AOI a
 - **Cobertura del Cuadro** – Limitar la búsqueda a cobertura de cuadro Completa o Parcial.
 - **Ancho de Banda de Rango** – Limitar la búsqueda a anchos de banda de rango específicos. Se permiten múltiples selecciones.
 - **Solo Observación Conjunta** – Este interruptor está desactivado de forma predeterminada. Actívelo para adquisiciones simultáneas de bandas L y S.
+- *Nota:* Los datos de banda S están disponibles a través de [Bhoonidhi de ISRO](https://bhoonidhi.nrsc.gov.in/bhoonidhi/home.html).
+
 
 ### Filtros de Ruta y Cuadro
 

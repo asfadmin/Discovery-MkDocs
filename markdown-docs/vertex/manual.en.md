@@ -106,20 +106,22 @@ Each of these steps is performed only when necessary to get the AOI to a single 
 ### Product Filters
 
 - **Product Filters** are available for the NISAR dataset.
-- **Science Product** - Limit the search to specific products. Multiple selections allowed.
-- **Production Configuration** - Limit the search to specific processing pipelines. *Production* uses the standard production system and is selected by default. *Urgent Response* is time-sensitive processing in response to urgent response events. *Custom Validation* is user-initiated processing outside the nominal production system. Multiple selections are allowed.
+- **Science Product** - Specific product types, grouped by product level. Multiple selections allowed.
+- **Production Configuration** - Specific processing pipelines. *Production* uses the standard production system and is selected by default. *Urgent Response* is time-sensitive processing in response to urgent response events. *Custom* is user-initiated processing outside the nominal production system. Multiple selections are allowed.
 
 ### Observational Filters
 
 - **Observational Filters** are available for the NISAR dataset.
-- **Main Band (Freq. A) Polarization** - Limit the search to specific Frequency A polarizations. Multiple selections allowed.
-- **Side Band (Freq. B) Polarization** - Limit the search to specific Frequency B polarizations. Multiple selections allowed.
-- **Direction** – Limit the search to a specific orbit direction.
-- **Instrument** - Limit the search to a specific instrument. Currently, only L-Band SAR is available.
-- **Frame Coverage** - Limit the search to either Full or Partial frame coverage.
-- **Range Bandwidth** - Limit the search to specific range bandwidths. Multiple selections allowed.
+- **Main Band (Freq. A) Polarization** - Frequency A polarizations. Multiple selections allowed.
+- **Side Band (Freq. B) Polarization** - Frequency B polarizations. Multiple selections allowed.
+- **Direction** – Orbit direction.
+- **Instrument** - Currently, only L-Band SAR is available.
+    - *Note:* S-band data is available through [ISRO's Bhoonidhi](https://bhoonidhi.nrsc.gov.in/bhoonidhi/home.html)
+- **Frame Coverage** - Full or Partial frame coverage.
+- **Range Bandwidth** - Range bandwidth in MHz. Some products have a range for both Main and Side band polarizations. These are listed as '[Main Band Bandwidth]+[Side Band Bandwidth]'. Multiple selections allowed.
 - **Joint Observation Only** - This toggle is defaulted to off. Toggle on for simultaneous L- and S-band acquisitions.
     - *Note:* S-band data is available through [ISRO's Bhoonidhi](https://bhoonidhi.nrsc.gov.in/bhoonidhi/home.html)
+
 
 ### Path and Frame Filters
 
