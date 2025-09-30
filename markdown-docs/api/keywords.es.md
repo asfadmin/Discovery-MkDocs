@@ -199,6 +199,7 @@ Las palabras clave se usan para encontrar los datos deseados. Use tantas o tan p
 
 - <span style="color: #236192; font-size: 20px;">jointObservation</span>
     - Usado para el conjunto de datos NISAR. Especifica si los productos son adquisiciones simultáneas en banda L y banda S. True se usa para adquisiciones simultáneas.
+- *Nota:* Los datos de banda S están disponibles a través de [Bhoonidhi de ISRO](https://bhoonidhi.nrsc.gov.in/bhoonidhi/home.html)
     - Ejemplo:
         - jointObservation=True
     - Valores: 

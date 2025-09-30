@@ -149,7 +149,8 @@ Las palabras clave se utilizan para encontrar los datos deseados. Usa tantas o t
         - groupID='S1A_IWDV_0112_0118_037147_150'
 
 - <span style="color: #236192; font-size: 20px;">jointObservation</span>  
-    - **Usado para NISAR.** Indica si las adquisiciones L-band y S-band son **simultáneas**.  
+   - Usado para el conjunto de datos NISAR. Especifica si los productos son adquisiciones simultáneas en bandas L y S. **True** se utiliza para adquisiciones simultáneas.  
+- *Nota:* Los datos de banda S están disponibles a través de [Bhoonidhi de ISRO](https://bhoonidhi.nrsc.gov.in/bhoonidhi/home.html)
     - Puedes especificar un valor booleano.  
     - Ejemplo:  
         - jointObservation=True  
