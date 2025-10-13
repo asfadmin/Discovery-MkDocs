@@ -106,20 +106,21 @@ Cada uno de estos pasos se realiza solo cuando es necesario para llevar el AOI a
 ### Filtros de Producto
 
 - **Filtros de Producto** están disponibles para el conjunto de datos NISAR.
-- **Producto Científico** – Limitar la búsqueda a productos específicos. Se permiten múltiples selecciones.
-- **Configuración de Producción** – Limite la búsqueda a pipelines de procesamiento específicos. *Producción* utiliza el sistema de producción estándar y está seleccionada por defecto. *Respuesta Urgente* es un procesamiento sensible al tiempo en respuesta a eventos de respuesta urgente. *Validación Personalizada* es un procesamiento iniciado por el usuario fuera del sistema de producción nominal. Se permiten múltiples selecciones.
+- **Producto Científico** - Tipos de producto específicos, agrupados por nivel de producto. Se permiten múltiples selecciones.
+- **Configuración de Producción** - Flujos de procesamiento específicos. *Producción* utiliza el sistema estándar de producción y está seleccionado de manera predeterminada. *Respuesta Urgente* corresponde a un procesamiento sensible al tiempo en respuesta a eventos de carácter urgente. *Personalizado* es un procesamiento iniciado por el usuario fuera del sistema de producción nominal. Se permiten múltiples selecciones.
 
 ### Filtros de Observación
 
 - **Filtros de Observación** están disponibles para el conjunto de datos NISAR.
-- **Polarización de Banda Principal (Frecuencia A)** – Limitar la búsqueda a polarizaciones específicas de Frecuencia A. Se permiten múltiples selecciones.
-- **Polarización de Banda Secundaria (Frecuencia B)** – Limitar la búsqueda a polarizaciones específicas de Frecuencia B. Se permiten múltiples selecciones.
-- **Dirección** – Limitar la búsqueda a una dirección de órbita específica.
-- **Instrumento** – Limitar la búsqueda a un instrumento específico. Actualmente, solo está disponible el SAR de Banda L.
-- **Cobertura del Cuadro** – Limitar la búsqueda a cobertura de cuadro Completa o Parcial.
-- **Ancho de Banda de Rango** – Limitar la búsqueda a anchos de banda de rango específicos. Se permiten múltiples selecciones.
-- **Solo Observación Conjunta** – Este interruptor está desactivado de forma predeterminada. Actívelo para adquisiciones simultáneas de bandas L y S.
-- *Nota:* Los datos de banda S están disponibles a través de [Bhoonidhi de ISRO](https://bhoonidhi.nrsc.gov.in/bhoonidhi/home.html).
+- **Polarización de Banda Principal (Frecuencia A)** - Polarizaciones de la Frecuencia A. Se permiten múltiples selecciones.
+- **Polarización de Banda Secundaria (Frecuencia B)** - Polarizaciones de la Frecuencia B. Se permiten múltiples selecciones.
+- **Dirección** – Dirección de la órbita.
+- **Instrumento** - Actualmente, solo está disponible el SAR de Banda L.
+    - *Nota:* Los datos de Banda S están disponibles a través de [Bhoonidhi de ISRO](https://bhoonidhi.nrsc.gov.in/bhoonidhi/home.html)
+- **Cobertura de Marco** - Cobertura de marco completa o parcial.
+- **Ancho de Banda en Rango** - Ancho de banda en MHz. Algunos productos incluyen un rango tanto para las polarizaciones de Banda Principal como de Banda Secundaria. Estos se listan como '[Ancho de Banda Principal]+[Ancho de Banda Secundaria]'. Se permiten múltiples selecciones.
+- **Solo Observación Conjunta** - Este interruptor está desactivado de manera predeterminada. Actívelo para adquisiciones simultáneas de Banda L y Banda S.
+    - *Nota:* Los datos de Banda S están disponibles a través de [Bhoonidhi de ISRO](https://bhoonidhi.nrsc.gov.in/bhoonidhi/home.html)
 
 
 ### Filtros de Ruta y Cuadro
