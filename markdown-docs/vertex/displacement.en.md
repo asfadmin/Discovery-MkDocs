@@ -23,9 +23,8 @@ However, the OPERA DISP products from Sentinel-1 are being rolled out in two pha
 Phase 1 (now through end of 2025) is focused on creating historical data between July 2016 and December 2024. 
 Phase 2 is focused on creating any remaining historical data and all new products as the input satellite data becomes available.
 
-The Displacement Portal provides the ability to visualize and interact with these products. 
-The Displacement Portal is coming soon. Check back for more updates.
-[add later]: <> (Access the [Displacement Portal](https://displacement.asf.alaska.edu/) to get started. Note that the Displacement Portal is also available by going to [Vertex](https://search.asf.alaska.edu), and selecting Displacement from the Search Type dropdown.)
+The Displacement Portal provides the ability to visualize and interact with these products.
+Access the [Displacement Portal](https://displacement.asf.alaska.edu/) to get started. Note that the Displacement Portal is also available by going to [Vertex](https://search.asf.alaska.edu), and selecting Displacement from the Search Type dropdown.
 To download the OPERA DISP products, see [NASA Earthdata](https://search.earthdata.nasa.gov/search/granules?p=C3294057315-ASF&pg[0][v]=f&pg[0][gsk]=-start_date&q=%22OPERA%22&tl=1578783442.59!5!!&lat=0.0703125).
 
 ## Beginning your Displacement Search
@@ -48,14 +47,9 @@ The chart is displayed in the right panel.
 
 Each Series is color coded. Hovering over the AOI in the AOI list, on the chart, or on the map will highlight that AOI in all three locations.
 
-### Additional Map Layers
-In the top left corner of the map, there are additional map layers available. You may click the checkbox to select your desired layer. 
+[//]: # (### Additional Map Layers)
 
-#### Rollout
-This layer shows color-coded regional priorities for Displacement Product generation during the historical processing phase, which would initially include data from July 2016 to December 2024 and will be updated by the end of 2025. 
-Regions are prioritized from 1 through 3, with 1 being the highest processing priority. 
-Note that some sub-regions may be de-prioritized based on snow cover, vegetation, or other factors. 
-There are separate Ascending and Descending variants, and the layer will update to display the correct direction based on your search filters.
+[//]: # (In the top left corner of the map, there are additional map layers available. You may click the checkbox to select your desired layer. )
 
 ## Interacting with Displacement Portal Results
 ### Area of Interest List

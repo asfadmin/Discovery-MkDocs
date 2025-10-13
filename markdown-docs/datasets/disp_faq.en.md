@@ -99,8 +99,8 @@ Between these masked data segments, it is assumed that no displacement occurred.
 
 These are the types of errors that will cause the "Timeseries Service Error" message:
 
-- The selected area is outside the dataset coverage (e.g. over the ocean, outside of the geographic scope of the data (e.g., over Europe); see data coverage by turning on the [rollout map layer](/vertex/displacement/#rollout)).
-- There is no data processed over the given frame yet. You can check the [rollout map layer](/vertex/displacement/#rollout) for more details.
+- The selected area is outside the dataset coverage (e.g. over the ocean, outside of the geographic scope of the data (e.g., over Europe).
+- There is no data processed over the given frame.
 - There is no valid data at the selected point. This happens when all short-wavelength displacement samples for the given AOI are pre-filtered by the dataset's validity mask.
 
 ### Are InSAR corrections applied to the time-series displayed in the Displacement Portal?
