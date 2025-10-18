@@ -2,8 +2,7 @@
 
 [![en](https://img.shields.io/badge/lang-en-red.svg)](./README.md)
 
-La documentación para las aplicaciones de búsqueda de ASF se construye utilizando MkDocs,  
-[mkdocs.org](https://www.mkdocs.org/#mkdocs) y [Material for MkDocs](https://github.com/squidfunk/mkdocs-material).
+La documentación para las aplicaciones de búsqueda de ASF se construye utilizando MkDocs, [mkdocs.org](https://www.mkdocs.org/#mkdocs) y [Material for MkDocs](https://github.com/squidfunk/mkdocs-material).
 
 Para instalar los requisitos, ejecute:
 
@@ -18,9 +17,9 @@ O puede usar el entorno virtual incluido ejecutando el siguiente comando:
 `source env_mkdocs/bin/activate`
 
 ### Desarrollo de Documentación
-MkDocs incluye un servidor de desarrollo integrado que le permite previsualizar  
-su documentación mientras trabaja en ella. Asegúrese de estar en el mismo  
-directorio que el archivo de configuración mkdocs.yml y luego inicie el servidor ejecutando el comando `mkdocs serve`:
+MkDocs incluye un servidor de desarrollo integrado que le permite previsualizar su documentación mientras trabaja en ella.
+Asegúrese de estar en el mismo directorio que el archivo de configuración mkdocs.yml y luego inicie el servidor ejecutando
+el comando `mkdocs serve`:
 
 >`$ mkdocs serve`  
 `INFO    -  Building documentation...`  
