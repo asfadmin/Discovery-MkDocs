@@ -1,6 +1,6 @@
 # Manual de Búsqueda de Datos de ASF
 
-[![es](https://img.shields.io/badge/lang-es-yellow.svg)](./README.ESP.md)
+[![en](https://img.shields.io/badge/lang-en-red.svg)](./README.md)
 
 La documentación para las aplicaciones de búsqueda de ASF se construye utilizando MkDocs,  
 [mkdocs.org](https://www.mkdocs.org/#mkdocs) y [Material for MkDocs](https://github.com/squidfunk/mkdocs-material).
