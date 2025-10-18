@@ -18,10 +18,9 @@ O puede usar el entorno virtual incluido ejecutando el siguiente comando:
 `source env_mkdocs/bin/activate`
 
 ### Desarrollo de Documentación
-
 MkDocs incluye un servidor de desarrollo integrado que le permite previsualizar  
 su documentación mientras trabaja en ella. Asegúrese de estar en el mismo  
-directorio que el archivo de configuración `mkdocs.yml` y luego inicie el servidor ejecutando el comando `mkdocs serve`:
+directorio que el archivo de configuración mkdocs.yml y luego inicie el servidor ejecutando el comando `mkdocs serve`:
 
 >`$ mkdocs serve`  
 `INFO    -  Building documentation...`  
@@ -37,13 +36,13 @@ predeterminada de la documentación.
 
 `mkdocs build --clean`
 
-Este comando construirá la documentación como un sitio web HTML dentro del directorio `site`.
+Este comando construirá la documentación como un sitio web HTML dentro del directorio "sitio".
 
 Después de algún tiempo, algunos archivos pueden eliminarse de la documentación,  
-pero seguirán existiendo en el directorio `site`. Por eso se usa la opción `--clean`:  
-esta eliminará los archivos antiguos del directorio del sitio.
+pero seguirán existiendo en el directorio site. Por eso se usa la opción --clean 
+Esta eliminará los archivos antiguos del directorio del sitio.
 
-El archivo `.gitignore` incluye el directorio `site` de MkDocs para que los archivos generados  
+El archivo .gitignore incluye el directorio site de MkDocs para que los archivos generados  
 no se almacenen en el repositorio. El directorio del sitio debe construirse dinámicamente  
 como parte del proceso de fusión en GitHub.
 
