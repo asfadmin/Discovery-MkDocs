@@ -4,14 +4,14 @@
 
 This class describes a pair of ASFProducts. This is useful for, but not limited to, describing pairs of reference and seconary scenes for SAR interferometry. The class provides metadata describing the pair's temporal and perpendicular baselines. For Sentinel-1, an optional method is available that estimates temporal coherence.
 
-`Pair` is a supportive class for the soon-to-be-released `Stack` and `SBAS` classes, which will simplify and automate the creation of fully connected, multi-annual, seasonal SBAS stacks.
+`Pair` is a supportive class for the `Stack` and soon-to-be-released `SBASNetwork` classes, which will simplify and automate the creation of connected, multi-annual, seasonal SBAS stacks.
 ***
 
 ## Attributes
-- `ref_date` datetime.date: The acquisition date of the reference scene
-- `sec_date` datetime.date: The acquisition date of the secondary scene
-- `perpendicular` int: The pair's perpendicular baseline
-- `temporal` datetime.timedelta: the pair's temporal baseline
+- `ref_date` datetime.date: The acquisition date of the reference scene.
+- `sec_date` datetime.date: The acquisition date of the secondary scene.
+- `perpendicular` int: The pair's perpendicular baseline.
+- `temporal` datetime.timedelta: the pair's temporal baseline.
 
 ***
 
