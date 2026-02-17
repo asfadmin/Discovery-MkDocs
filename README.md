@@ -1,4 +1,7 @@
 # ASF Data Search Manual 
+
+[![es](https://img.shields.io/badge/lang-es-yellow.svg)](./README.ESP.md)
+
 Documentation for ASF Search applications is built using MkDocs,
 [mkdocs.org](https://www.mkdocs.org/#mkdocs) and [Material for MkDocs](https://github.com/squidfunk/mkdocs-material).
 
