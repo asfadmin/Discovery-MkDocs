@@ -186,7 +186,7 @@ Keywords are used to find the desired data. Use as many or as few keywords as ne
 
 - <span style="color: #236192; font-size: 20px;">granule_list</span>
     - Comma-separated list of specific scenes (granules). Large lists will need to utilize a [POST request](https://en.wikipedia.org/wiki/POST_(HTTP)).
-    - granule_list may not be used in conjuction with other keywords, however, it may be used with the output keyword.
+    - supports wildcard querying ("*" for greedy and "?" for single character match), but requires setting `maxresults` or asf-search directly for unbounded results. See [wildcard usage](/datasets/wildcard_usage/) for usage examples.
     - Example:
         - granule_list=ALPSRP111041130,
         S1B_IW_GRDH_1SDV_20161124T032008_20161124T032033_003095_005430_9906

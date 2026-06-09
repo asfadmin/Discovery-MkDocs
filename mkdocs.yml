@@ -101,6 +101,7 @@ nav:
     - Event: vertex/events.md
     - Derived Datasets: vertex/derived_datasets.md
     - What's New: vertex/changelog.md
+    - Wildcard Queries: datasets/wildcard_usage.md
     - Tutorial Videos: https://www.youtube.com/playlist?list=PLXluIEvp5ZzIWd0yNy-ANfdwWjCD1hInA
     - Source Code: https://github.com/asfadmin/Discovery-SearchUI
   - Custom Processing: https://hyp3-docs.asf.alaska.edu
@@ -115,6 +116,7 @@ nav:
       - ASFSession: asf_search/ASFSession.md
       - Pair: asf_search/Pair.md
     - Best Practices: asf_search/BestPractices.md
+    - Wildcard Queries: datasets/wildcard_usage.md
     - Exceptions: asf_search/exceptions.md
     - What's New: https://github.com/asfadmin/Discovery-asf_search/blob/master/CHANGELOG.md
   - ASF Search API:
@@ -123,6 +125,7 @@ nav:
     - Tools: api/tools.md
     - Troubleshooting: api/troubleshooting.md
     - Cookbook: api/cookbook.md
+    - Wildcard Queries: datasets/wildcard_usage.md
     - What's New: api/changelog.md
   # - About: about.md
   - Product Details:
