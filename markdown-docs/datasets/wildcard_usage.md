@@ -1,14 +1,14 @@
 # Wildcard Queries
 
-asf-search, SearchAPI support querying scene names via wildcards (* and ?) with the `granule_list` keyword and is also available on `dataset` search type in Vertex. This enables searching metadata embedded in scene names. Below are examples of useful queries with certain datasets.
+The asf-search module and SearchAPI support querying scene names via wildcards ("*" for matching any number of characters and "?" for a single character) with the `granule_list` keyword and is also available on `dataset` search type in Vertex. This enables searching metadata embedded in scene names. Below are examples of useful queries with certain datasets.
 
-## Where to use wildcards
+## Using Wildcards
 
 Below are some basic examples of searching for Sentinel-1D SLCs and/or NISAR PR RSLC using only wildcards.
 
 ### asf-search python module
 
-In asf-search wildcard queries are available with the existing `granule_list` keyword.
+In asf-search, wildcard queries are available with the existing `granule_list` keyword.
 
 ``` python
 import asf_search as asf
@@ -27,7 +27,7 @@ Like asf-search, SearchAPI accepts wildcard queries with the `granule_list` keyw
 
 `https://api.daac.asf.alaska.edu/services/search/param?granule_list=NISAR_L1_PR_RSLC*,S1D_IW_SLC*&maxResults=250&output=geojson`
 
-Note: `maxResults` is required when using SearchAPI. For unbounded results use asf-search.
+Note: `maxResults` is required when using SearchAPI. For unbounded results, use asf-search.
 
 ### Vertex
 
@@ -39,41 +39,35 @@ Note: cross-dataset results are not supported in Vertex.
 
 ## NISAR
 
-NISAR data product names contain a few pieces of metadata that aren't directly searchable by additional attributes in CMR or aren't searchable params in asf-search
+NISAR data product names contain a few pieces of metadata that aren't directly searchable by additional attributes in CMR or aren't searchable params in asf-search.
 
-For a breakdown of NISAR data product naming conventions see ASF's [NISAR user manual](https://nisar-docs.asf.alaska.edu/naming-conventions/)
+For a breakdown of NISAR data product naming conventions see ASF's [NISAR user manual](https://nisar-docs.asf.alaska.edu/naming-conventions/).
 
 
 ### CRID Version Number
 The asf-search python module, SearchAPI, and Vertex don't explicitly provide a search parameter for 
 [CRID versions](https://nisar-docs.asf.alaska.edu/gcov/#term-crid), but wildcards offer a way to do search for them.
 
-match all Level 2 NISAR products with CRID version X05010:
-
-- `NISAR_L2_*X05010*`
-
-match all NISAR science products with CRID version X05010 and above:
-
-- `NISAR_L?_*X0501?*`
-
-match all NISAR products with CRID version P05012 and above:
-
-- `NISAR_*P05012*`
+- match all Level 2 NISAR products with CRID version X05010:
+    - `NISAR_L2_*X05010*`
+- match all NISAR science products with CRID version X05010 and above:
+    - `NISAR_L?_*X0501?*`
+- match all NISAR products with CRID version P05012 and above:
+    - `NISAR_*P05012*`
 
 ### Freq A & B Polarizations
-While asf-search provides searching on these `mainBandPolarization` and `sideBandPolarization` fields you can't search exclusively on single band data without possibly getting both bands in results. Data products denote when a band isn't used with `NA`.
+While asf-search provides searching on these `mainBandPolarization` and `sideBandPolarization` fields, you can't search exclusively on single band data without possibly getting both bands in results. Data products denote when a band isn't used with `NA`.
 
-Data products that strictly contain frequency A HH data 
+- Data products that strictly contain frequency A HH data:
+    - `NISAR_L?_\*_SHNA\*`
 
-- `NISAR_L?_\*_SHNA\*`
+### Stack IDs
 
-### Stack ids
+Stack IDs are useful for building timeseries and are formatted as `RelativeOrbit_OrbitDirection_FrameNumber`.
 
-Stack IDs are useful for building timeseries
-`stack_id`: `RelativeOrbit_OrbitDirection_FrameNumber`
+Example stack ID wildcard:
 
-`NISAR_\*165_D_100\*`:
-    
+- `NISAR_\*165_D_100\*`
     * Relative Orbit: 165
     * Orbit Direction: D (Descending)
     * Frame Number: 100
