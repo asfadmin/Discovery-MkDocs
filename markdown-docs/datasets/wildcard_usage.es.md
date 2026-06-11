@@ -60,6 +60,18 @@ Aunque asf-search permite buscar en estos campos `mainBandPolarization` y `sideB
 - Productos que contienen exclusivamente datos HH de la frecuencia A:
     - `NISAR_L?_\*_SHNA\*`
 
+### Ciclos
+Los ciclos se representan mediante 3 caracteres cerca del inicio del nombre del granule; cada incremento indica en qué pasada de repetición de 12 días se tomó la escena. `003` indica que esta escena se tomó durante el 3er ciclo.
+
+- Para todos los productos que se tomaron durante el 3er ciclo:
+    - `NISAR_L?_PR_????_003_*`
+
+- Para todos los productos que se tomaron durante los ciclos 1-9:
+    - `NISAR_L?_PR_????_00*`
+
+- Para todos los productos que se tomaron durante los ciclos 9 y 10:
+    - `NISAR_L?_PR_????_009*`, `NISAR_L?_PR_????_010*`
+
 ### IDs de stack
 
 Los IDs de stack son útiles para construir series temporales y se formatean como `RelativeOrbit_OrbitDirection_FrameNumber`.
