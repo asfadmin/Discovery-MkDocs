@@ -186,6 +186,7 @@ Las palabras clave se usan para encontrar los datos deseados. Use tantas o tan p
 
 - <span style="color: #236192; font-size: 20px;">granule_list</span>
     - Lista separada por comas de escenas (gránulos) específicas. Las listas grandes deberán utilizar una [POST request](https://en.wikipedia.org/wiki/POST_(HTTP)).
+    - admite consultas con comodines (`*` para coincidir con cualquier número de caracteres y `?` para coincidencias de un solo carácter), pero requiere establecer `maxresults` o usar asf-search directamente para resultados no acotados. Consulte [uso de comodines](/datasets/wildcard_usage/) para ver ejemplos de uso.
     - granule_list no puede usarse junto con otras palabras clave; sin embargo, puede usarse con la palabra clave output.
     - Ejemplo:
         - granule_list=ALPSRP111041130,
