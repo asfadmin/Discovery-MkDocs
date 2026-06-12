@@ -62,7 +62,8 @@ While asf-search provides searching on these `mainBandPolarization` and `sideBan
     - `NISAR_L?_\*_SHNA\*`
 
 ### Cycles
-Cycles are represented by 3 characters near the beginning of the granule name, each increment indicating which 12 day repeat pass the scene was taken on. The `003` indicates this scene was taken during 3rd cycle.
+Cycles are represented by 3 characters near the beginning of the granule name, each increment indicating which 12 day repeat pass the scene was taken during. In the case of `NISAR_L2_PR_GUNW_003_136_D_081_008_4000_SH_20251026T153228_20251026T153231_20251225T153231_20251225T153234_X05010_N_P_J_001`
+the `003` indicates this scene was taken during 3rd cycle.
 
 - For all products that were taken during the 3rd cycle:
     - `NISAR_L?_PR_????_003_*`
