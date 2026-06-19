@@ -1,51 +1,33 @@
 name: Deploy to Github.io
-
 on:
   push:
     branches:
       - prod
       - test
-
   workflow_dispatch:
 
 jobs:
   build_and_deploy:
     name: Build site and deploy
-    runs-on: "ubuntu-latest"
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           path: Discovery-MkDocs
-      - uses: actions/setup-python@v4
+
+      - uses: actions/setup-python@v6
         with:
-          path: Discovery-MkDocs
-      - name: Setup Python
+          python-version: '3.x'
+
+      - name: Setup Python environment
         env:
           PHRASE_DISCOVERY_ACCESS_TOKEN: ${{ secrets.PHRASE_DISCOVERY_ACCESS_TOKEN }}
+        working-directory: Discovery-MkDocs
         run: |
-          cd Discovery-MkDocs
-          echo $PWD
-          ls -l
-          python -m venv ./venv
-          source ./venv/bin/activate
-          python -m pip install wheel
-          python -m pip install -r requirements.txt
-          python -m pip list
-          echo "Calling for phrase to translate to md"
+          pip install wheel -r requirements.txt
           python -m phrase-translate-to-md markdown-docs
-          deactivate
 
-      - name: deploy to github.io
+      - name: Deploy to github.io
         if: github.ref == 'refs/heads/prod'
-        shell: bash -l {0}
-        run: |
-          echo $PWD
-          cd Discovery-MkDocs
-          echo "mkdocs gh-deploy"
-          python -m venv ./venv
-          source ./venv/bin/activate
-          python -m pip install wheel
-          python -m pip install -r requirements.txt
-          python -m pip list
-          python -m mkdocs gh-deploy --force
-          deactivate
+        working-directory: Discovery-MkDocs
+        run: python -m mkdocs gh-deploy --force
