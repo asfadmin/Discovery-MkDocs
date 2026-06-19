@@ -310,22 +310,6 @@ Enhanced download queue functionality is now available on Google Chrome browser.
 	- **Data Download** is used to download multiple products, with either the *Download Python Script (.py)* option or *Metalink (metalink)* file option.
 	- **Metadata Download** is used to export the contents of the download queue to a *CSV*, *KML*, or *GeoJSON* file. The *KML* and *GeoJSON* files provided by this feature are compatible with the *Geographic Search Import* feature.
 
-### Google Chrome Browser
-
-Enhanced download queue functionality is available on Google Chrome browser. Please note, this improved functionality is not supported while using incognito mode.
-
-- Click on the **cart icon** in the header, labeled **Downloads** to open your download queue.
-	- Next to each file, you may click the **cloud** icon to begin the download.
-		- As the download begins, a progress indicator lists the percentage downloaded. Once the dowload has completed, the icon appears as a **check mark** to indicate the file has been downloaded.
-		- While the file is downloading, you may click the progress indicator to stop the download.
-	- Under **Data Download**, you may select **Download All**. This will download 3 files at a time until all products in your cart have been downloaded. The same progress indicators and checkmarks will be displayed to let you know the status of each download in your queue.
-		- When you click **Download All**, a dialog box will appear:
-			1. Navigate to the folder where you wish to save the files and click *Select*.
-			2. Click *View Files* to allow the download to continue. 
-			3. Click *Save Changes* to save your download folder preferences. This will persist as long as the Vertex browser window remains open.
-	- If you **Clear** the products in your queue, the download progress and completion indicators will reset. You may add the products to your queue again if desired.
-	- *Note*: You must be signed in to download files. If you are not signed in, when you click to begin a download, you will be redirected to the sign in page first.
-
 ## Other Vertex Options
 
 - In the top left corner of the map, there are buttons that allow you to change your **map view**, **zoom**, and **layers**. *Note:* Available map controls vary by search type.
