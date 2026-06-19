@@ -1,0 +1,2414 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for searching and processing ASF SAR data.">
+      
+      
+      
+      
+        <link rel="prev" href="../Pair/">
+      
+      
+        <link rel="next" href="../../datasets/wildcard_usage/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>Mejores Prácticas - ASF SAR Manual de Búsqueda de Datos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/styles.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/asf.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6RCQC8BJ8S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6RCQC8BJ8S');
+</script>
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#asf_search-mejores-practicas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../" title="ASF SAR Manual de Búsqueda de Datos" class="md-header__button md-logo" aria-label="ASF SAR Manual de Búsqueda de Datos" data-md-component="logo">
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Logo -->
+
+  <img src="../../../assets/images/ASFLogo-Blue2.png" alt="logo" />
+
+    </a>
+
+    
+
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ASF SAR Manual de Búsqueda de Datos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mejores Prácticas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../asf_search/BestPractices/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="ASF SAR Manual de Búsqueda de Datos" class="md-nav__button md-logo" aria-label="ASF SAR Manual de Búsqueda de Datos" data-md-component="logo">
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Logo -->
+
+  <img src="../../../assets/images/ASFLogo-Blue2.png" alt="logo" />
+
+    </a>
+    ASF SAR Manual de Búsqueda de Datos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vertex
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Vertex
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Manual Vertex
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Manual Vertex
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/manual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guía del Usuario para Comenzar con Vertex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/baseline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Baseline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/sbas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SBAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/displacement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Displacement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/derived_datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conjuntos de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Novedades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/wildcard_usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wildcard Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.youtube.com/playlist?list=PLXluIEvp5ZzIWd0yNy-ANfdwWjCD1hInA" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Videos Tutoriales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/asfadmin/Discovery-SearchUI" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Código Fuente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hyp3-docs.asf.alaska.edu" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Procesamiento Personalizado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Paquete de Búsqueda en Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Paquete de Búsqueda en Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Básicos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../searching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Búsqueda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../downloading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descarga
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Clases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Clases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASFProduct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASFProduct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASFSearchOptions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASFSearchOptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASFSearchResults/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASFSearchResults
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ASFSession/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASFSession
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pair/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pair
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Mejores Prácticas
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Mejores Prácticas
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recomendaciones-generales" class="md-nav__link">
+    Recomendaciones Generales
+  </a>
+  
+    <nav class="md-nav" aria-label="Recomendaciones Generales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conjuntos-de-resultados" class="md-nav__link">
+    Conjuntos de Resultados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendimiento-general" class="md-nav__link">
+    Rendimiento general
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferencias-entre-tipos-de-busqueda" class="md-nav__link">
+    Diferencias entre tipos de búsqueda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtros-comunes" class="md-nav__link">
+    Filtros Comunes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search_count" class="md-nav__link">
+    search_count()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especificaciones-del-conjunto-de-datos" class="md-nav__link">
+    Especificaciones del Conjunto de Datos
+  </a>
+  
+    <nav class="md-nav" aria-label="Especificaciones del Conjunto de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nisar" class="md-nav__link">
+    NISAR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opera-s1" class="md-nav__link">
+    Opera-S1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slc-burst" class="md-nav__link">
+    SLC-Burst
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectura-adicional" class="md-nav__link">
+    Lectura Adicional
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especificaciones-de-busqueda" class="md-nav__link">
+    Especificaciones de Búsqueda
+  </a>
+  
+    <nav class="md-nav" aria-label="Especificaciones de Búsqueda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-de-granulados-y-productos" class="md-nav__link">
+    Búsqueda de Granulados y Productos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nota-sobre-metodos-incorrectos" class="md-nav__link">
+    Nota sobre métodos incorrectos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame-vs-asfframe" class="md-nav__link">
+    frame vs asfframe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apilamiento" class="md-nav__link">
+    Apilamiento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plataforma-vs-conjunto-de-datos" class="md-nav__link">
+    Plataforma vs Conjunto de Datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-cmr-uat" class="md-nav__link">
+    Host CMR UAT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listas-de-campanas" class="md-nav__link">
+    Listas de Campañas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-de-palabras-clave-de-cmr" class="md-nav__link">
+    Alias de Palabras Clave de CMR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descarga" class="md-nav__link">
+    Descarga
+  </a>
+  
+    <nav class="md-nav" aria-label="Descarga">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-recomendada" class="md-nav__link">
+    Autenticación Recomendada
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnicas-avanzadas-de-busqueda" class="md-nav__link">
+    Técnicas Avanzadas de Búsqueda
+  </a>
+  
+    <nav class="md-nav" aria-label="Técnicas Avanzadas de Búsqueda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sentinel-1-y-groupid" class="md-nav__link">
+    Sentinel-1 y GroupID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subclasificacion" class="md-nav__link">
+    Subclasificación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-busquedas-autenticadas" class="md-nav__link">
+    Uso de búsquedas autenticadas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search_generator-para-grandes-conjuntos-de-resultados" class="md-nav__link">
+    search_generator() para grandes conjuntos de resultados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descargando-archivos-adicionales" class="md-nav__link">
+    Descargando archivos adicionales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uris-de-s3" class="md-nav__link">
+    URIs de S3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametro-de-busqueda-de-palabras-clave-de-cmr" class="md-nav__link">
+    Parámetro de Búsqueda de Palabras Clave de CMR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/wildcard_usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wildcard Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exceptions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Excepciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/asfadmin/Discovery-asf_search/blob/master/CHANGELOG.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Novedades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API de Búsqueda ASF
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API de Búsqueda ASF
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Básicos de la API de búsqueda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/keywords/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Palabras Clave y Puntos Finales de la API de Búsqueda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Herramientas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solución de Problemas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/cookbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recetario
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/wildcard_usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wildcard Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Novedades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Detalles del Producto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Detalles del Producto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/using_ASF_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utilizando Datos de ASF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/disp_usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Displacement Product Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/disp_faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Displacement Product FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/palsar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Productos ALOS PALSAR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/events_about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eventos (SARVIEWS)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://asf.alaska.edu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASF Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recomendaciones-generales" class="md-nav__link">
+    Recomendaciones Generales
+  </a>
+  
+    <nav class="md-nav" aria-label="Recomendaciones Generales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conjuntos-de-resultados" class="md-nav__link">
+    Conjuntos de Resultados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rendimiento-general" class="md-nav__link">
+    Rendimiento general
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diferencias-entre-tipos-de-busqueda" class="md-nav__link">
+    Diferencias entre tipos de búsqueda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtros-comunes" class="md-nav__link">
+    Filtros Comunes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search_count" class="md-nav__link">
+    search_count()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especificaciones-del-conjunto-de-datos" class="md-nav__link">
+    Especificaciones del Conjunto de Datos
+  </a>
+  
+    <nav class="md-nav" aria-label="Especificaciones del Conjunto de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nisar" class="md-nav__link">
+    NISAR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opera-s1" class="md-nav__link">
+    Opera-S1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slc-burst" class="md-nav__link">
+    SLC-Burst
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectura-adicional" class="md-nav__link">
+    Lectura Adicional
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especificaciones-de-busqueda" class="md-nav__link">
+    Especificaciones de Búsqueda
+  </a>
+  
+    <nav class="md-nav" aria-label="Especificaciones de Búsqueda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-de-granulados-y-productos" class="md-nav__link">
+    Búsqueda de Granulados y Productos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nota-sobre-metodos-incorrectos" class="md-nav__link">
+    Nota sobre métodos incorrectos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame-vs-asfframe" class="md-nav__link">
+    frame vs asfframe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apilamiento" class="md-nav__link">
+    Apilamiento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plataforma-vs-conjunto-de-datos" class="md-nav__link">
+    Plataforma vs Conjunto de Datos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-cmr-uat" class="md-nav__link">
+    Host CMR UAT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listas-de-campanas" class="md-nav__link">
+    Listas de Campañas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alias-de-palabras-clave-de-cmr" class="md-nav__link">
+    Alias de Palabras Clave de CMR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descarga" class="md-nav__link">
+    Descarga
+  </a>
+  
+    <nav class="md-nav" aria-label="Descarga">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-recomendada" class="md-nav__link">
+    Autenticación Recomendada
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnicas-avanzadas-de-busqueda" class="md-nav__link">
+    Técnicas Avanzadas de Búsqueda
+  </a>
+  
+    <nav class="md-nav" aria-label="Técnicas Avanzadas de Búsqueda">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sentinel-1-y-groupid" class="md-nav__link">
+    Sentinel-1 y GroupID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subclasificacion" class="md-nav__link">
+    Subclasificación
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-de-busquedas-autenticadas" class="md-nav__link">
+    Uso de búsquedas autenticadas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search_generator-para-grandes-conjuntos-de-resultados" class="md-nav__link">
+    search_generator() para grandes conjuntos de resultados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descargando-archivos-adicionales" class="md-nav__link">
+    Descargando archivos adicionales
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uris-de-s3" class="md-nav__link">
+    URIs de S3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametro-de-busqueda-de-palabras-clave-de-cmr" class="md-nav__link">
+    Parámetro de Búsqueda de Palabras Clave de CMR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="asf_search-mejores-practicas">asf_search Mejores Prácticas<a class="headerlink" href="#asf_search-mejores-practicas" title="Permanent link">#</a></h1>
+<p>Además de cubrir las mejores prácticas, esta página también contiene técnicas avanzadas de búsqueda y sirve como la "filosofía de asf_search".</p>
+<p>Los temas cubiertos incluyen:</p>
+<ul>
+<li>Recomendaciones generales, incluyendo
+  trabajar con resultados, rendimiento, filtros y tipos de búsqueda comunes, y conteo</li>
+<li>Especificaciones para algunos conjuntos de datos</li>
+<li>Búsquedas de granulados y productos y el método preferido para estos</li>
+<li>Búsquedas secundarias como apilamiento</li>
+<li>Método de autenticación recomendado y descarga</li>
+<li>Técnicas avanzadas de búsqueda, incluyendo rangos, subclases, grandes conjuntos de resultados, y más</li>
+</ul>
+<h2 id="recomendaciones-generales">Recomendaciones Generales<a class="headerlink" href="#recomendaciones-generales" title="Permanent link">#</a></h2>
+<p>Esta sección contiene información sobre conjuntos de resultados, rendimiento general, los diferentes tipos de búsqueda disponibles, ejemplos de filtros comunes y conteo.</p>
+<h3 id="conjuntos-de-resultados">Conjuntos de Resultados<a class="headerlink" href="#conjuntos-de-resultados" title="Permanent link">#</a></h3>
+<p>Los resultados de búsqueda se devuelven como un objeto <code>ASFSearchResults</code>, una subclase de <code>User List</code>, que contiene una lista de objetos <code>ASFProduct</code>. Cada una de estas clases proporciona alguna funcionalidad adicional para ayudar a trabajar con los resultados y productos individuales.
+<code>ASFProduct</code> proporciona una serie de campos de metadatos, tales como:</p>
+<ul>
+<li>Coordenadas geográficas</li>
+<li>Latitud/Longitud</li>
+<li>Tipo de forma</li>
+<li>Metadatos de escena y producto</li>
+<li>Ruta, marco</li>
+<li>Plataforma, haz, polarización</li>
+<li>Nombre de archivo, tamaño, URL</li>
+</ul>
+<p>Las coordenadas geográficas se almacenan en el atributo geometría:</p>
+<p><code>results[0].geometry</code></p>
+<p>Otros metadatos están disponibles a través del atributo propiedades:</p>
+<p><code>results[0].properties</code></p>
+<p>Los objetos <code>ASFProduct</code> proporcionan serialización basada en geojson, en forma de un fragmento de característica geojson:</p>
+<p><code>print(results[0])</code></p>
+<p><code>ASFSearchResults</code> también admite los siguientes formatos de salida:</p>
+<ul>
+<li>csv</li>
+<li>jsonlite</li>
+<li>jsonlite2</li>
+<li>metalink</li>
+<li>kml</li>
+</ul>
+<h3 id="rendimiento-general">Rendimiento general<a class="headerlink" href="#rendimiento-general" title="Permanent link">#</a></h3>
+<p>Cuando se busca múltiples productos, es más rápido buscar todos los productos a la vez en una sola búsqueda, en lugar de ejecutar una consulta separada para cada producto, lo que implica múltiples solicitudes https.</p>
+<pre><code class="language-python">import asf_search as asf
+
+granules = ['S1B_IW_GRDH_1SDV_20161124T032008_20161124T032033_003095_005430_9906', 'S1-GUNW-D-R-087-tops-20190301_20190223-161540-20645N_18637N-PP-7a85-v2_0_1', 'ALPSRP111041130']
+
+# ESTO ES LENTO Y HACE MÁS SOLICITUDES DE RED DE LAS NECESARIAS
+batched_results = ASFSearchResults([])
+for granule in granules:
+    unbatched_response = asf.granule_search(granules_list=granule)
+    batched_results.extend(batched_results)
+
+# ESTO SIEMPRE SERÁ MÁS RÁPIDO
+fast_results = asf.granule_search(granules_list=granules)
+</code></pre>
+<p>Si necesita realizar operaciones intermedias en resultados grandes (como escribir metadatos en un archivo o llamar a algún proceso externo en los resultados), use el método <code>search_generator()</code> para operar en los resultados a medida que se devuelven página por página (el tamaño de página predeterminado es 250).</p>
+<pre><code class="language-python">import asf_search as asf
+
+opts = asf.ASFSearchOptions(platform=asf.DATASET.SENTINEL1, maxResults=1000)
+
+for page in asf.search_generator(opts=opts):
+    foo(page)
+</code></pre>
+<h3 id="diferencias-entre-tipos-de-busqueda">Diferencias entre tipos de búsqueda<a class="headerlink" href="#diferencias-entre-tipos-de-busqueda" title="Permanent link">#</a></h3>
+<p>Para ver detalles sobre los diferentes tipos de búsqueda, consulte la sección <a href="/asf_search/searching/">Searching</a>.</p>
+<h3 id="filtros-comunes">Filtros Comunes<a class="headerlink" href="#filtros-comunes" title="Permanent link">#</a></h3>
+<p>Las opciones de búsqueda se pueden especificar utilizando kwargs, lo que también permite manejarlas utilizando un diccionario:</p>
+<pre><code>opts = {
+    'platform': asf.PLATFORM.ALOS,
+    'start': '2010-01-01T00:00:00Z',
+    'end': '2010-02-01T23:59:59Z'
+}
+</code></pre>
+<p>A continuación se presentan algunos ejemplos de filtros comunes:</p>
+<pre><code>results = asf.geo_search(
+    intersectsWith='POLYGON((-91.97 28.78,-88.85 28.78,-88.85 30.31,-91.97 30.31,-91.97 28.78))',
+    platform=asf.PLATFORM.UAVSAR,
+    processingLevel=asf.PRODUCT_TYPE.METADATA,
+    maxResults=250)
+</code></pre>
+<h3 id="search_count">search_count()<a class="headerlink" href="#search_count" title="Permanent link">#</a></h3>
+<p>Puede usar el método <code>search_count()</code> para devolver el conteo total de resultados que coinciden con las opciones de búsqueda pasadas.</p>
+<p>Este ejemplo devuelve el tamaño actual del catálogo SENTINEL1:</p>
+<pre><code>opts = {
+'platform': asf.PLATFORM.SENTINEL1}
+count = asf.search_count(**opts)
+</code></pre>
+<h2 id="especificaciones-del-conjunto-de-datos">Especificaciones del Conjunto de Datos<a class="headerlink" href="#especificaciones-del-conjunto-de-datos" title="Permanent link">#</a></h2>
+<p>Se proporcionan constantes para cada conjunto de datos. La lista de constantes se puede encontrar <a href="https://github.com/asfadmin/Discovery-asf_search/blob/master/asf_search/constants/DATASET.py">aquí</a>.</p>
+<p>Ejemplo básico de búsqueda de conjunto de datos:</p>
+<pre><code>sentinel_results = asf.search(dataset=asf.DATASET.SENTINEL1, maxResults=250)
+</code></pre>
+<p>Puede ver los metadatos de sus resultados a través del diccionario properties:</p>
+<pre><code>sentinel_results[0].properties
+</code></pre>
+<p>O puede ver los metadatos como un diccionario con formato geojson:</p>
+<pre><code>sentinel_results.geojson()
+</code></pre>
+<h3 id="nisar">NISAR<a class="headerlink" href="#nisar" title="Permanent link">#</a></h3>
+<p>asf_search admite la búsqueda de listas de nombres cortos mediante la palabra clave <code>shortName</code>.
+Los datos de NISAR actualmente disponibles que proporciona CMR carecen de atributos adicionales buscables.
+Por lo tanto, la mejor manera de buscar resultados de NISAR es mediante combinaciones de las palabras clave <code>shortName</code>, <code>dataset</code>, <code>platform</code>, y <code>granule_list</code>/<code>product_list</code>.</p>
+<p>Ejemplo de NISAR</p>
+<pre><code>nisar_gslc_gunw = asf.search(shortName=['NISAR_L2_GSLC_V1', 'NISAR_L2_GUNW_V1'], opts=search_opts, maxResults=250)
+print(nisar_gslc_gunw)
+</code></pre>
+<h3 id="opera-s1">Opera-S1<a class="headerlink" href="#opera-s1" title="Permanent link">#</a></h3>
+<p>El conjunto de datos Opera tiene disponibles tanto productos estándar como productos de CalVal (calibración/validación).
+Por favor, tenga en cuenta que los productos de CalVal se tratan como su propio conjunto de datos en asf_search.
+Ambos se pueden encontrar en la <a href="https://github.com/asfadmin/Discovery-asf_search/blob/master/asf_search/constants/DATASET.py">lista de constantes</a>.</p>
+<h3 id="slc-burst">SLC-Burst<a class="headerlink" href="#slc-burst" title="Permanent link">#</a></h3>
+<p>El conjunto de datos SLC Burst tiene tanto datos tiff como xml asociados con una sola entrada en CMR. Para acceder a los datos xml,
+consulte la sección sobre <a href="#downloading-additional-files">descarga de archivos adicionales</a>.</p>
+<p><code>fullBurstID</code>, <code>relativeBurstID</code> y <code>absoluteBurstID</code> son filtros específicos de SLC Burst. Para
+obtener una pila temporal de productos sobre un solo marco de ráfaga, use <code>fullBurstID</code>, que se comparte entre
+todas las ráfagas sobre un solo marco.</p>
+<h3 id="lectura-adicional">Lectura Adicional<a class="headerlink" href="#lectura-adicional" title="Permanent link">#</a></h3>
+<p>Para obtener más información sobre las constantes y palabras clave disponibles, consulte la sección <a href="/asf_search/searching/#keywords">Keywords</a>.</p>
+<h2 id="especificaciones-de-busqueda">Especificaciones de Búsqueda<a class="headerlink" href="#especificaciones-de-busqueda" title="Permanent link">#</a></h2>
+<p>Esta sección contiene información sobre búsquedas de granulados y productos, búsquedas secundarias,
+y otros detalles de búsqueda.</p>
+<h3 id="busqueda-de-granulados-y-productos">Búsqueda de Granulados y Productos<a class="headerlink" href="#busqueda-de-granulados-y-productos" title="Permanent link">#</a></h3>
+<p><code>granule_search()</code> y <code>product_search()</code> son similares.
+Las búsquedas de granulados (también llamadas escenas) incluyen todos los tipos de archivos para el granulado especificado, mientras que las búsquedas de productos especifican un tipo de archivo.
+Las búsquedas de granulados pueden ser 1:many, mientras que una búsqueda de productos siempre será 1:1.</p>
+<p>Ejemplo de búsqueda de granulados:</p>
+<pre><code>granule_list = [
+    'S1B_IW_GRDH_1SDV_20190822T151551_20190822T151616_017700_0214D2_6084',
+    'S1B_IW_GRDH_1SDV_20190810T151550_20190810T151615_017525_020F5A_2F74',
+    'S1B_IW_GRDH_1SDV_20190729T151549_20190729T151614_017350_020A0A_C3E2',
+    'S1B_IW_GRDH_1SDV_20190717T151548_20190717T151613_017175_0204EA_4181',
+    'S1B_IW_GRDH_1SDV_20190705T151548_20190705T151613_017000_01FFC4_24EC',
+    'S1B_IW_GRDH_1SDV_20190623T151547_20190623T151612_016825_01FA95_14B9',
+    'S1B_IW_GRDH_1SDV_20190611T151546_20190611T151611_016650_01F566_D7CE',
+    'S1B_IW_GRDH_1SDV_20190530T151546_20190530T151611_016475_01F02E_BF97',
+    'S1B_IW_GRDH_1SDV_20190518T151545_20190518T151610_016300_01EAD8_9308',
+    'S1B_IW_GRDH_1SDV_20190506T151544_20190506T151609_016125_01E56C_1D67'
+]
+results = asf.granule_search(granule_list)
+print(results)
+</code></pre>
+<p>Ejemplo de búsqueda de productos:</p>
+<pre><code>product_list = [
+    'S1A_IW_GRDH_1SDV_20190809T001336_20190809T001401_028485_033839_78A1-GRD_HD',
+    'S1A_IW_GRDH_1SDV_20150322T000454_20150322T000524_005137_006794_56E3-GRD_HD',
+    'S1A_IW_GRDH_1SDV_20160121T001256_20160121T001321_009585_00DF26_5B84-GRD_HD',
+    'S1A_IW_GRDH_1SDV_20151117T000448_20151117T000513_008637_00C455_3DC2-GRD_HD'
+]
+results = asf.product_search(product_list)
+print(results)
+</code></pre>
+<p><code>granule_search()</code> y <code>product_search()</code> no hacen uso de otros filtros de búsqueda, pero aceptarán kwargs para mantener la consistencia con otras funciones de búsqueda:</p>
+<pre><code>results = asf.granule_search(granule_list=granule_list)
+print(f'{len(results)} resultados encontrados')
+</code></pre>
+<h3 id="nota-sobre-metodos-incorrectos">Nota sobre métodos incorrectos<a class="headerlink" href="#nota-sobre-metodos-incorrectos" title="Permanent link">#</a></h3>
+<p>Generalmente se prefiere "colapsar" muchas consultas pequeñas en menos consultas grandes. Es decir, puede ser fácil y lógicamente razonable ejecutar una serie de pequeñas consultas <code>granule_search()</code> a través de un bucle <code>foreach</code> sobre cada uno de los elementos de la lista original de granulados. <strong>Por favor, no haga esto.</strong> Consume muchos recursos tanto en ASF como en CMR.</p>
+<p>En su lugar, combine sus consultas pequeñas en una consulta grande siempre que sea posible, como se muestra arriba, y luego postprocese los resultados localmente. <code>granule_search()</code> y <code>product_search()</code> pueden soportar listas muy grandes, y las dividirán internamente cuando sea necesario.</p>
+<h3 id="frame-vs-asfframe">frame vs asfframe<a class="headerlink" href="#frame-vs-asfframe" title="Permanent link">#</a></h3>
+<p>Al usar la palabra clave <code>frame</code> con ciertas plataformas/conjuntos de datos, asf_search cambiará implícitamente a usar la palabra clave <code>asfframe</code> en el momento de la búsqueda. Las plataformas/conjuntos de datos que esto afecta son:</p>
+<ul>
+<li><code>SENTINEL-1A/B</code></li>
+<li><code>ALOS</code></li>
+</ul>
+<p>En la consulta a CMR, esto significa buscar por el atributo adicional <code>FRAME_NUMBER</code> en lugar de <code>CENTER_ESA_FRAME</code>.
+Una forma de evitar esto en las búsquedas y usar <code>CENTER_ESA_FRAME</code> con las plataformas/conjuntos de datos mencionados es usar <code>cmr_keywords</code>:</p>
+<p><code>asf.search(platform=asf.PLATFORM.SENTINEL1, cmr_keywords=[('attribute[]', 'int,CENTER_ESA_FRAME,1001')], maxResults=250)</code></p>
+<h3 id="apilamiento">Apilamiento<a class="headerlink" href="#apilamiento" title="Permanent link">#</a></h3>
+<p>Una vez que haya identificado un conjunto de resultados o un ID de producto, es posible que desee construir una pila de línea base basada en esos resultados.
+Puede usar los métodos <code>stack()</code> o <code>stack_from_id()</code> para lograr esto.</p>
+<p><code>stack_from_id()</code> se proporciona en gran medida por conveniencia: internamente, realiza una <code>product_search()</code> usando el ID proporcionado y luego devuelve los resultados del método <code>stack()</code> de ese producto.
+Por esta razón, se recomienda que si tiene un objeto <code>ASFProduct</code> a mano, lo use para construir su pila directamente, ya que elimina la necesidad de la acción de búsqueda adicional.
+Para otros casos donde tiene parámetros que describen su escena de referencia pero no un objeto <code>ASFProduct</code>, es apropiado usar una de las diversas funciones de búsqueda disponibles para obtener primero un <code>ASFProduct</code>.</p>
+<p>Un ejemplo básico usando
+ <code>ASFProduct.stack()</code>:</p>
+<pre><code>import asf_search as asf
+
+reference = asf.product_search('S1A_IW_SLC__1SDV_20220215T225119_20220215T225146_041930_04FE2E_9252-SLC')[0]
+
+print(reference.stack())
+</code></pre>
+<p>Los resultados son un objeto estándar <code>ASFSearchResults</code> que contiene una lista de objetos <code>ASFProduct</code>, cada uno con toda la funcionalidad habitual.
+Hay 2 campos adicionales en los objetos <code>ASFProduct</code>: <code>temporalBaseline</code> y <code>perpendicularBaseline</code>.
+<code>temporalBaseline</code> describe el desplazamiento temporal en días desde la escena de referencia utilizada para construir la pila.
+<code>perpendicularBaseline</code> describe el desplazamiento perpendicular en metros desde la escena de referencia utilizada para construir la pila.
+La escena de referencia se incluye en la pila y siempre tendrá una línea base temporal y perpendicular de 0.</p>
+<h3 id="plataforma-vs-conjunto-de-datos">Plataforma vs Conjunto de Datos<a class="headerlink" href="#plataforma-vs-conjunto-de-datos" title="Permanent link">#</a></h3>
+<p>asf_search proporciona 2 palabras clave principales con diferencias sutiles:</p>
+<ul>
+<li><code>platform</code></li>
+<li><code>dataset</code></li>
+</ul>
+<p><code>platform</code> se asigna a la palabra clave <code>platform[]</code> de CMR; valores como <code>Sentinel-1A</code>, <code>UAVSAR</code>, <code>ALOS</code>. Una limitación de buscar por 
+plataforma es que para plataformas como <code>Sentinel-1A</code> hay muchos tipos de productos derivados de Sentinel-1 (<code>OPERA-S1</code>, <code>SLC-BURST</code>). 
+Para cada producto <code>SLC</code>, hay 27 productos adicionales <code>OPERA-S1</code> y <code>SLC-BURST</code>, lo que puede llevar a resultados homogéneos dependiendo de sus filtros de búsqueda.</p>
+<p>La palabra clave <code>dataset</code> sirve como una solución para esto. Cada "dataset" es una colección de IDs de concepto generalmente asociada con conjuntos de datos comúnmente usados.</p>
+<pre><code class="language-python"># Al momento de escribir esto, probablemente contendrá en su mayoría productos `OPERA-S1` y/o `SLC-BURST`
+platform_results = asf.search(dataset=asf.PLATFORM.SENTINEL1, maxResults=250)
+
+# Contendrá todo excepto productos `OPERA-S1` y/o `SLC-BURST`
+dataset_results = asf.search(dataset=asf.DATASET.SENTINEL1, maxResults=250)
+
+# Contendrá productos OPERA-S1
+opera_results = asf.search(dataset=asf.DATASET.OPERA_S1, maxResults=250)
+
+# Contendrá productos SLC-BURST
+slc_burst_results = asf.search(dataset=asf.DATASET.SLC_BURST, maxResults=250)
+</code></pre>
+<h3 id="host-cmr-uat">Host CMR UAT<a class="headerlink" href="#host-cmr-uat" title="Permanent link">#</a></h3>
+<p>asf_search por defecto consulta contra la API de producción de CMR, <code>cmr.earthdata.nasa.gov</code>.
+Para usar otro host de CMR, configure la palabra clave <code>host</code> con <code>ASFSearchOptions</code>.</p>
+<pre><code class="language-python">uat_opts = asf.ASFSearchOptions(host='cmr.uat.earthdata.nasa.gov', maxResults=250)
+uat_results = asf.search(opts=uat_opts)
+</code></pre>
+<h3 id="listas-de-campanas">Listas de Campañas<a class="headerlink" href="#listas-de-campanas" title="Permanent link">#</a></h3>
+<p>asf_search proporcione un método incorporado para buscar campañas por plataforma.</p>
+<p><code>asf.campaigns(platform=asf.PLATFORM.SENTINEL1A)</code></p>
+<h3 id="alias-de-palabras-clave-de-cmr">Alias de Palabras Clave de CMR<a class="headerlink" href="#alias-de-palabras-clave-de-cmr" title="Permanent link">#</a></h3>
+<p>asf_search utiliza los siguientes alias de palabras clave internamente con los IDs de concepto de colección correspondientes para mejorar el rendimiento de la búsqueda:</p>
+<ul>
+<li><code>platform</code></li>
+<li><code>processingLevel</code></li>
+</ul>
+<p>Las listas de alias se actualizan según sea necesario con cada versión, pero si no está encontrando los resultados esperados, entonces la lista de alias puede estar desactualizada.
+Para omitir el paso de alias, configure la palabra clave <code>collectionAlias</code> en false con <code>ASFSearchOptions</code>.</p>
+<pre><code class="language-python">opts = asf.ASFSearchOptions(collectionAlias=False, maxResults=250)
+unaliased_results = asf.search(opts=opts)
+</code></pre>
+<p><strong>Por favor, tenga en cuenta que esto resultará en tiempos de búsqueda promedio más lentos.</strong> Si faltan resultados de nuevos conjuntos de datos, infórmelo como un <a href="https://github.com/asfadmin/Discovery-asf_search/issues">problema en GitHub</a> con el ID de concepto y el nombre de la colección que falta en el conjunto de datos.</p>
+<h2 id="descarga">Descarga<a class="headerlink" href="#descarga" title="Permanent link">#</a></h2>
+<p>Este <a href="https://github.com/asfadmin/Discovery-asf_search/blob/master/examples/5-Download.ipynb">cuaderno de Jupyter</a> cubre los métodos de autenticación disponibles.
+Una vez autenticado, proporcione un flujo de trabajo para descargar los resultados de la búsqueda.</p>
+<h3 id="autenticacion-recomendada">Autenticación Recomendada<a class="headerlink" href="#autenticacion-recomendada" title="Permanent link">#</a></h3>
+<p>El uso de credenciales .netrc es el método preferido para la autenticación.
+Esta <a href="https://www.labkey.org/Documentation/wiki-page.view?name=netrc">guía</a> le mostrará cómo configurar un archivo .netrc.
+Las solicitudes intentarán obtener las credenciales de autenticación para el nombre de host de la URL desde su archivo .netrc.
+El archivo .netrc anula los encabezados de autenticación HTTP en bruto establecidos con <code>headers=</code>.
+Si se encuentran las credenciales para el nombre de host, la solicitud se envía con HTTP Basic Auth.</p>
+<h2 id="tecnicas-avanzadas-de-busqueda">Técnicas Avanzadas de Búsqueda<a class="headerlink" href="#tecnicas-avanzadas-de-busqueda" title="Permanent link">#</a></h2>
+<p>A continuación encontrará recomendaciones para técnicas avanzadas de búsqueda, como subclasificación, autenticación y el método preferido para búsquedas grandes.</p>
+<h3 id="sentinel-1-y-groupid">Sentinel-1 y GroupID<a class="headerlink" href="#sentinel-1-y-groupid" title="Permanent link">#</a></h3>
+<p>Los productos de Sentinel-1, así como la mayoría de los conjuntos de datos derivados de Sentinel-1 (OPERA-S1, SLC-Burst) tienen un ID de grupo asociado con ellos.
+Esto significa que obtener la escena de origen original, o cualquier producto asociado con esa escena, es tan simple como usar la palabra clave <code>groupID</code> 
+en una búsqueda.</p>
+<pre><code class="language-python">import asf_search as asf
+
+burst_name = 'S1_279916_IW1_20230418T162849_VV_A7E1-BURST'
+burst_granule = asf.search(granule_list=['S1_279916_IW1_20230418T162849_VV_A7E1-BURST'])[0]
+
+groupID = burst_granule.properties['groupID']
+
+# gets the parent SLC of the burst product
+parent_slc = asf.search(groupID=groupID, processingLevel=asf.PRODUCT_TYPE.SLC)[0]
+
+# gets all other SLC Bursts associated with the same parent SLC
+bursts_in_same_scene = asf.search(groupID=groupID, processingLevel=asf.PRODUCT_TYPE.BURST)
+
+# gets ALL Sentinel-1 products and derived products available for the parent scene
+all_products_for_scene = asf.search(groupID=groupID)
+</code></pre>
+<h3 id="subclasificacion">Subclasificación<a class="headerlink" href="#subclasificacion" title="Permanent link">#</a></h3>
+<p><code>ASFProduct</code> es la clase base para todos los objetos de resultados de búsqueda.
+Hay varias subclases de <code>ASFProduct</code> que se utilizan para plataformas específicas y tipos de productos con propiedades/funcionalidad únicas.</p>
+<p>Métodos clave:</p>
+<ul>
+<li><code>geojson()</code></li>
+<li><code>download()</code></li>
+<li><code>stack()</code></li>
+<li><code>get_stack_opts()</code> (devuelve None en <code>ASFProduct</code>, implementado por la subclase <code>ASFStackableProduct</code> y sus subclases)</li>
+<li><code>centroid()</code></li>
+<li><code>remotezip()</code> (requiere que se instale la dependencia opcional)</li>
+<li><code>get_property_paths()</code> (obtiene las palabras clave del producto y sus rutas en el diccionario umm)</li>
+<li><code>translate_product()</code> (lee las propiedades de umm, llena <code>properties</code> con la palabra clave asociada)</li>
+<li><code>get_sort_keys()</code></li>
+<li><code>umm_get()</code></li>
+</ul>
+<p>Propiedades Clave: </p>
+<ul>
+<li><code>properties</code></li>
+<li><code>_base_properties</code> (lo que <code>get_property_paths()</code> use para encontrar valores en las <code>properties</code> JSON de umm)</li>
+<li><code>umm</code> (el umm JSON del producto desde CMR)</li>
+<li><code>metadata</code> (el JSON de metadatos del producto desde CMR)</li>
+</ul>
+<p><code>ASFStackableProduct</code> es una subclase importante de <code>ASFProduct</code>, de la cual se derivan los tipos de productos apilables destinados al análisis de series temporales.
+<code>ASFStackableProduct</code> tiene una enumeración de clase, <code>BaselineCalcType</code>, que determina cómo se manejan los cálculos de pila perpendicular.
+Cada subclase realiza un seguimiento de su tipo de cálculo de línea base a través de la propiedad <code>baseline_type</code>.</p>
+<p>Hereda: <code>ASFProduct</code></p>
+<p>Heredado por: <code>ALOSProduct</code>; <code>ERSProduct</code>; <code>JERSProduct</code>; <code>RADARSATProduct</code>; <code>S1Product</code>;
+<code>S1BurstProduct</code>; <code>OPERAS1Product</code>, <code>ARIAS1GUNWProduct</code></p>
+<p>Métodos Clave:</p>
+<ul>
+<li><code>get_baseline_calc_properties()</code></li>
+<li><code>get_stack_opts()</code> (sobrescribe <code>ASFProduct</code>)</li>
+<li><code>is_valid_reference()</code></li>
+<li><code>get_default_baseline_product_type()</code></li>
+</ul>
+<p>Definiciones Clave para la Enumeración de Clase <code>BaselineCalcType</code>:</p>
+<ul>
+<li><code>PRE_CALCULATED</code>: tiene un valor <code>insarBaseline</code> pre-calculado que se usará para cálculos perpendiculares</li>
+<li><code>CALCULATED</code>: use vectores de estado de posición/velocidad y tiempo de nodo ascendente para cálculos perpendiculares</li>
+</ul>
+<p>Campos Clave:</p>
+<ul>
+<li><code>baseline</code></li>
+<li><code>baseline_type</code> (<code>BaselineCalcType.PRE_CALCULATED</code> por defecto o <code>BaselineCalcType.CALCULATED</code>)</li>
+</ul>
+<p>Dado que <code>ASFProduct</code> está diseñado para subclasificación, esto significa que usted puede proporcionar sus propias subclases personalizadas derivadas directamente de <code>ASFProduct</code> o incluso de una subclase preexistente como <code>S1Product</code> o <code>OperaS1Product</code>.</p>
+<p>Para obtener más información sobre la subclasificación, consulte el <a href="https://github.com/asfadmin/Discovery-asf_search/blob/master/examples/Advanced-Custom-ASFProduct-Subclassing.ipynb">cuaderno de Jupyter</a>.</p>
+<h3 id="uso-de-busquedas-autenticadas">Uso de búsquedas autenticadas<a class="headerlink" href="#uso-de-busquedas-autenticadas" title="Permanent link">#</a></h3>
+<p>La descarga de datos y el acceso a algunos datos requieren una sesión autenticada con Earthdata Login.
+Para simplificar este flujo de trabajo, se proporciona la clase <code>ASFSession</code>.</p>
+<pre><code>auth_with_creds()
+auth_with_token()
+auth_with_cookiejar()
+</code></pre>
+<p>Ejemplo de creación de una sesión autenticada:</p>
+<pre><code>from getpass import getpass
+session = asf.ASFSession()
+session.auth_with_creds(input('EDL Username'), getpass('EDL Password'))
+</code></pre>
+<p>Se proporciona la clase <code>ASFSearchOptions</code> para almacenar y validar parámetros de búsqueda.
+Crear un objeto <code>ASFSearchOptions</code> es necesario para pasar nuestra sesión autenticada a <code>search()</code>.</p>
+<pre><code>search_opts = asf.ASFSearchOptions(
+dataset=asf.DATASET.NISAR,
+session=session)
+
+nisar_response = asf.search(opts=search_opts, maxResults=250)
+</code></pre>
+<h3 id="search_generator-para-grandes-conjuntos-de-resultados">search_generator() para grandes conjuntos de resultados<a class="headerlink" href="#search_generator-para-grandes-conjuntos-de-resultados" title="Permanent link">#</a></h3>
+<p>La forma recomendada de realizar búsquedas grandes y de larga duración es usar <code>search_generator()</code> para obtener los resultados de CMR página por página.
+Esto le permite transmitir resultados a un archivo en caso de que CMR se agote.
+Se pueden usar diferentes formatos de salida.</p>
+<p>Tenga en cuenta que asf_search consulta a CMR con tamaños de página de 250, por lo que configurar maxResults=500 significa que asf_search tendrá que consultar a CMR dos veces, devolviendo cada vez 250 productos:</p>
+<p><code>large_results_generator = asf.search_generator(maxResults=500, platform=asf.PLATFORM.SENTINEL1A)</code></p>
+<pre><code>with open("search_results.metalink", "w") as f:
+    f.writelines(asf.export.results_to_metalink(large_results_generator))
+</code></pre>
+<p>Otro ejemplo de uso:</p>
+<pre><code>import asf_search as asf
+opts = asf.ASFSearchOptions(shortName='ARIA_S1_GUNW')
+urs = []
+for page in asf.search_generator(opts=opts):
+    urs.extend(product.properties['fileID'] for product in page)
+    print(len(urs))
+</code></pre>
+<h3 id="descargando-archivos-adicionales">Descargando archivos adicionales<a class="headerlink" href="#descargando-archivos-adicionales" title="Permanent link">#</a></h3>
+<p>Algunos tipos de productos, como SLC Bursts o productos Opera-S1, tienen varios archivos que se pueden descargar.
+Podemos especificar qué archivos descargar configurando el <code>fileType</code> y utilizando la clase de enumeración <code>FileDownloadType</code>.</p>
+<p>Los archivos adicionales se almacenan en este array:</p>
+<pre><code>product.properties['additionalUrls']
+</code></pre>
+<p>Para descargar solo los archivos adicionales:</p>
+<pre><code>FileDownloadType.ADDITIONAL_FILES    # todo lo que está en 'additionalUrls'
+</code></pre>
+<p>Para descargar el archivo predeterminado:</p>
+<pre><code>FileDownloadType.DEFAULT_FILE        # El archivo de datos predeterminado, 'url'
+</code></pre>
+<p>Para descargar ambos:</p>
+<pre><code>FileDownloadType.ALL_FILES           # todo lo anterior
+</code></pre>
+<p>Este ejemplo descargará todos los archivos adicionales bajo el atributo <code>additionalUrls</code>:</p>
+<pre><code>cslc_results[0].download(session=session, path = './', fileType=asf.FileDownloadType.ADDITIONAL_FILES)
+</code></pre>
+<p>Para ser más específicos, podemos usar los métodos <code>download_urls()</code> o <code>download_url()</code></p>
+<pre><code>print(f"Additional urls: {opera_results[0].properties['additionalUrls']}")
+
+url = opera_results[0].properties['additionalUrls'][0]
+fileName = url.split('/')[-1]
+
+asf.download_url(url, session=session, path ='./', filename=fileName)
+</code></pre>
+<h3 id="uris-de-s3">URIs de S3<a class="headerlink" href="#uris-de-s3" title="Permanent link">#</a></h3>
+<p>Algunos tipos de productos (Sentinel-1, BURST, OPERA, NISAR) tienen URIs de acceso directo a s3 disponibles. Son accesibles bajo la clave de propiedades <code>s3Urls</code>:</p>
+<p><code>ASFProduct.properties['s3Urls']</code>.</p>
+<h3 id="parametro-de-busqueda-de-palabras-clave-de-cmr">Parámetro de Búsqueda de Palabras Clave de CMR<a class="headerlink" href="#parametro-de-busqueda-de-palabras-clave-de-cmr" title="Permanent link">#</a></h3>
+<p>También puede buscar granulados usando <code>readable_granule_name</code> a través de la coincidencia de patrones.</p>
+<p>Para hacer esto, puede pasar la configuración de búsqueda de palabras clave de CMR directamente con el parámetro de búsqueda <code>cmr_keywords</code>.
+Esto le permite pasar cualquier par de palabras clave-valor de CMR válido que no esté cubierto directamente por asf_search, así como configurar el comportamiento del parámetro existente.</p>
+<p>Más información sobre la coincidencia de patrones y las opciones de parámetros se puede encontrar <a href="https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html#Parameter-Options">aquí</a>.</p>
+<p>Ejemplo:</p>
+<pre><code>gslc_results = asf.search(granule_list=['*046_009_A_095*'], cmr_keywords=('options[readable_granule_name][pattern]', 'true'), opts=search_opts)
+
+for product in gslc_results:
+    print(product.properties['fileID'])
+</code></pre>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Application footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    <div class="md-footer-nav">
+      <nav
+        class="md-footer-nav__inner md-grid"
+        aria-label="footer.title"
+      >
+
+        <!-- Link to previous page -->
+        
+          <a href="../Pair/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Pair
+              </div>
+            </div>
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          <a href="../../datasets/wildcard_usage/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Wildcard Queries
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+
+      <!-- ASF Footer information-->
+      <div class="md-grid">
+        <div class="md-footer-container md-grid">
+          <div class="md-footer-container-item">
+            <img src="/assets/images/asf-logo-blue-nav.png"
+                 alt="ASF Logo"
+                 class="md-footer-logo">
+          </div>
+          <div class="md-footer-container-item md-about-us">
+            <h1>About Us</h1>
+            <p>
+              The Alaska Satellite Facility downlinks, processes, archives, and
+              distributes remote-sensing data to scientific users around the world.
+              ASF’s mission is to make remote-sensing data accessible.
+            </p>
+            <p>
+              <a href="https://asf.alaska.edu/about-asf/" target="_blank">
+                Read More
+              </a>
+            </p>
+          </div>
+          <div class="md-footer-container-item md-contact-info">
+            <h1>Contact Info</h1>
+            <p>
+              Alaska Satellite Facility<br>
+              2156 Koyukuk Drive<br>
+              Fairbanks, AK 99775<br>
+              (907) 474-5041<br>
+              uso@asf.alaska.edu<br>
+            </p>
+            <p>
+              <a href="javascript:feedback.showForm();">Send Us A Message</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Copyright and theme information -->
+      <div class="md-footer-copyright">
+        <div class="md-footer-copyright__highlight">
+          
+            &copy; <span id="copyright-year"></span>
+            <script type="text/javascript">
+                current_year = new Date().getFullYear();
+                document.getElementById("copyright-year").innerHTML=current_year;
+            </script>
+            ASF – <a href="#__consent">Change cookie settings</a>
+
+          
+          <!-- ASF non-discrimination disclaimer-->
+          &nbsp;&nbsp;
+          <a href="https://www.alaska.edu/nondiscrimination"
+             target="_blank"
+             class="md-footer-copyright-link">
+            UA is an AA/EO employer and educational institution and prohibits
+            illegal discrimination against any individual
+          </a>
+        </div>
+      </div>
+
+      <!-- Social links -->
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Social links in footer -->
+<div class="md-footer-social">
+    
+    
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+
+
+
+
+
+  
+
+<h4>Cookie Consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Analytics
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceptar</button>
+    
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>

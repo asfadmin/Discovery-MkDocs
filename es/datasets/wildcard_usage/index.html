@@ -1,0 +1,2069 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for searching and processing ASF SAR data.">
+      
+      
+      
+      
+        <link rel="prev" href="../../api/cookbook/">
+      
+      
+        <link rel="next" href="../../api/changelog/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>Wildcard Queries - ASF SAR Manual de Búsqueda de Datos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/styles.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/asf.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6RCQC8BJ8S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6RCQC8BJ8S');
+</script>
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#consultas-con-comodines" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../" title="ASF SAR Manual de Búsqueda de Datos" class="md-header__button md-logo" aria-label="ASF SAR Manual de Búsqueda de Datos" data-md-component="logo">
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Logo -->
+
+  <img src="../../../assets/images/ASFLogo-Blue2.png" alt="logo" />
+
+    </a>
+
+    
+
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ASF SAR Manual de Búsqueda de Datos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Wildcard Queries
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../datasets/wildcard_usage/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="ASF SAR Manual de Búsqueda de Datos" class="md-nav__button md-logo" aria-label="ASF SAR Manual de Búsqueda de Datos" data-md-component="logo">
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Logo -->
+
+  <img src="../../../assets/images/ASFLogo-Blue2.png" alt="logo" />
+
+    </a>
+    ASF SAR Manual de Búsqueda de Datos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vertex
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Vertex
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Manual Vertex
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Manual Vertex
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/manual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guía del Usuario para Comenzar con Vertex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/baseline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Baseline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/sbas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SBAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/displacement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Displacement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/derived_datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conjuntos de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vertex/changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Novedades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Wildcard Queries
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Wildcard Queries
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uso-de-comodines" class="md-nav__link">
+    Uso de comodines
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso de comodines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulo-de-python-asf-search" class="md-nav__link">
+    Módulo de Python asf-search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searchapi" class="md-nav__link">
+    SearchAPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex" class="md-nav__link">
+    Vertex
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nisar" class="md-nav__link">
+    NISAR
+  </a>
+  
+    <nav class="md-nav" aria-label="NISAR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numero-de-version-crid" class="md-nav__link">
+    Número de versión CRID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polarizaciones-de-frecuencia-a-y-b" class="md-nav__link">
+    Polarizaciones de frecuencia A y B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ciclos" class="md-nav__link">
+    Ciclos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ids-de-stack" class="md-nav__link">
+    IDs de stack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opera-s1" class="md-nav__link">
+    OPERA-S1
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.youtube.com/playlist?list=PLXluIEvp5ZzIWd0yNy-ANfdwWjCD1hInA" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Videos Tutoriales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/asfadmin/Discovery-SearchUI" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Código Fuente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hyp3-docs.asf.alaska.edu" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Procesamiento Personalizado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Paquete de Búsqueda en Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Paquete de Búsqueda en Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Básicos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/searching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Búsqueda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/downloading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descarga
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Clases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Clases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/ASFProduct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASFProduct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/ASFSearchOptions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASFSearchOptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/ASFSearchResults/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASFSearchResults
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/ASFSession/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASFSession
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/Pair/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pair
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/BestPractices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mejores Prácticas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Wildcard Queries
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Wildcard Queries
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uso-de-comodines" class="md-nav__link">
+    Uso de comodines
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso de comodines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulo-de-python-asf-search" class="md-nav__link">
+    Módulo de Python asf-search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searchapi" class="md-nav__link">
+    SearchAPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex" class="md-nav__link">
+    Vertex
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nisar" class="md-nav__link">
+    NISAR
+  </a>
+  
+    <nav class="md-nav" aria-label="NISAR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numero-de-version-crid" class="md-nav__link">
+    Número de versión CRID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polarizaciones-de-frecuencia-a-y-b" class="md-nav__link">
+    Polarizaciones de frecuencia A y B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ciclos" class="md-nav__link">
+    Ciclos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ids-de-stack" class="md-nav__link">
+    IDs de stack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opera-s1" class="md-nav__link">
+    OPERA-S1
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/exceptions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Excepciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/asfadmin/Discovery-asf_search/blob/master/CHANGELOG.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Novedades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API de Búsqueda ASF
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API de Búsqueda ASF
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Básicos de la API de búsqueda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/keywords/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Palabras Clave y Puntos Finales de la API de Búsqueda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Herramientas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solución de Problemas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/cookbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recetario
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Wildcard Queries
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Wildcard Queries
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uso-de-comodines" class="md-nav__link">
+    Uso de comodines
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso de comodines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulo-de-python-asf-search" class="md-nav__link">
+    Módulo de Python asf-search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searchapi" class="md-nav__link">
+    SearchAPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex" class="md-nav__link">
+    Vertex
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nisar" class="md-nav__link">
+    NISAR
+  </a>
+  
+    <nav class="md-nav" aria-label="NISAR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numero-de-version-crid" class="md-nav__link">
+    Número de versión CRID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polarizaciones-de-frecuencia-a-y-b" class="md-nav__link">
+    Polarizaciones de frecuencia A y B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ciclos" class="md-nav__link">
+    Ciclos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ids-de-stack" class="md-nav__link">
+    IDs de stack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opera-s1" class="md-nav__link">
+    OPERA-S1
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Novedades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Detalles del Producto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Detalles del Producto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using_ASF_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utilizando Datos de ASF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disp_usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Displacement Product Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disp_faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Displacement Product FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../palsar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Productos ALOS PALSAR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events_about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eventos (SARVIEWS)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://asf.alaska.edu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASF Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uso-de-comodines" class="md-nav__link">
+    Uso de comodines
+  </a>
+  
+    <nav class="md-nav" aria-label="Uso de comodines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulo-de-python-asf-search" class="md-nav__link">
+    Módulo de Python asf-search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searchapi" class="md-nav__link">
+    SearchAPI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex" class="md-nav__link">
+    Vertex
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nisar" class="md-nav__link">
+    NISAR
+  </a>
+  
+    <nav class="md-nav" aria-label="NISAR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numero-de-version-crid" class="md-nav__link">
+    Número de versión CRID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polarizaciones-de-frecuencia-a-y-b" class="md-nav__link">
+    Polarizaciones de frecuencia A y B
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ciclos" class="md-nav__link">
+    Ciclos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ids-de-stack" class="md-nav__link">
+    IDs de stack
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opera-s1" class="md-nav__link">
+    OPERA-S1
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="consultas-con-comodines">Consultas con comodines<a class="headerlink" href="#consultas-con-comodines" title="Permanent link">#</a></h1>
+<p>El módulo asf-search y SearchAPI admiten consultas de nombres de escenas mediante comodines (<code>*</code> para coincidir con cualquier número de caracteres y <code>?</code> para un solo carácter) con la palabra clave <code>granule_list</code>, y también está disponible en el tipo de búsqueda <code>dataset</code> en Vertex. Esto permite buscar metadatos integrados en los nombres de las escenas. A continuación se muestran ejemplos de consultas útiles con ciertos conjuntos de datos.</p>
+<h2 id="uso-de-comodines">Uso de comodines<a class="headerlink" href="#uso-de-comodines" title="Permanent link">#</a></h2>
+<p>A continuación se muestran algunos ejemplos básicos de búsqueda de SLC de Sentinel-1D y/o NISAR PR RSLC usando solo comodines.</p>
+<h3 id="modulo-de-python-asf-search">Módulo de Python asf-search<a class="headerlink" href="#modulo-de-python-asf-search" title="Permanent link">#</a></h3>
+<p>En asf-search, las consultas con comodines están disponibles con la palabra clave existente <code>granule_list</code>.</p>
+<pre><code class="language-python">import asf_search as asf
+
+response = asf.search(
+    granule_list=['NISAR_L1_PR_RSLC*', 'S1D_IW_SLC*'],
+    maxResults=250
+)
+
+response.geojson()
+</code></pre>
+<h3 id="searchapi">SearchAPI<a class="headerlink" href="#searchapi" title="Permanent link">#</a></h3>
+<p>Al igual que asf-search, SearchAPI acepta consultas con comodines con la palabra clave <code>granule_list</code>.</p>
+<p><code>https://api.daac.asf.alaska.edu/services/search/param?granule_list=NISAR_L1_PR_RSLC*,S1D_IW_SLC*&amp;maxResults=250&amp;output=geojson</code></p>
+<p>Nota: <code>maxResults</code> es obligatorio al usar SearchAPI. Para resultados no acotados, use asf-search.</p>
+<h3 id="vertex">Vertex<a class="headerlink" href="#vertex" title="Permanent link">#</a></h3>
+<p>Los comodines se admiten en el campo <code>Scene Name Patterns</code> mediante <code>Geographic Search</code>, accesible desde el panel de filtros.</p>
+<p><img alt="Screenshot" src="/images/vertex_granule_wildcard_es.png" style="height:450px;width:750px" /></p>
+<p>Nota: Vertex no admite resultados entre conjuntos de datos distintos.</p>
+<h2 id="nisar">NISAR<a class="headerlink" href="#nisar" title="Permanent link">#</a></h2>
+<p>Los nombres de productos de datos de NISAR contienen algunas piezas de metadatos que no se pueden buscar directamente mediante atributos adicionales en CMR o no son parámetros de búsqueda en asf-search.</p>
+<p>Para ver un desglose de las convenciones de nomenclatura de productos de datos de NISAR, consulte el <a href="https://nisar-docs.asf.alaska.edu/naming-conventions/">manual de usuario de NISAR</a>.</p>
+<h3 id="numero-de-version-crid">Número de versión CRID<a class="headerlink" href="#numero-de-version-crid" title="Permanent link">#</a></h3>
+<p>El módulo de Python asf-search, SearchAPI y Vertex no proporcionan explícitamente un parámetro de búsqueda para las <a href="https://nisar-docs.asf.alaska.edu/gcov/#term-crid">versiones CRID</a>, pero los comodines ofrecen una forma de buscarlas.</p>
+<ul>
+<li>coincidir con todos los productos NISAR de nivel 2 con la versión CRID X05010:<ul>
+<li><code>NISAR_L2_*X05010*</code></li>
+</ul>
+</li>
+<li>coincidir con todos los productos científicos de NISAR con la versión CRID X05010 y superiores:<ul>
+<li><code>NISAR_L?_*X0501?*</code></li>
+</ul>
+</li>
+<li>coincidir con todos los productos NISAR con la versión CRID P05012 y superiores:<ul>
+<li><code>NISAR_*P05012*</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="polarizaciones-de-frecuencia-a-y-b">Polarizaciones de frecuencia A y B<a class="headerlink" href="#polarizaciones-de-frecuencia-a-y-b" title="Permanent link">#</a></h3>
+<p>Aunque asf-search permite buscar en estos campos <code>mainBandPolarization</code> y <code>sideBandPolarization</code>, no puede buscar exclusivamente datos de una sola banda sin obtener posiblemente ambas bandas en los resultados. Los productos de datos indican cuando una banda no se utiliza con <code>NA</code>.</p>
+<ul>
+<li>Productos que contienen exclusivamente datos HH de la frecuencia A:<ul>
+<li><code>NISAR_L?_\*_SHNA\*</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="ciclos">Ciclos<a class="headerlink" href="#ciclos" title="Permanent link">#</a></h3>
+<p>Los ciclos se representan mediante 3 caracteres cerca del inicio del nombre del granule; cada incremento indica en qué pasada de repetición de 12 días se tomó la escena. <code>003</code> indica que esta escena se tomó durante el 3er ciclo.</p>
+<ul>
+<li>
+<p>Para todos los productos que se tomaron durante el 3er ciclo:</p>
+<ul>
+<li><code>NISAR_L?_PR_????_003_*</code></li>
+</ul>
+</li>
+<li>
+<p>Para todos los productos que se tomaron durante los ciclos 1-9:</p>
+<ul>
+<li><code>NISAR_L?_PR_????_00*</code></li>
+</ul>
+</li>
+<li>
+<p>Para todos los productos que se tomaron durante los ciclos 9 y 10:</p>
+<ul>
+<li><code>NISAR_L?_PR_????_009*</code>, <code>NISAR_L?_PR_????_010*</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="ids-de-stack">IDs de stack<a class="headerlink" href="#ids-de-stack" title="Permanent link">#</a></h3>
+<p>Los IDs de stack son útiles para construir series temporales y se formatean como <code>RelativeOrbit_OrbitDirection_FrameNumber</code>.</p>
+<p>Ejemplo de comodín para un ID de stack:</p>
+<ul>
+<li><code>NISAR_\*165_D_100\*</code><ul>
+<li>Órbita relativa: 165</li>
+<li>Dirección de la órbita: D (descendente)</li>
+<li>Número de marco: 100</li>
+</ul>
+</li>
+</ul>
+<p>A continuación se muestra cómo usar el patrón anterior con el módulo de Python asf-search para obtener resultados adyacentes de series temporales de NISAR.</p>
+<pre><code class="language-python">import asf_search as asf
+
+# Dos pilas adyacentes
+stack_ids = ['165_D_100', '165_D_101']
+
+multi_stack_results = asf.search(
+    dataset=asf.DATASET.NISAR, 
+    granule_list=[f'NISAR_*{stack_id}*' for stack_id in stack_ids]
+    )
+
+multi_stack_results.geojson()
+</code></pre>
+<h2 id="opera-s1">OPERA-S1<a class="headerlink" href="#opera-s1" title="Permanent link">#</a></h2>
+<p>OPERA-S1 tiene algunos campos útiles que no están cubiertos directamente en lugares como Vertex, pero sí son posibles en SearchAPI y asf-search.</p>
+<p>Buscar productos OPERA de nivel 2 que usen S1C como adquisiciones de origen:</p>
+<ul>
+<li><code>OPERA_L2_*S1C_*</code></li>
+</ul>
+<p>Vertex no admite directamente la búsqueda por número de pista para datos OPERA-S1, pero los usuarios pueden usar un patrón como <code>OPERA_L*-S1_T&lt;Track ###&gt;*</code> para limitar a un número de pista específico.</p>
+<p>El siguiente patrón devolvería productos OPERA-S1 de nivel 2 con el número de pista <code>95</code>:</p>
+<ul>
+<li><code>OPERA_L2_*-S1_T095*</code></li>
+</ul>
+<p>Las especificaciones del proyecto OPERA están disponibles <a href="https://www.jpl.nasa.gov/go/opera/products/">aquí</a>.</p>
+<!-- ## UAVSAR
+RPI docs: https://uavsar.jpl.nasa.gov/science/documents/rpi-format.html
+POSLAR docs: https://uavsar.jpl.nasa.gov/science/documents/polsar-format.html
+`Dthvly_34501_08038_006_080731_L090HH_XX_01.slc`
+
+The first six character are an abbreviation for the desired target site (image may contain other sites).
+`L090HH` is frequency band `L`, steering angle `090` followed by the polarization `HH`.
+`XX` means there's no cross talk calibration  -->
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Application footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    <div class="md-footer-nav">
+      <nav
+        class="md-footer-nav__inner md-grid"
+        aria-label="footer.title"
+      >
+
+        <!-- Link to previous page -->
+        
+          <a href="../../api/cookbook/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Recetario
+              </div>
+            </div>
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          <a href="../../api/changelog/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Novedades
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+
+      <!-- ASF Footer information-->
+      <div class="md-grid">
+        <div class="md-footer-container md-grid">
+          <div class="md-footer-container-item">
+            <img src="/assets/images/asf-logo-blue-nav.png"
+                 alt="ASF Logo"
+                 class="md-footer-logo">
+          </div>
+          <div class="md-footer-container-item md-about-us">
+            <h1>About Us</h1>
+            <p>
+              The Alaska Satellite Facility downlinks, processes, archives, and
+              distributes remote-sensing data to scientific users around the world.
+              ASF’s mission is to make remote-sensing data accessible.
+            </p>
+            <p>
+              <a href="https://asf.alaska.edu/about-asf/" target="_blank">
+                Read More
+              </a>
+            </p>
+          </div>
+          <div class="md-footer-container-item md-contact-info">
+            <h1>Contact Info</h1>
+            <p>
+              Alaska Satellite Facility<br>
+              2156 Koyukuk Drive<br>
+              Fairbanks, AK 99775<br>
+              (907) 474-5041<br>
+              uso@asf.alaska.edu<br>
+            </p>
+            <p>
+              <a href="javascript:feedback.showForm();">Send Us A Message</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Copyright and theme information -->
+      <div class="md-footer-copyright">
+        <div class="md-footer-copyright__highlight">
+          
+            &copy; <span id="copyright-year"></span>
+            <script type="text/javascript">
+                current_year = new Date().getFullYear();
+                document.getElementById("copyright-year").innerHTML=current_year;
+            </script>
+            ASF – <a href="#__consent">Change cookie settings</a>
+
+          
+          <!-- ASF non-discrimination disclaimer-->
+          &nbsp;&nbsp;
+          <a href="https://www.alaska.edu/nondiscrimination"
+             target="_blank"
+             class="md-footer-copyright-link">
+            UA is an AA/EO employer and educational institution and prohibits
+            illegal discrimination against any individual
+          </a>
+        </div>
+      </div>
+
+      <!-- Social links -->
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Social links in footer -->
+<div class="md-footer-social">
+    
+    
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+
+
+
+
+
+  
+
+<h4>Cookie Consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Analytics
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceptar</button>
+    
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>

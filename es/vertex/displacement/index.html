@@ -1,0 +1,1872 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for searching and processing ASF SAR data.">
+      
+      
+      
+      
+        <link rel="prev" href="../sbas/">
+      
+      
+        <link rel="next" href="../events/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>Displacement - ASF SAR Manual de Búsqueda de Datos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/styles.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/asf.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6RCQC8BJ8S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6RCQC8BJ8S');
+</script>
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#portal-de-desplazamiento" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../" title="ASF SAR Manual de Búsqueda de Datos" class="md-header__button md-logo" aria-label="ASF SAR Manual de Búsqueda de Datos" data-md-component="logo">
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Logo -->
+
+  <img src="../../../assets/images/ASFLogo-Blue2.png" alt="logo" />
+
+    </a>
+
+    
+
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ASF SAR Manual de Búsqueda de Datos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Displacement
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../vertex/displacement/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="ASF SAR Manual de Búsqueda de Datos" class="md-nav__button md-logo" aria-label="ASF SAR Manual de Búsqueda de Datos" data-md-component="logo">
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Logo -->
+
+  <img src="../../../assets/images/ASFLogo-Blue2.png" alt="logo" />
+
+    </a>
+    ASF SAR Manual de Búsqueda de Datos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vertex
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Vertex
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Manual Vertex
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Manual Vertex
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guía del Usuario para Comenzar con Vertex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../baseline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Baseline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sbas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SBAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Displacement
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Displacement
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-el-portal-de-desplazamiento" class="md-nav__link">
+    ¿Qué es el Portal de Desplazamiento?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-son-los-productos-de-desplazamiento-superficial-de-opera" class="md-nav__link">
+    ¿Qué son los Productos de Desplazamiento Superficial de OPERA?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iniciar-su-busqueda-de-desplazamiento" class="md-nav__link">
+    Iniciar su búsqueda de desplazamiento
+  </a>
+  
+    <nav class="md-nav" aria-label="Iniciar su búsqueda de desplazamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capas-base-del-mapa" class="md-nav__link">
+    Capas base del mapa
+  </a>
+  
+    <nav class="md-nav" aria-label="Capas base del mapa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#velocidad-basica" class="md-nav__link">
+    Velocidad básica
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seleccion-de-aois" class="md-nav__link">
+    Selección de AOIs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capas-adicionales-del-mapa" class="md-nav__link">
+    Capas adicionales del mapa
+  </a>
+  
+    <nav class="md-nav" aria-label="Capas adicionales del mapa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementacion" class="md-nav__link">
+    Implementación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaccion-con-los-resultados-del-portal-de-desplazamiento" class="md-nav__link">
+    Interacción con los resultados del Portal de Desplazamiento
+  </a>
+  
+    <nav class="md-nav" aria-label="Interacción con los resultados del Portal de Desplazamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lista-de-areas-de-interes" class="md-nav__link">
+    Lista de Áreas de Interés
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafico" class="md-nav__link">
+    Gráfico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direccion-de-vuelo" class="md-nav__link">
+    Dirección de Vuelo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#herramientas-de-busqueda" class="md-nav__link">
+    Herramientas de Búsqueda
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecturas-adicionales" class="md-nav__link">
+    Lecturas adicionales
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../derived_datasets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conjuntos de Datos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Novedades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/wildcard_usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wildcard Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.youtube.com/playlist?list=PLXluIEvp5ZzIWd0yNy-ANfdwWjCD1hInA" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Videos Tutoriales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/asfadmin/Discovery-SearchUI" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Código Fuente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://hyp3-docs.asf.alaska.edu" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Procesamiento Personalizado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Paquete de Búsqueda en Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Paquete de Búsqueda en Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Básicos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/searching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Búsqueda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/downloading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Descarga
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Clases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Clases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/ASFProduct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASFProduct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/ASFSearchOptions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASFSearchOptions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/ASFSearchResults/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASFSearchResults
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/ASFSession/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASFSession
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/Pair/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pair
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/BestPractices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mejores Prácticas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/wildcard_usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wildcard Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../asf_search/exceptions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Excepciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/asfadmin/Discovery-asf_search/blob/master/CHANGELOG.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Novedades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API de Búsqueda ASF
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API de Búsqueda ASF
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Básicos de la API de búsqueda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/keywords/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Palabras Clave y Puntos Finales de la API de Búsqueda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Herramientas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solución de Problemas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/cookbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recetario
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/wildcard_usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wildcard Queries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/changelog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Novedades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Detalles del Producto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Detalles del Producto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/using_ASF_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utilizando Datos de ASF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/disp_usage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Displacement Product Usage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/disp_faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Displacement Product FAQs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/palsar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Productos ALOS PALSAR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datasets/events_about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eventos (SARVIEWS)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://asf.alaska.edu/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ASF Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-el-portal-de-desplazamiento" class="md-nav__link">
+    ¿Qué es el Portal de Desplazamiento?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-son-los-productos-de-desplazamiento-superficial-de-opera" class="md-nav__link">
+    ¿Qué son los Productos de Desplazamiento Superficial de OPERA?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iniciar-su-busqueda-de-desplazamiento" class="md-nav__link">
+    Iniciar su búsqueda de desplazamiento
+  </a>
+  
+    <nav class="md-nav" aria-label="Iniciar su búsqueda de desplazamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#capas-base-del-mapa" class="md-nav__link">
+    Capas base del mapa
+  </a>
+  
+    <nav class="md-nav" aria-label="Capas base del mapa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#velocidad-basica" class="md-nav__link">
+    Velocidad básica
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seleccion-de-aois" class="md-nav__link">
+    Selección de AOIs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capas-adicionales-del-mapa" class="md-nav__link">
+    Capas adicionales del mapa
+  </a>
+  
+    <nav class="md-nav" aria-label="Capas adicionales del mapa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementacion" class="md-nav__link">
+    Implementación
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaccion-con-los-resultados-del-portal-de-desplazamiento" class="md-nav__link">
+    Interacción con los resultados del Portal de Desplazamiento
+  </a>
+  
+    <nav class="md-nav" aria-label="Interacción con los resultados del Portal de Desplazamiento">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lista-de-areas-de-interes" class="md-nav__link">
+    Lista de Áreas de Interés
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grafico" class="md-nav__link">
+    Gráfico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direccion-de-vuelo" class="md-nav__link">
+    Dirección de Vuelo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#herramientas-de-busqueda" class="md-nav__link">
+    Herramientas de Búsqueda
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lecturas-adicionales" class="md-nav__link">
+    Lecturas adicionales
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="portal-de-desplazamiento">Portal de Desplazamiento<a class="headerlink" href="#portal-de-desplazamiento" title="Permanent link">#</a></h1>
+<h2 id="que-es-el-portal-de-desplazamiento">¿Qué es el Portal de Desplazamiento?<a class="headerlink" href="#que-es-el-portal-de-desplazamiento" title="Permanent link">#</a></h2>
+<p>El Portal de Desplazamiento proporciona la capacidad de visualizar e interactuar con los Productos de Desplazamiento Superficial (DISP) de OPERA.<br />
+Acceda al <a href="https://displacement.asf.alaska.edu/">Portal de Desplazamiento</a> para comenzar. Tenga en cuenta que el Portal de Desplazamiento también está disponible en <a href="https://search.asf.alaska.edu">Vertex</a>, y seleccionando "Desplazamiento" en el menú desplegable Tipo de búsqueda.</p>
+<h2 id="que-son-los-productos-de-desplazamiento-superficial-de-opera">¿Qué son los Productos de Desplazamiento Superficial de OPERA?<a class="headerlink" href="#que-son-los-productos-de-desplazamiento-superficial-de-opera" title="Permanent link">#</a></h2>
+<p>Los Productos de Desplazamiento Superficial (DISP) de OPERA son datos de desplazamiento derivados del radar de apertura sintética interferométrica (InSAR), creados mediante un enfoque híbrido de procesamiento de series temporales con Dispersores Persistentes (PS) y Dispersores Distribuidos (DS).<br />
+Para más detalles, consulte el <a href="https://www.jpl.nasa.gov/go/opera/products/disp-product-suite/">Documento de Especificaciones de los Productos DISP de OPERA</a>.
+Los productos DISP de OPERA proporcionan información sobre movimientos antropogénicos y naturales de la superficie terrestre, como subsidencia debido a la extracción de agua subterránea o de petróleo y gas, levantamiento debido a la inyección de aguas residuales, y movimiento del terreno por fallas tectónicas, deslizamientos de tierra, volcanes y más.<br />
+Todos los productos DISP de OPERA se proporcionan en la dirección de línea de visión (LOS) del satélite, lo que significa que los movimientos de la superficie se miden en relación con la LOS, indicando si un punto se está moviendo hacia (valor positivo) o alejándose (valor negativo) del satélite.<br />
+La información LOS se muestra gráficamente en el panel superior del Portal de Desplazamiento.<br />
+La suite de productos DISP de OPERA se deriva de los datos SAR de los satélites Sentinel-1A/B/C y NISAR, y cubre América del Norte (Estados Unidos y territorios estadounidenses, Canadá dentro de los 200 km de la frontera con EE. UU., y todos los países continentales desde la frontera sur de EE. UU. hasta Panamá inclusive).</p>
+<p>El producto DISP de OPERA incluye una capa de “desplazamiento de longitud de onda corta”, que es el conjunto de datos actualmente mostrado en el Portal de Desplazamiento.  </p>
+<p>La capa de desplazamiento de longitud de onda corta está filtrada para resaltar el desplazamiento local (longitud de onda &lt; 30 km) y eliminar señales de longitud de onda larga como el ruido atmosférico.<br />
+Consulte las <a href="/datasets/disp_faq">Preguntas Frecuentes</a> y el <a href="https://www.jpl.nasa.gov/go/opera/products/disp-product-suite/">Documento de Especificaciones de los Productos DISP de OPERA</a> para una descripción más detallada de la capa del producto.</p>
+<p>En general, OPERA crea los productos DISP tan pronto como los datos de entrada del satélite están disponibles.<br />
+Sin embargo, los productos DISP de OPERA provenientes de Sentinel-1 se están implementando en dos fases.<br />
+La Fase 1 (desde ahora hasta finales de 2025) se enfoca en la creación de datos históricos entre julio de 2016 y diciembre de 2024. La Fase 2 se enfoca en la creación de los datos históricos restantes y de todos los productos nuevos a medida que estén disponibles los datos de satélite.</p>
+<p>El Portal de Desplazamiento proporciona la capacidad de visualizar e interactuar con estos productos.<br />
+El Portal de Desplazamiento estará disponible próximamente. Vuelva más adelante para obtener más actualizaciones.  </p>
+<p>Para descargar los productos DISP de OPERA, consulte <a href="https://search.earthdata.nasa.gov/search/granules?p=C3294057315-ASF&amp;pg[0][v]=f&amp;pg[0][gsk]=-start_date&amp;q=%22OPERA%22&amp;tl=1578783442.59!5!!&amp;lat=0.0703125">NASA Earthdata</a>.</p>
+<h2 id="iniciar-su-busqueda-de-desplazamiento">Iniciar su búsqueda de desplazamiento<a class="headerlink" href="#iniciar-su-busqueda-de-desplazamiento" title="Permanent link">#</a></h2>
+<h3 id="capas-base-del-mapa">Capas base del mapa<a class="headerlink" href="#capas-base-del-mapa" title="Permanent link">#</a></h3>
+<p>Las capas base del mapa disponibles pueden ayudarle a seleccionar su área de interés (AOI).<br />
+En la esquina superior izquierda del mapa, puede hacer clic en la casilla de verificación para activar o desactivar las capas del mapa que desee.</p>
+<h4 id="velocidad-basica">Velocidad básica<a class="headerlink" href="#velocidad-basica" title="Permanent link">#</a></h4>
+<p>Esta capa muestra la velocidad, derivada utilizando la capa de desplazamiento de longitud de onda corta del producto DISP. Consulte las <a href="/datasets/disp_faq">Preguntas Frecuentes</a> para más detalles. Hay capas separadas para trayectos satelitales Ascendentes y Descendentes, y la capa se actualizará automáticamente para mostrar únicamente la dirección correcta según los filtros de búsqueda.</p>
+<h3 id="seleccion-de-aois">Selección de AOIs<a class="headerlink" href="#seleccion-de-aois" title="Permanent link">#</a></h3>
+<p>Cuando acceda por primera vez al Portal de Desplazamiento, el selector de puntos estará activo. Puede hacer clic en los puntos deseados en el mapa. Cuando haya terminado de agregar sus Áreas de Interés (AOIs), puede hacer clic en el botón <strong>Dibujar</strong> para dejar de dibujar. Puede volver a hacer clic para seleccionar más AOIs en el mapa.</p>
+<p>Una vez que haya seleccionado el AOI, aparecerá el panel de resultados. El panel izquierdo muestra sus AOIs seleccionados, etiquetados como <strong>Serie 1, Serie 2</strong>, y así sucesivamente. También mostrará el marco asociado con cada AOI. Se mostrará un ícono de carga giratorio junto a cada serie mientras se carga.  El gráfico se mostrará en el panel derecho.</p>
+<p>Cada Serie está codificada por colores. Al pasar el cursor sobre el AOI en la lista de AOIs, en el gráfico o en el mapa, se resaltará dicho AOI en las tres ubicaciones.</p>
+<h3 id="capas-adicionales-del-mapa">Capas adicionales del mapa<a class="headerlink" href="#capas-adicionales-del-mapa" title="Permanent link">#</a></h3>
+<p>En la esquina superior izquierda del mapa, hay capas adicionales de mapa disponibles. Puede hacer clic en la casilla de verificación para seleccionar la capa deseada.</p>
+<h4 id="implementacion">Implementación<a class="headerlink" href="#implementacion" title="Permanent link">#</a></h4>
+<p>Esta capa muestra prioridades regionales codificadas por colores para la generación de productos de desplazamiento durante la fase de procesamiento histórico, que inicialmente incluirá datos desde julio de 2016 hasta diciembre de 2024 y se actualizará para finales de 2025. Las regiones se priorizan del 1 al 3, siendo 1 la prioridad de procesamiento más alta. Tenga en cuenta que algunas subregiones pueden tener menor prioridad debido a cobertura de nieve, vegetación u otros factores. Hay variantes separadas Ascendente y Descendente, y la capa se actualizará para mostrar la dirección correcta según los filtros de su búsqueda.</p>
+<h2 id="interaccion-con-los-resultados-del-portal-de-desplazamiento">Interacción con los resultados del Portal de Desplazamiento<a class="headerlink" href="#interaccion-con-los-resultados-del-portal-de-desplazamiento" title="Permanent link">#</a></h2>
+<h3 id="lista-de-areas-de-interes">Lista de Áreas de Interés<a class="headerlink" href="#lista-de-areas-de-interes" title="Permanent link">#</a></h3>
+<ul>
+<li>Al pasar el cursor sobre un AOI, se resaltará en la lista de AOIs, en el gráfico y en el mapa.  </li>
+<li>De forma predeterminada, todos los AOIs se muestran en el gráfico. Puede hacer clic en la <strong>casilla de verificación</strong> junto a un AOI para alternar cómo se muestra en el gráfico. Cuando está marcada, los AOIs aparecerán en el gráfico. Cuando no está marcada, aparecerán como una serie atenuada en el gráfico.  <ul>
+<li>Puede hacer clic en la <strong>casilla de verificación de Todos los AOIs</strong> para atenuar todas las series temporales en el gráfico.  </li>
+</ul>
+</li>
+<li>Puede hacer clic en el ícono de <strong>papelera</strong> para eliminar un AOI de su lista. Esto lo eliminará del mapa, la lista y el gráfico.  </li>
+<li>Puede eliminar todas las series haciendo clic en el ícono de <strong>papelera</strong> junto a <em>Todos los AOIs</em>. Aparecerá un mensaje de confirmación. Al hacer clic en <strong>Cancelar</strong>, no se eliminará ningún AOI. Al hacer clic en <strong>Eliminar</strong>, se eliminarán todos los AOIs existentes del mapa, la lista y el gráfico.</li>
+</ul>
+<h3 id="grafico">Gráfico<a class="headerlink" href="#grafico" title="Permanent link">#</a></h3>
+<ul>
+<li>Al pasar el cursor sobre una serie temporal en el gráfico, se resaltará en la lista de AOIs, en el gráfico y en el mapa. Al pasar el cursor sobre puntos individuales en el gráfico, se proporcionará información adicional sobre ese punto.  </li>
+<li>Puede usar el mouse para navegar por el gráfico. Hay botones de <strong>Acercar</strong> y <strong>Alejar</strong> en la parte superior derecha del gráfico, o puede desplazarse con el mouse. El botón <strong>Ajustar al gráfico</strong> ajustará todas las series temporales al gráfico visible.  </li>
+<li>Haga clic derecho en cualquier punto de una serie temporal para restablecer el primer punto de la serie de desplazamiento a 0 utilizando <strong>Ajustar a cero</strong>.  </li>
+<li>El <strong>Control deslizante de fechas</strong> se encuentra debajo del gráfico. Puede arrastrar los extremos para ajustar las fechas de inicio y fin.  </li>
+<li>Haga clic en el ícono de <strong>Exportar</strong> en la parte superior derecha para descargar un archivo .csv con todos los AOIs de su serie temporal. <em>Nota</em>: si un AOI está deseleccionado en la lista de AOIs, no se incluirá en la exportación .csv.  </li>
+<li>Haga clic en el ícono de <strong>Configuración</strong> en la parte superior derecha para opciones adicionales  <ul>
+<li>Haga clic en la casilla de verificación <strong>Mostrar líneas</strong> para activar o desactivar las líneas.  </li>
+<li>Haga clic en la casilla de verificación <strong>Mostrar ajuste lineal</strong> para mostrar el ajuste lineal de cada serie temporal. Las ecuaciones del ajuste lineal se mostrarán sobre el gráfico. Las líneas discontinuas que representan el ajuste lineal aparecerán en el gráfico.  </li>
+<li>Haga clic en <strong>Restablecer referencia del gráfico</strong> para restablecer el gráfico a su referencia de línea base original.  </li>
+</ul>
+</li>
+<li>Los datos de desplazamiento de longitud de onda corta se denominan <em>Desplazamiento local</em> en el eje Y del gráfico.  </li>
+<li>Los datos DISP de OPERA pueden estar enmascarados cuando se marcan como de baja calidad <a href="/datasets/disp_faq">(ver FAQ)</a>. Los datos enmascarados se indicarán en el gráfico utilizando puntos huecos. La información adicional que aparece al pasar el cursor sobre el punto indicará que no hay datos válidos para ese punto.</li>
+</ul>
+<h3 id="direccion-de-vuelo">Dirección de Vuelo<a class="headerlink" href="#direccion-de-vuelo" title="Permanent link">#</a></h3>
+<p>En la barra superior, haga clic en el botón <strong>Dirección de Vuelo</strong> para cambiar la dirección de vuelo. Cambiar la dirección de vuelo actualizará el gráfico y todas las capas de mapa seleccionadas.<br />
+Las opciones de dirección de vuelo son Ascendente (el satélite se desplaza de sur a norte) y Descendente (el satélite se desplaza de norte a sur). Los íconos a la derecha del botón Dirección de Vuelo mostrarán la orientación del satélite, la dirección de observación del radar y el rango del ángulo de observación. Los íconos se actualizarán según la dirección seleccionada.</p>
+<h3 id="herramientas-de-busqueda">Herramientas de Búsqueda<a class="headerlink" href="#herramientas-de-busqueda" title="Permanent link">#</a></h3>
+<p>Hay opciones adicionales disponibles en la parte superior derecha de la barra de encabezado.</p>
+<ul>
+<li>El botón <strong>Compartir/Guardar</strong> abre el menú de <strong>Búsquedas Guardadas</strong> y <strong>Compartir Búsqueda</strong>.<br />
+  Desde <strong>Búsquedas Guardadas</strong>, usted puede guardar o ver una búsqueda de desplazamiento. También puede ver el historial de sus búsquedas de desplazamiento.<br />
+<strong>Compartir Búsqueda</strong> le permite copiar la URL actual para compartir su búsqueda, o puede enviar el enlace por correo electrónico.  </li>
+<li>El botón <strong>Información</strong> abre una ventana con más información sobre los Productos de Desplazamiento Superficial (DISP) de OPERA.  </li>
+<li>El ícono <strong>Ayuda</strong> abre el menú de ayuda de Vertex, que incluye tutoriales en video y documentación.  </li>
+<li>El <strong>selector de idioma</strong> le permite cambiar de idioma. Actualmente están disponibles inglés y español.  </li>
+<li>El ícono de <strong>Iniciar sesión</strong> muestra las opciones de usuario, incluyendo Búsquedas Guardadas, Historial de Búsqueda, Filtros Guardados y Preferencias.</li>
+</ul>
+<h2 id="lecturas-adicionales">Lecturas adicionales<a class="headerlink" href="#lecturas-adicionales" title="Permanent link">#</a></h2>
+<p><a href="https://storymaps.arcgis.com/stories/9356add046654d719fcc20566fc1f243">Hoja de ruta de los Productos de Desplazamiento</a></p>
+<p><a href="/datasets/disp_usage">Uso de los Productos de Desplazamiento</a></p>
+<p><a href="/datasets/disp_faq">Preguntas Frecuentes sobre Desplazamiento</a></p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Application footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    <div class="md-footer-nav">
+      <nav
+        class="md-footer-nav__inner md-grid"
+        aria-label="footer.title"
+      >
+
+        <!-- Link to previous page -->
+        
+          <a href="../sbas/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                SBAS
+              </div>
+            </div>
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          <a href="../events/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Siguiente
+                </span>
+                Evento
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+
+      <!-- ASF Footer information-->
+      <div class="md-grid">
+        <div class="md-footer-container md-grid">
+          <div class="md-footer-container-item">
+            <img src="/assets/images/asf-logo-blue-nav.png"
+                 alt="ASF Logo"
+                 class="md-footer-logo">
+          </div>
+          <div class="md-footer-container-item md-about-us">
+            <h1>About Us</h1>
+            <p>
+              The Alaska Satellite Facility downlinks, processes, archives, and
+              distributes remote-sensing data to scientific users around the world.
+              ASF’s mission is to make remote-sensing data accessible.
+            </p>
+            <p>
+              <a href="https://asf.alaska.edu/about-asf/" target="_blank">
+                Read More
+              </a>
+            </p>
+          </div>
+          <div class="md-footer-container-item md-contact-info">
+            <h1>Contact Info</h1>
+            <p>
+              Alaska Satellite Facility<br>
+              2156 Koyukuk Drive<br>
+              Fairbanks, AK 99775<br>
+              (907) 474-5041<br>
+              uso@asf.alaska.edu<br>
+            </p>
+            <p>
+              <a href="javascript:feedback.showForm();">Send Us A Message</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Copyright and theme information -->
+      <div class="md-footer-copyright">
+        <div class="md-footer-copyright__highlight">
+          
+            &copy; <span id="copyright-year"></span>
+            <script type="text/javascript">
+                current_year = new Date().getFullYear();
+                document.getElementById("copyright-year").innerHTML=current_year;
+            </script>
+            ASF – <a href="#__consent">Change cookie settings</a>
+
+          
+          <!-- ASF non-discrimination disclaimer-->
+          &nbsp;&nbsp;
+          <a href="https://www.alaska.edu/nondiscrimination"
+             target="_blank"
+             class="md-footer-copyright-link">
+            UA is an AA/EO employer and educational institution and prohibits
+            illegal discrimination against any individual
+          </a>
+        </div>
+      </div>
+
+      <!-- Social links -->
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Social links in footer -->
+<div class="md-footer-social">
+    
+    
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+
+
+
+
+
+  
+
+<h4>Cookie Consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Analytics
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceptar</button>
+    
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>
