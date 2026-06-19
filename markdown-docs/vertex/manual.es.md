@@ -310,22 +310,6 @@ La funcionalidad mejorada de la lista de descargas ahora está disponible en el 
   - **Descarga de Datos** se utiliza para descargar múltiples productos, con la opción *Descargar Script de Python (.py)* o la opción de archivo *Metalink (metalink)*.
   - **Descarga de Metadatos** se utiliza para exportar el contenido de la lista de descargas a un archivo *CSV*, *KML* o *GeoJSON*. Los archivos *KML* y *GeoJSON* proporcionados por esta función son compatibles con la función de *Importación de Búsqueda Geográfica*.
 
-### Navegador Google Chrome
-
-La funcionalidad mejorada de la lista de descargas está disponible en el navegador Google Chrome. Tenga en cuenta que esta funcionalidad mejorada no es compatible cuando se usa el modo incógnito.
-
-- Haga clic en el **icono del carrito** en el encabezado, etiquetado como **Descargas** para abrir su lista de descargas.
-  - Junto a cada archivo, puede hacer clic en el icono de **nube** para comenzar la descarga.
-    - Al comenzar la descarga, un indicador de progreso muestra el porcentaje descargado. Una vez que la descarga se haya completado, el icono aparecerá como una **marca de verificación** para indicar que el archivo ha sido descargado.
-    - Mientras el archivo se está descargando, puede hacer clic en el indicador de progreso para detener la descarga.
-  - Bajo **Descarga de Datos**, puede seleccionar **Descargar Todo**. Esto descargará 3 archivos a la vez hasta que todos los productos en su carrito se hayan descargado. Los mismos indicadores de progreso y marcas de verificación se mostrarán para informarle el estado de cada descarga en su lista.
-    - Cuando haga clic en **Descargar Todo**, aparecerá un cuadro de diálogo:
-      1. Navegue a la carpeta donde desea guardar los archivos y haga clic en *Seleccionar*.
-      2. Haga clic en *Ver Archivos* para permitir que la descarga continúe.
-      3. Haga clic en *Guardar Cambios* para guardar sus preferencias de carpeta de descarga. Esto persistirá mientras la ventana del navegador Vertex permanezca abierta.
-  - Si **Borra** los productos en su lista, los indicadores de progreso y finalización de la descarga se restablecerán. Puede agregar los productos a su lista nuevamente si lo desea.
-  - *Nota*: Debe iniciar sesión para descargar archivos. Si no ha iniciado sesión, cuando haga clic para comenzar una descarga, será redirigido primero a la página de inicio de sesión.
-
 ## Otras Opciones de Vertex
 
 - En la esquina superior izquierda del mapa, hay botones que le permiten cambiar su **vista del mapa**, **zoom** y **capas**. *Nota:* Los controles del mapa disponibles varían según el tipo de búsqueda.
