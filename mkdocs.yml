@@ -115,6 +115,8 @@ nav:
       - ASFSearchResults: asf_search/ASFSearchResults.md
       - ASFSession: asf_search/ASFSession.md
       - Pair: asf_search/Pair.md
+      - Stack: asf_search/Stack.md
+      - SBASNetwork: asf_search/SBASNetwork.md
     - Best Practices: asf_search/BestPractices.md
     - Wildcard Queries: datasets/wildcard_usage.md
     - Exceptions: asf_search/exceptions.md
