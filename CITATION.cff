@@ -4,7 +4,7 @@ message: >-
   metadata from this file.
 
 title: ASF SAR Data Search Manual
-doi: TODO
+doi: 10.5281/zenodo.2433569
 contact:
   - name: NASA Earthdata Forum
     website: https://forum.earthdata.nasa.gov
