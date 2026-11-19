@@ -4,7 +4,7 @@ message: >-
   metadata from this file.
 
 title: ASF SAR Data Search Manual
-doi: 10.5281/zenodo.2433569
+doi: TODO
 contact:
   - name: NASA Earthdata Forum
     website: https://forum.earthdata.nasa.gov
@@ -71,4 +71,5 @@ authors:
     alias: williamh890
   - given-names: Yoreley
     family-names: Villafañez
+    orcid: https://orcid.org/0009-0005-2449-6615
     alias: yoreley777
